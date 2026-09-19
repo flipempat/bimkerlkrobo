@@ -1,0 +1,7 @@
+{
+  "name": "BIMKER LKROBO - Lapas Kerobokan",
+  "description": "Website resmi Bimbingan Kerja Lapas Kelas IIA Kerobokan Bali. Menampilkan program pembinaan kemandirian, katalog produk karya warga binaan, dan kemitraan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
