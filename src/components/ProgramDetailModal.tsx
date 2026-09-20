@@ -18,6 +18,11 @@ export const ProgramDetailModal: React.FC<ProgramDetailModalProps> = ({
 
   if (!program) return null;
 
+  const isUmkm = program.category === 'umkm';
+  const displayTitle = language === 'en' && program.titleEn ? program.titleEn : program.title;
+  const displayCategory = language === 'en' && program.categoryLabelEn ? program.categoryLabelEn : program.categoryLabel;
+  const displayDuration = language === 'en' && program.durationEn ? program.durationEn : program.duration;
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
       {/* Backdrop */}
@@ -44,16 +49,20 @@ export const ProgramDetailModal: React.FC<ProgramDetailModalProps> = ({
           <div className="relative aspect-16/9 bg-slate-900">
             <img 
               src={program.image} 
-              alt={program.title}
+              alt={displayTitle}
               className="w-full h-full object-cover opacity-85"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent flex items-end p-6">
               <div>
-                <span className="inline-block text-xs font-bold px-2.5 py-0.5 rounded-full bg-[#D4A017] text-[#1A1A1A] mb-2">
-                  {program.categoryLabel}
+                <span className={`inline-block text-xs font-bold px-3 py-1 rounded-full mb-2 ${
+                  isUmkm
+                    ? 'bg-[#0B1C3D] text-[#D4A017] border border-[#D4A017]/40'
+                    : 'bg-[#1A7A4C] text-white border border-[#2E9B6A]/50'
+                }`}>
+                  {displayCategory}
                 </span>
                 <h2 className="text-xl sm:text-2xl font-bold text-white">
-                  {program.title}
+                  {displayTitle}
                 </h2>
               </div>
             </div>
@@ -68,7 +77,7 @@ export const ProgramDetailModal: React.FC<ProgramDetailModalProps> = ({
                   {language === 'id' ? 'Kapasitas' : 'Capacity'}
                 </span>
                 <span className="font-bold text-sm text-[#0B1C3D]">
-                  {program.participantsCount} {language === 'id' ? 'Peserta/Tahun' : 'Trainees/Yr'}
+                  {program.participantsCount} {language === 'id' ? 'Peserta' : 'Trainees'}
                 </span>
               </div>
               <div className="bg-[#F8F9FC] p-3 rounded-xl border border-slate-200 text-center">
@@ -76,7 +85,7 @@ export const ProgramDetailModal: React.FC<ProgramDetailModalProps> = ({
                 <span className="block text-xs text-[#6B7280] font-medium">
                   {language === 'id' ? 'Durasi' : 'Duration'}
                 </span>
-                <span className="font-bold text-xs sm:text-sm text-[#0B1C3D]">{program.duration}</span>
+                <span className="font-bold text-xs sm:text-sm text-[#0B1C3D]">{displayDuration}</span>
               </div>
               <div className="bg-[#F8F9FC] p-3 rounded-xl border border-slate-200 text-center">
                 <Award className="w-5 h-5 text-[#D4A017] mx-auto mb-1" />
@@ -84,7 +93,7 @@ export const ProgramDetailModal: React.FC<ProgramDetailModalProps> = ({
                   {language === 'id' ? 'Standarisasi' : 'Standard'}
                 </span>
                 <span className="font-bold text-xs sm:text-sm text-[#1A7A4C] truncate">
-                  {language === 'id' ? 'BNSP / Teruji' : 'Certified BNSP'}
+                  {language === 'id' ? 'Standar BNSP/Dinas' : 'Certified Standard'}
                 </span>
               </div>
             </div>

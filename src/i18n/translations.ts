@@ -84,6 +84,13 @@ export interface Translations {
   programsHeaderTitle: string;
   programsHeaderDesc: string;
   allCategories: string;
+  allProgramsTab: string;
+  umkmProgramTab: string;
+  foodSecurityProgramTab: string;
+  umkmSectionTitle: string;
+  umkmSectionDesc: string;
+  foodSecuritySectionTitle: string;
+  foodSecuritySectionDesc: string;
   craftsCategory: string;
   culinaryCategory: string;
   manufacturingCategory: string;
@@ -283,8 +290,15 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     // Programs Page
     programsHeaderBadge: 'Kurikulum Pembinaan Berstandar Industri',
     programsHeaderTitle: 'Program Keterampilan BIMKER LKROBO',
-    programsHeaderDesc: 'Mempersiapkan warga binaan menjadi tenaga kerja terampil, bersertifikat BNSP, dan siap berwirausaha mandiri dengan 8 sektor keahlian produktif.',
-    allCategories: 'Semua Bidang',
+    programsHeaderDesc: 'Mempersiapkan warga binaan menjadi tenaga kerja terampil, bersertifikat BNSP, dan siap berwirausaha mandiri melalui Program UMKM Kreatif dan Program Ketahanan Pangan Berkelanjutan.',
+    allCategories: 'Semua Program',
+    allProgramsTab: 'Semua Program',
+    umkmProgramTab: 'Program UMKM',
+    foodSecurityProgramTab: 'Program Ketahanan Pangan',
+    umkmSectionTitle: 'Program UMKM',
+    umkmSectionDesc: 'Membina kemandirian ekonomi warga binaan melalui karya kriya, seni rupa, busana, kuliner, dan produk bernilai jual tinggi.',
+    foodSecuritySectionTitle: 'Program Ketahanan Pangan',
+    foodSecuritySectionDesc: 'Mendukung swasembada pangan mandiri melalui peternakan, perikanan bioflok, holtikultura hidroponik, perkebunan, dan konservasi alam.',
     craftsCategory: 'Kriya & Kerajinan',
     culinaryCategory: 'Tata Boga & Bakery',
     manufacturingCategory: 'Garmen & Konveksi',
@@ -482,9 +496,16 @@ export const TRANSLATIONS: Record<Language, Translations> = {
 
     // Programs Page
     programsHeaderBadge: 'Industry-Standard Vocational Curriculum',
-    programsHeaderTitle: 'BIMKER LKROBO Skill Programs',
-    programsHeaderDesc: 'Preparing inmates into skilled, BNSP-certified workers ready for self-employment across 8 productive vocational sectors.',
-    allCategories: 'All Fields',
+    programsHeaderTitle: 'BIMKER LKROBO Vocational Programs',
+    programsHeaderDesc: 'Equipping inmates into skilled, certified workers ready for self-employment through Creative SME Programs and Sustainable Food Security Initiatives.',
+    allCategories: 'All Programs',
+    allProgramsTab: 'All Programs',
+    umkmProgramTab: 'SME Programs',
+    foodSecurityProgramTab: 'Food Security Programs',
+    umkmSectionTitle: 'SME & Creative Enterprise Programs',
+    umkmSectionDesc: 'Fostering inmate economic independence through handicrafts, fine arts, culinary arts, apparel, and high-value creative goods.',
+    foodSecuritySectionTitle: 'Food Security Programs',
+    foodSecuritySectionDesc: 'Supporting sustainable food self-sufficiency through poultry farming, biofloc aquaculture, hydroponics, agriculture, and avian conservation.',
     craftsCategory: 'Arts & Crafts',
     culinaryCategory: 'Culinary & Bakery',
     manufacturingCategory: 'Garments & Apparel',

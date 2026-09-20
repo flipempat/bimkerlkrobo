@@ -21,16 +21,22 @@ export interface Product {
 export interface Program {
   id: string;
   title: string;
-  category: 'kriya' | 'kuliner' | 'manufaktur' | 'agribisnis' | 'jasa';
+  titleEn?: string;
+  category: 'umkm' | 'ketahanan_pangan' | string;
   categoryLabel: string;
+  categoryLabelEn?: string;
   shortDesc: string;
+  shortDescEn?: string;
   fullDesc: string;
+  fullDescEn?: string;
   participantsCount: number;
   duration: string;
+  durationEn?: string;
   certification: string;
   outputProducts: string[];
   image: string;
   highlights: string[];
+  icon: string;
 }
 
 export interface NewsItem {

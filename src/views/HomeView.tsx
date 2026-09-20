@@ -36,8 +36,14 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
   // Top 4 featured/bestseller products
   const featuredProducts = PRODUCTS.filter(p => p.isFeatured).slice(0, 4);
-  // Highlight top 4 programs
-  const highlightPrograms = PROGRAMS.slice(0, 4);
+  
+  // Highlight programs from both categories (UMKM & Ketahanan Pangan)
+  const highlightPrograms = [
+    PROGRAMS.find(p => p.id === 'prog-perak'),
+    PROGRAMS.find(p => p.id === 'prog-bakery'),
+    PROGRAMS.find(p => p.id === 'prog-holtikultura'),
+    PROGRAMS.find(p => p.id === 'prog-perikanan')
+  ].filter(Boolean) as Program[];
 
   return (
     <div className="space-y-20 pb-16">
@@ -296,45 +302,56 @@ export const HomeView: React.FC<HomeViewProps> = ({
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {highlightPrograms.map((program) => (
-              <div
-                key={program.id}
-                onClick={() => onOpenProgramDetail(program)}
-                className="group bg-white rounded-2xl p-5 border border-slate-200/80 hover:border-[#D4A017]/50 shadow-xs hover:shadow-lg transition-all cursor-pointer flex flex-col justify-between"
-              >
-                <div>
-                  <div className="relative aspect-16/10 rounded-xl overflow-hidden mb-4 bg-slate-100">
-                    <img
-                      src={program.image}
-                      alt={program.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <span className="absolute top-2 left-2 text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#0B1C3D]/90 text-[#D4A017] backdrop-blur-xs">
-                      {program.categoryLabel}
-                    </span>
-                  </div>
-                  <h3 className="font-bold text-base text-[#1A1A1A] group-hover:text-[#0B1C3D] transition-colors mb-2">
-                    {program.title}
-                  </h3>
-                  <p className="text-xs text-[#6B7280] leading-relaxed line-clamp-3 mb-4">
-                    {program.shortDesc}
-                  </p>
-                </div>
+            {highlightPrograms.map((program) => {
+              const isUmkm = program.category === 'umkm';
+              const displayTitle = language === 'en' && program.titleEn ? program.titleEn : program.title;
+              const displayDesc = language === 'en' && program.shortDescEn ? program.shortDescEn : program.shortDesc;
+              const displayCategory = language === 'en' && program.categoryLabelEn ? program.categoryLabelEn : program.categoryLabel;
 
-                <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-[#1A7A4C] font-semibold">
-                  <span>{language === 'id' ? 'Lihat Silabus & Karya' : 'View Syllabus & Works'}</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              return (
+                <div
+                  key={program.id}
+                  onClick={() => onOpenProgramDetail(program)}
+                  className="group bg-white rounded-2xl p-5 border border-slate-200/80 hover:border-[#D4A017]/50 shadow-xs hover:shadow-lg transition-all cursor-pointer flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="relative aspect-16/10 rounded-xl overflow-hidden mb-4 bg-slate-100">
+                      <img
+                        src={program.image}
+                        alt={displayTitle}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <span className={`absolute top-2 left-2 text-[10px] font-bold px-2.5 py-0.5 rounded-full backdrop-blur-xs ${
+                        isUmkm
+                          ? 'bg-[#0B1C3D]/90 text-[#D4A017] border border-[#D4A017]/40'
+                          : 'bg-[#1A7A4C]/90 text-white border border-[#2E9B6A]/50'
+                      }`}>
+                        {displayCategory}
+                      </span>
+                    </div>
+                    <h3 className="font-bold text-base text-[#1A1A1A] group-hover:text-[#0B1C3D] transition-colors mb-2">
+                      {displayTitle}
+                    </h3>
+                    <p className="text-xs text-[#6B7280] leading-relaxed line-clamp-3 mb-4">
+                      {displayDesc}
+                    </p>
+                  </div>
+
+                  <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-[#1A7A4C] font-semibold">
+                    <span>{language === 'id' ? 'Lihat Silabus & Karya' : 'View Syllabus & Works'}</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           <div className="text-center mt-10">
             <button
               onClick={() => setActiveTab('program')}
-              className="inline-flex items-center gap-2 bg-[#0B1C3D] hover:bg-[#10244C] text-white text-sm font-semibold px-6 py-3 rounded-xl transition-colors shadow-sm"
+              className="inline-flex items-center gap-2 bg-[#0B1C3D] hover:bg-[#10244C] text-white text-sm font-semibold px-6 py-3 rounded-xl transition-colors shadow-sm hover:scale-102"
             >
-              <span>{language === 'id' ? 'Jelajahi Semua 10+ Bidang Program Keterampilan' : 'Explore All 10+ Vocational Fields'}</span>
+              <span>{language === 'id' ? 'Jelajahi Seluruh 12 Program UMKM & Ketahanan Pangan' : 'Explore All 12 SME & Food Security Programs'}</span>
               <ArrowRight className="w-4 h-4 text-[#D4A017]" />
             </button>
           </div>

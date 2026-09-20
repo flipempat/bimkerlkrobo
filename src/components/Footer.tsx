@@ -152,40 +152,85 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
           </div>
 
           {/* Column 3: Skill Sectors */}
-          <div className="space-y-3">
+          <div className="space-y-4">
             <h4 className="text-sm font-bold uppercase tracking-wider text-[#D4A017]">
               {t.footerPrograms}
             </h4>
-            <ul className="space-y-1.5 text-xs text-slate-300">
-              <li className="flex items-center gap-2">
+            
+            {/* Sub-section: Program UMKM */}
+            <div className="space-y-1.5">
+              <div className="flex items-center gap-1.5 text-[11px] font-bold text-[#E8C547] uppercase tracking-wide">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#D4A017]" />
-                <span>{language === 'id' ? 'Kerajinan Perak' : 'Silver Craft'}</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#D4A017]" />
-                <span>{language === 'id' ? 'Dapur Bakery & Pastry Antaboga' : 'Antaboga Bakery & Pastry'}</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#D4A017]" />
-                <span>{language === 'id' ? 'Garmen & Busana Tenun Endek' : 'Garments & Balinese Endek Apparel'}</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#D4A017]" />
-                <span>{language === 'id' ? 'Greenhouse Sayur Hidroponik' : 'Hydroponic Vegetable Greenhouse'}</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#D4A017]" />
-                <span>{language === 'id' ? 'Dupa Wangi Herbal Cempaka' : 'Herbal Aromatherapy Incense'}</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#D4A017]" />
-                <span>{language === 'id' ? 'Pangkas Rambut Modern & Sablon' : 'Modern Barbershop & Screen Printing'}</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#D4A017]" />
-                <span>{language === 'id' ? 'Peternakan Unggas & Bioflok' : 'Poultry & Biofloc Aquaculture'}</span>
-              </li>
-            </ul>
+                <span>{language === 'id' ? 'Program UMKM' : 'SME Programs'}</span>
+              </div>
+              <ul className="space-y-1 text-xs text-slate-300 pl-3 border-l border-slate-700/60">
+                <li>
+                  <button onClick={() => handleNav('program')} className="hover:text-[#D4A017] transition-colors text-left">
+                    {language === 'id' ? 'Art Gallery & Seni Lukis' : 'Art Gallery & Fine Arts'}
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => handleNav('program')} className="hover:text-[#D4A017] transition-colors text-left">
+                    {language === 'id' ? 'Kerajinan Daur Ulang (Koran & Kemasan)' : 'Upcycling Crafts (Paper & Packs)'}
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => handleNav('program')} className="hover:text-[#D4A017] transition-colors text-left">
+                    {language === 'id' ? 'Bakery & Pastry' : 'Bakery & Pastry'}
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => handleNav('program')} className="hover:text-[#D4A017] transition-colors text-left">
+                    {language === 'id' ? 'Kerajinan Perak 925' : 'Silver Jewelry 925'}
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => handleNav('program')} className="hover:text-[#D4A017] transition-colors text-left">
+                    {language === 'id' ? 'Pembuatan Dupa & Udeng' : 'Incense & Udeng Crafting'}
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => handleNav('program')} className="hover:text-[#D4A017] transition-colors text-left">
+                    {language === 'id' ? 'Design Grafis & Sablon' : 'Graphic Design & Screen Printing'}
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            {/* Sub-section: Program Ketahanan Pangan */}
+            <div className="space-y-1.5 pt-1">
+              <div className="flex items-center gap-1.5 text-[11px] font-bold text-emerald-400 uppercase tracking-wide">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                <span>{language === 'id' ? 'Ketahanan Pangan' : 'Food Security'}</span>
+              </div>
+              <ul className="space-y-1 text-xs text-slate-300 pl-3 border-l border-emerald-900/60">
+                <li>
+                  <button onClick={() => handleNav('program')} className="hover:text-emerald-300 transition-colors text-left">
+                    {language === 'id' ? 'Aviary & Konservasi Satwa' : 'Aviary & Avian Conservation'}
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => handleNav('program')} className="hover:text-emerald-300 transition-colors text-left">
+                    {language === 'id' ? 'Peternakan Ayam Petelur' : 'Laying Hen Livestock'}
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => handleNav('program')} className="hover:text-emerald-300 transition-colors text-left">
+                    {language === 'id' ? 'Holtikultura Hidroponik' : 'Hydroponic Horticulture'}
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => handleNav('program')} className="hover:text-emerald-300 transition-colors text-left">
+                    {language === 'id' ? 'Perkebunan & Tanaman Pangan' : 'Plantation & Agro Crops'}
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => handleNav('program')} className="hover:text-emerald-300 transition-colors text-left">
+                    {language === 'id' ? 'Perikanan Kolam Bioflok' : 'Biofloc Aquaculture'}
+                  </button>
+                </li>
+              </ul>
+            </div>
           </div>
 
           {/* Column 4: Official Contact & Address */}
