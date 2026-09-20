@@ -3,13 +3,28 @@
 @theme {
   --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-display: "Playfair Display", Georgia, serif;
+
+  /* Pemasyarakatan Official Color Palette */
+  --color-navy-deep: #0B1C3D;
+  --color-navy-dark: #07132B;
+  --color-navy-surface: #10244C;
+  --color-gold-official: #D4A017;
+  --color-gold-soft: #E8C547;
+  --color-emerald-official: #1A7A4C;
+  --color-emerald-fresh: #2E9B6A;
+  --color-neutral-offwhite: #F8F9FC;
+  --color-neutral-dark: #1A1A1A;
+  --color-neutral-muted: #6B7280;
 }
 
 html {
   scroll-behavior: smooth;
   font-family: var(--font-sans);
+  color: #1A1A1A;
+  background-color: #FFFFFF;
 }
 
 .font-display {
   font-family: var(--font-display);
 }
+

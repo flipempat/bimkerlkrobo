@@ -33,7 +33,7 @@ export const FloatingWhatsApp: React.FC = () => {
       {isOpen && (
         <div className="mb-3 w-80 sm:w-88 bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden animate-fadeIn">
           {/* Header */}
-          <div className="bg-[#0f4c42] p-4 text-white flex items-center justify-between">
+          <div className="bg-[#0B1C3D] p-4 text-white flex items-center justify-between border-b border-[#D4A017]/30">
             <div className="flex items-center gap-3">
               <div className="relative shrink-0">
                 <img
@@ -42,21 +42,21 @@ export const FloatingWhatsApp: React.FC = () => {
                   className="h-10 w-auto object-contain"
                   referrerPolicy="no-referrer"
                 />
-                <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-emerald-400 border-2 border-[#0f4c42] rounded-full" />
+                <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-[#1A7A4C] border-2 border-[#0B1C3D] rounded-full" />
               </div>
               <div>
-                <h4 className="font-bold text-sm tracking-wide">
+                <h4 className="font-bold text-sm tracking-wide text-white">
                   {language === 'id' ? 'Hotline BIMKER LKROBO' : 'BIMKER LKROBO Hotline'}
                 </h4>
-                <p className="text-[11px] text-emerald-200 flex items-center gap-1">
-                  <ShieldCheck className="w-3 h-3 text-amber-400" />
+                <p className="text-[11px] text-slate-300 flex items-center gap-1">
+                  <ShieldCheck className="w-3 h-3 text-[#D4A017]" />
                   <span>Lapas Kelas IIA Kerobokan</span>
                 </p>
               </div>
             </div>
             <button
               onClick={() => setIsOpen(false)}
-              className="text-emerald-200 hover:text-white p-1 rounded-lg hover:bg-emerald-800/60"
+              className="text-slate-300 hover:text-white p-1 rounded-lg hover:bg-white/10"
               aria-label="Tutup Chat"
             >
               <X className="w-5 h-5" />
@@ -64,12 +64,12 @@ export const FloatingWhatsApp: React.FC = () => {
           </div>
 
           {/* Body */}
-          <div className="p-4 bg-slate-50 space-y-3 text-xs">
-            <div className="bg-white p-3 rounded-xl shadow-xs border border-slate-100 text-slate-700 leading-relaxed">
-              <p className="font-semibold text-emerald-900 mb-1">
+          <div className="p-4 bg-[#F8F9FC] space-y-3 text-xs">
+            <div className="bg-white p-3 rounded-xl shadow-xs border border-slate-200/80 text-[#1A1A1A] leading-relaxed">
+              <p className="font-semibold text-[#0B1C3D] mb-1">
                 {language === 'id' ? 'Om Swastyastu! Salam Pemasyarakatan. 🙏' : 'Om Swastyastu! Warm Greetings. 🙏'}
               </p>
-              <p>
+              <p className="text-[#6B7280]">
                 {language === 'id' 
                   ? 'Ada yang bisa kami bantu seputar produk karya warga binaan, pembelian Tokopedia, atau pengajuan kemitraan bimbingan kerja?' 
                   : 'How can we help you regarding inmate crafted products, Tokopedia purchases, or vocational training partnerships?'}
@@ -78,7 +78,7 @@ export const FloatingWhatsApp: React.FC = () => {
 
             {/* Quick Chips */}
             <div className="space-y-1.5 pt-1">
-              <p className="text-[11px] font-medium text-slate-400">
+              <p className="text-[11px] font-medium text-[#6B7280]">
                 {language === 'id' ? 'Pertanyaan cepat:' : 'Quick questions:'}
               </p>
               {quickMessages.map((msg, idx) => (
@@ -89,10 +89,10 @@ export const FloatingWhatsApp: React.FC = () => {
                     window.open(url, '_blank', 'noopener,noreferrer');
                     setIsOpen(false);
                   }}
-                  className="w-full text-left p-2 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-900 text-[11px] transition-colors border border-emerald-200/50 flex items-center justify-between"
+                  className="w-full text-left p-2 rounded-lg bg-[#1A7A4C]/10 hover:bg-[#1A7A4C]/20 text-[#1A7A4C] text-[11px] transition-colors border border-[#1A7A4C]/25 flex items-center justify-between font-medium"
                 >
                   <span className="truncate">{msg}</span>
-                  <Send className="w-3 h-3 text-emerald-600 shrink-0 ml-1" />
+                  <Send className="w-3 h-3 text-[#1A7A4C] shrink-0 ml-1" />
                 </button>
               ))}
             </div>
@@ -105,11 +105,11 @@ export const FloatingWhatsApp: React.FC = () => {
               placeholder={language === 'id' ? 'Ketik pesan Anda...' : 'Type your message...'}
               value={userMsg}
               onChange={(e) => setUserMsg(e.target.value)}
-              className="flex-1 text-xs px-3 py-2 rounded-lg border border-slate-200 focus:outline-none focus:border-emerald-600 focus:ring-1 focus:ring-emerald-600 text-slate-800"
+              className="flex-1 text-xs px-3 py-2 rounded-lg border border-slate-200 focus:outline-none focus:border-[#D4A017] focus:ring-1 focus:ring-[#D4A017] text-[#1A1A1A]"
             />
             <button
               type="submit"
-              className="bg-[#25D366] hover:bg-[#20ba59] text-white p-2 rounded-lg shadow-sm transition-colors"
+              className="bg-[#1A7A4C] hover:bg-[#2E9B6A] text-white p-2 rounded-lg shadow-sm transition-colors"
               aria-label="Kirim ke WhatsApp"
             >
               <Send className="w-4 h-4" />

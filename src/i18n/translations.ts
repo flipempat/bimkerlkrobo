@@ -18,8 +18,10 @@ export interface Translations {
   brandSub: string;
   verifiedOfficialStore: string;
   visitTokopediaStore: string;
+  visitShopeeStore: string;
   tokopediaDescription: string;
   buyOnTokopedia: string;
+  buyOnShopee: string;
 
   // General Actions
   seeAll: string;
@@ -216,9 +218,11 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     brandTagline: 'Karya Nyata di Balik Terali • Membangun Harapan Melalui Keterampilan',
     brandSub: 'Lapas Kelas IIA Kerobokan Bali',
     verifiedOfficialStore: 'Official Store Terverifikasi',
-    visitTokopediaStore: 'Kunjungi Toko di Tokopedia',
+    visitTokopediaStore: 'Kunjungi Toko Tokopedia BIMKER LKROBO',
+    visitShopeeStore: 'Kunjungi Toko Shopee BIMKER LKROBO',
     tokopediaDescription: 'Nikmati kemudahan transaksi, proteksi pembeli, dan aneka promo bebas ongkir langsung di aplikasi Tokopedia Anda.',
     buyOnTokopedia: 'Beli di Tokopedia',
+    buyOnShopee: 'Beli di Shopee',
 
     // General Actions
     seeAll: 'Lihat Semua',
@@ -248,15 +252,15 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     heroBadge: 'Pembinaan Kemandirian Lapas Kelas IIA Kerobokan Bali',
     heroTitle: 'Karya Nyata di Balik Terali,',
     heroTitleHighlight: 'Membangun Harapan Melalui Keterampilan',
-    heroDesc: 'Wadah resmi pelatihan kerja dan pemberdayaan narapidana. Menghasilkan karya kriya, busana, kuliner, dan agribisnis berkualitas tinggi yang dipasarkan secara transparan melalui Tokopedia.',
+    heroDesc: 'Wadah resmi pelatihan kerja dan pemberdayaan narapidana. Menghasilkan karya kriya, busana, kuliner, dan agribisnis berkualitas tinggi yang dipasarkan secara transparan.',
     heroExploreBtn: 'Jelajahi Produk Kami',
-    heroShopBtn: 'Toko Resmi Tokopedia',
+    heroShopBtn: 'Toko Resmi Marketplace',
     statsParticipants: 'Warga Binaan Terlatih',
     statsPrograms: 'Bidang Keterampilan',
-    statsSold: 'Produk Terjual di Tokopedia',
+    statsSold: 'Produk Karya Terjual',
     statsPartners: 'Mitra Usaha & Industri',
     featuredProductsTitle: 'Produk Pilihan & Terlaris Warga Binaan',
-    featuredProductsDesc: 'Dibuat dengan dedikasi tinggi dan pengawasan ketat instruktur bersertifikasi. Seluruh pembelian diproses aman melalui Tokopedia.',
+    featuredProductsDesc: 'Dibuat dengan dedikasi tinggi dan pengawasan ketat instruktur bersertifikasi. Seluruh pembelian diproses secara aman dan terverifikasi.',
     quoteTitle: 'Prinsip Pembinaan Pemasyarakatan',
     quoteDesc: 'Narapidana bukan semata-mata dihukum, melainkan dibina dan dipersiapkan agar kembali menjadi manusia seutuhnya yang mandiri, bermartabat, dan bermanfaat bagi masyarakat luas.',
     quoteAuthor: 'Direktorat Jenderal Pemasyarakatan Kemenkumham RI',
@@ -297,15 +301,15 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     // Products Page
     productsHeaderBadge: 'Etalase Resmi Warga Binaan',
     productsHeaderTitle: 'Produk Hasil Karya BIMKER LKROBO',
-    productsHeaderDesc: 'Seluruh transaksi penjualan produk kami difasilitasi dengan aman, cepat, dan transparan melalui toko resmi Tokopedia.',
+    productsHeaderDesc: 'Seluruh transaksi penjualan produk kami difasilitasi dengan aman, cepat, dan transparan melalui toko resmi marketplace pilihan Anda.',
     showingProductsCount: 'Menampilkan produk karya warga binaan',
-    clickToBuyNotice: 'Klik "Beli di Tokopedia" untuk langsung memesan',
+    clickToBuyNotice: 'Pilih toko marketplace untuk langsung memesan',
     productNotFound: 'Produk Tidak Ditemukan',
     productNotFoundDesc: 'Tidak ada produk yang cocok dengan pencarian Anda. Coba gunakan kata kunci lain atau reset filter.',
-    howTokopediaHelps: 'Bagaimana Transaksi Tokopedia Mendukung Warga Binaan?',
-    howTokopediaHelpsDesc: 'Membeli karya warga binaan di Tokopedia memberikan dampak langsung dan terukur.',
+    howTokopediaHelps: 'Bagaimana Transaksi Belanja Mendukung Warga Binaan?',
+    howTokopediaHelpsDesc: 'Membeli karya warga binaan memberikan dampak langsung dan nyata bagi masa depan mereka.',
     secureTransactionTitle: '1. Transaksi Mudah & Terproteksi',
-    secureTransactionDesc: 'Anda bertransaksi menggunakan platform Tokopedia dengan metode pembayaran lengkap serta jaminan proteksi pembeli.',
+    secureTransactionDesc: 'Anda bertransaksi menggunakan platform marketplace resmi dengan metode pembayaran lengkap serta jaminan proteksi pembeli.',
     fastShippingTitle: '2. Pengemasan & Pengiriman Cepat',
     fastShippingDesc: 'Produk dikemas rapi langsung dari bengkel kerja Lapas Kerobokan Badung Bali menuju alamat Anda.',
     inmateWageTitle: '3. Hak Premi Tabungan Warga Binaan',
@@ -414,9 +418,11 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     brandTagline: 'True Works Behind Bars • Building Hope Through Skills',
     brandSub: 'Kerobokan Class IIA Correctional Facility Bali',
     verifiedOfficialStore: 'Verified Official Store',
-    visitTokopediaStore: 'Visit Store on Tokopedia',
+    visitTokopediaStore: 'Visit BIMKER LKROBO Tokopedia Store',
+    visitShopeeStore: 'Visit BIMKER LKROBO Shopee Store',
     tokopediaDescription: 'Enjoy convenient checkout, buyer protection, and free shipping promotions directly in your Tokopedia app.',
     buyOnTokopedia: 'Buy on Tokopedia',
+    buyOnShopee: 'Buy on Shopee',
 
     // General Actions
     seeAll: 'View All',
@@ -446,15 +452,15 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     heroBadge: 'Independence Guidance of Kerobokan Class IIA Prison Bali',
     heroTitle: 'True Works Behind Bars,',
     heroTitleHighlight: 'Building Hope Through Skills',
-    heroDesc: 'Official vocational training and rehabilitation center for inmates. Crafting premium jewelry, apparel, bakery, and agribusiness goods marketed transparently through Tokopedia.',
+    heroDesc: 'Official vocational training and rehabilitation center for inmates. Crafting premium jewelry, apparel, bakery, and agribusiness goods marketed transparently.',
     heroExploreBtn: 'Explore Products',
-    heroShopBtn: 'Official Tokopedia Store',
+    heroShopBtn: 'Official Marketplace Stores',
     statsParticipants: 'Trained Inmates',
     statsPrograms: 'Skill Sectors',
-    statsSold: 'Products Sold on Tokopedia',
+    statsSold: 'Inmate Products Sold',
     statsPartners: 'Industry Partners',
     featuredProductsTitle: 'Featured & Bestselling Inmate Creations',
-    featuredProductsDesc: 'Crafted with passion and strict supervision under certified instructors. All purchases are processed safely through Tokopedia.',
+    featuredProductsDesc: 'Crafted with passion and strict supervision under certified instructors. All purchases are processed securely and verified.',
     quoteTitle: 'Core Principle of Corrections',
     quoteDesc: 'Inmates are not merely punished, but rehabilitated and equipped to reintegrate into society as independent, dignified, and productive individuals.',
     quoteAuthor: 'Directorate General of Corrections, Ministry of Law & Human Rights',
@@ -495,15 +501,15 @@ export const TRANSLATIONS: Record<Language, Translations> = {
     // Products Page
     productsHeaderBadge: 'Official Inmate Showcase',
     productsHeaderTitle: 'Products Crafted by BIMKER LKROBO',
-    productsHeaderDesc: 'All transactions are securely, quickly, and transparently facilitated through our official Tokopedia store.',
+    productsHeaderDesc: 'All product purchase transactions are facilitated safely, quickly, and transparently through our official marketplace stores.',
     showingProductsCount: 'Showing inmate-crafted products',
-    clickToBuyNotice: 'Click "Buy on Tokopedia" to order directly',
+    clickToBuyNotice: 'Select marketplace store to order directly',
     productNotFound: 'No Products Found',
     productNotFoundDesc: 'No products match your search. Try using other keywords or reset your filters.',
-    howTokopediaHelps: 'How Tokopedia Purchases Support Inmates?',
-    howTokopediaHelpsDesc: 'Purchasing inmate-crafted goods on Tokopedia creates measurable, life-changing social impact.',
+    howTokopediaHelps: 'How Your Purchases Support Inmates?',
+    howTokopediaHelpsDesc: 'Purchasing inmate-crafted goods creates measurable, life-changing social impact.',
     secureTransactionTitle: '1. Seamless & Protected Transactions',
-    secureTransactionDesc: 'You transact using Tokopedia with multiple payment methods and comprehensive buyer protection guarantee.',
+    secureTransactionDesc: 'You transact through official marketplace platforms with multiple payment methods and comprehensive buyer protection guarantee.',
     fastShippingTitle: '2. Professional Packaging & Nationwide Delivery',
     fastShippingDesc: 'Items are carefully packaged directly from Kerobokan Prison workshop in Badung, Bali to your doorstep.',
     inmateWageTitle: '3. Inmate Wage & Savings Fund',

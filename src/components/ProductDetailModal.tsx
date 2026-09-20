@@ -59,11 +59,11 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
                 className="w-full h-full object-cover"
               />
               <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs text-white">
-                <span className="bg-emerald-950/80 backdrop-blur-sm px-2.5 py-1 rounded-lg border border-emerald-500/30">
+                <span className="bg-[#0B1C3D]/90 backdrop-blur-sm px-2.5 py-1 rounded-lg border border-[#D4A017]/30 text-[#D4A017] font-semibold">
                   {product.categoryLabel}
                 </span>
                 {product.isBestSeller && (
-                  <span className="bg-amber-500 text-slate-950 font-bold px-2.5 py-1 rounded-lg">
+                  <span className="bg-[#D4A017] text-[#1A1A1A] font-bold px-2.5 py-1 rounded-lg">
                     {t.bestSeller}
                   </span>
                 )}
@@ -74,34 +74,34 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
             <div className="p-6 sm:p-8 flex flex-col justify-between space-y-6">
               <div>
                 {/* Official Tag */}
-                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-semibold border border-emerald-200 mb-3">
-                  <ShieldCheck className="w-4 h-4 text-emerald-600" />
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#1A7A4C]/10 text-[#1A7A4C] text-xs font-semibold border border-[#1A7A4C]/30 mb-3">
+                  <ShieldCheck className="w-4 h-4 text-[#1A7A4C]" />
                   <span>{language === 'id' ? 'Karya Binaan Lapas Kerobokan' : 'Inmate Crafted at Kerobokan Prison'}</span>
                 </div>
 
                 {/* Title */}
-                <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2 leading-snug">
+                <h2 className="text-xl sm:text-2xl font-bold text-[#1A1A1A] mb-2 leading-snug">
                   {product.name}
                 </h2>
 
                 {/* Price */}
                 <div className="flex items-baseline gap-2 mb-4">
-                  <span className="text-2xl font-extrabold text-emerald-900">
+                  <span className="text-2xl font-extrabold text-[#0B1C3D]">
                     {product.formattedPrice}
                   </span>
-                  <span className="text-xs text-slate-400 font-medium">/ pcs di Tokopedia</span>
+                  <span className="text-xs text-[#6B7280] font-medium">/ pcs di Tokopedia</span>
                 </div>
 
                 {/* Made By & Unit */}
-                <div className="bg-slate-50 rounded-xl p-3 border border-slate-100 text-xs space-y-1 mb-4">
-                  <p className="text-slate-500">
-                    <span className="font-semibold text-slate-700">
+                <div className="bg-[#F8F9FC] rounded-xl p-3 border border-slate-200/80 text-xs space-y-1 mb-4">
+                  <p className="text-[#6B7280]">
+                    <span className="font-semibold text-[#1A1A1A]">
                       {language === 'id' ? 'Dibuat oleh:' : 'Crafted by:'}
                     </span> {product.madeBy}
                   </p>
                   {product.material && (
-                    <p className="text-slate-500">
-                      <span className="font-semibold text-slate-700">
+                    <p className="text-[#6B7280]">
+                      <span className="font-semibold text-[#1A1A1A]">
                         {language === 'id' ? 'Bahan Baku:' : 'Raw Material:'}
                       </span> {product.material}
                     </p>
@@ -109,22 +109,22 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
                 </div>
 
                 {/* Description */}
-                <div className="space-y-2 text-sm text-slate-600 leading-relaxed mb-6">
+                <div className="space-y-2 text-sm text-[#6B7280] leading-relaxed mb-6">
                   <p>{product.fullDescription}</p>
                 </div>
 
                 {/* Specifications List */}
                 {product.specifications && product.specifications.length > 0 && (
                   <div className="mb-6">
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2 flex items-center gap-1.5">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-[#6B7280] mb-2 flex items-center gap-1.5">
                       <Info className="w-3.5 h-3.5" />
                       <span>{language === 'id' ? 'Spesifikasi Produk' : 'Product Specifications'}</span>
                     </h4>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
                       {product.specifications.map((spec, i) => (
-                        <div key={i} className="bg-slate-50 px-3 py-2 rounded-lg border border-slate-100">
-                          <span className="text-slate-400 block text-[10px]">{spec.label}</span>
-                          <span className="font-semibold text-slate-800">{spec.value}</span>
+                        <div key={i} className="bg-[#F8F9FC] px-3 py-2 rounded-lg border border-slate-200/80">
+                          <span className="text-[#6B7280] block text-[10px]">{spec.label}</span>
+                          <span className="font-semibold text-[#1A1A1A]">{spec.value}</span>
                         </div>
                       ))}
                     </div>
@@ -132,8 +132,8 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
                 )}
 
                 {/* Social Impact Note */}
-                <div className="bg-amber-50/80 border border-amber-200/80 rounded-xl p-3 text-xs text-amber-900 flex items-start gap-2.5">
-                  <HeartHandshake className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+                <div className="bg-[#F8F9FC] border border-[#D4A017]/40 rounded-xl p-3 text-xs text-[#1A1A1A] flex items-start gap-2.5">
+                  <HeartHandshake className="w-5 h-5 text-[#D4A017] shrink-0 mt-0.5" />
                   <p className="leading-relaxed">
                     {language === 'id' 
                       ? 'Pembelian Anda memberikan hak upah premi kerja mandiri yang ditabung untuk masa depan warga binaan pasca bebas.' 
@@ -144,26 +144,63 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
 
               {/* Action Buttons */}
               <div className="space-y-2.5 pt-2 border-t border-slate-100">
-                {/* Big Tokopedia Primary Button */}
-                <a
-                  href={product.tokopediaUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full flex items-center justify-center gap-2.5 bg-[#03AC0E] hover:bg-[#02950c] text-white font-bold py-3.5 px-6 rounded-xl shadow-md hover:shadow-lg transition-all text-sm group"
-                >
-                  <ShoppingBag className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                  <span>{t.buyOnTokopedia}</span>
-                  <ExternalLink className="w-4 h-4 opacity-80" />
-                </a>
+                {/* Dual Marketplace Purchase Buttons */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                  {/* Shopee Button (#EE4D2D) */}
+                  {product.shopeeUrl ? (
+                    <a
+                      href={product.shopeeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2 bg-[#EE4D2D] hover:bg-[#D73211] text-white font-bold py-3.5 px-4 rounded-xl shadow-md hover:shadow-lg transition-all text-xs sm:text-sm group"
+                    >
+                      <ShoppingBag className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                      <span>{t.buyOnShopee}</span>
+                      <ExternalLink className="w-3.5 h-3.5 opacity-80" />
+                    </a>
+                  ) : (
+                    <button
+                      type="button"
+                      disabled
+                      className="flex items-center justify-center gap-2 bg-slate-100 text-slate-400 font-medium py-3.5 px-4 rounded-xl border border-slate-200 cursor-not-allowed opacity-60 text-xs sm:text-sm"
+                    >
+                      <ShoppingBag className="w-4 h-4" />
+                      <span>{t.buyOnShopee} (Belum Tersedia)</span>
+                    </button>
+                  )}
 
-                {/* WhatsApp Bulk / Custom Inquiry */}
+                  {/* Tokopedia Button (#03AC0E) */}
+                  {product.tokopediaUrl ? (
+                    <a
+                      href={product.tokopediaUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2 bg-[#03AC0E] hover:bg-[#028A0B] text-white font-bold py-3.5 px-4 rounded-xl shadow-md hover:shadow-lg transition-all text-xs sm:text-sm group"
+                    >
+                      <ShoppingBag className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                      <span>{t.buyOnTokopedia}</span>
+                      <ExternalLink className="w-3.5 h-3.5 opacity-80" />
+                    </a>
+                  ) : (
+                    <button
+                      type="button"
+                      disabled
+                      className="flex items-center justify-center gap-2 bg-slate-100 text-slate-400 font-medium py-3.5 px-4 rounded-xl border border-slate-200 cursor-not-allowed opacity-60 text-xs sm:text-sm"
+                    >
+                      <ShoppingBag className="w-4 h-4" />
+                      <span>{t.buyOnTokopedia} (Belum Tersedia)</span>
+                    </button>
+                  )}
+                </div>
+
+                {/* WhatsApp Bulk / Custom Inquiry - Emerald Secondary Button */}
                 <a
                   href={waQuestionUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium py-2.5 px-4 rounded-xl transition-colors text-xs"
+                  className="w-full flex items-center justify-center gap-2 bg-[#1A7A4C] hover:bg-[#2E9B6A] text-white font-semibold py-2.5 px-4 rounded-xl border border-[#2E9B6A]/50 transition-colors text-xs"
                 >
-                  <MessageCircle className="w-4 h-4 text-emerald-600" />
+                  <MessageCircle className="w-4 h-4 text-emerald-200" />
                   <span>{language === 'id' ? 'Tanya Info Custom / Pesanan Khusus via WhatsApp' : 'Inquire Custom / Bulk Orders via WhatsApp'}</span>
                 </a>
               </div>

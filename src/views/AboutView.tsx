@@ -45,7 +45,7 @@ export const AboutView: React.FC<AboutViewProps> = ({ setActiveTab }) => {
     {
       step: "05",
       title: "Pemasaran & Hak Upah Premi",
-      desc: "Hasil penjualan melalui Tokopedia dan mitra disalurkan sebagai upah premi resmi (remunerasi) yang masuk ke buku tabungan warga binaan untuk keluarga."
+      desc: "Hasil penjualan karya dan pesanan mitra disalurkan sebagai upah premi resmi (remunerasi) yang masuk ke buku tabungan warga binaan untuk keluarga."
     }
   ] : [
     {
@@ -71,7 +71,7 @@ export const AboutView: React.FC<AboutViewProps> = ({ setActiveTab }) => {
     {
       step: "05",
       title: "Commercialization & Premium Wages",
-      desc: "Proceeds from Tokopedia and corporate orders fund transparent monthly premium wages saved for inmates' families and release funds."
+      desc: "Proceeds from official marketplace and corporate orders fund transparent monthly premium wages saved for inmates' families and release funds."
     }
   ];
 
@@ -93,7 +93,7 @@ export const AboutView: React.FC<AboutViewProps> = ({ setActiveTab }) => {
     },
     {
       title: "Transparan & Akuntabel",
-      desc: "Pengelolaan hasil penjualan di Tokopedia serta pembagian premi tercatat jelas dan dapat dipertanggungjawabkan.",
+      desc: "Pengelolaan hasil penjualan serta pembagian premi tercatat jelas dan dapat dipertanggungjawabkan.",
       icon: Target
     }
   ] : [
@@ -114,7 +114,7 @@ export const AboutView: React.FC<AboutViewProps> = ({ setActiveTab }) => {
     },
     {
       title: "Transparent & Accountable",
-      desc: "Managing Tokopedia sales and labor allowances through verified accounting and direct inmate savings accounts.",
+      desc: "Managing product sales and labor allowances through verified accounting and direct inmate savings accounts.",
       icon: Target
     }
   ];
@@ -122,15 +122,15 @@ export const AboutView: React.FC<AboutViewProps> = ({ setActiveTab }) => {
   return (
     <div className="space-y-16 pb-16">
       {/* Header Banner */}
-      <section className="bg-[#0a3a32] text-white py-14 border-b border-emerald-900/60">
+      <section className="bg-gradient-to-b from-[#07132B] via-[#0B1C3D] to-[#07132B] text-white py-14 border-b border-[#0B1C3D]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
-          <span className="text-xs font-bold uppercase tracking-wider text-amber-300 bg-emerald-900/90 px-3 py-1 rounded-full border border-amber-500/20">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#E8C547] bg-[#10244C] px-3 py-1 rounded-full border border-[#D4A017]/40">
             {t.aboutHeaderBadge}
           </span>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-white mt-3 tracking-tight">
             {t.aboutHeaderTitle}
           </h1>
-          <p className="text-emerald-100/90 text-sm sm:text-base mt-3 leading-relaxed">
+          <p className="text-slate-200 text-sm sm:text-base mt-3 leading-relaxed">
             {t.aboutHeaderDesc}
           </p>
         </div>
@@ -140,16 +140,16 @@ export const AboutView: React.FC<AboutViewProps> = ({ setActiveTab }) => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-5">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-900 text-xs font-bold">
-              <Compass className="w-3.5 h-3.5 text-emerald-700" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1A7A4C]/15 text-[#1A7A4C] border border-[#1A7A4C]/30 text-xs font-bold">
+              <Compass className="w-3.5 h-3.5 text-[#1A7A4C]" />
               <span>{language === 'id' ? 'Sejarah & Misi Pemasyarakatan' : 'History & Penitentiary Mission'}</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1C3D] tracking-tight">
               {language === 'id' 
                 ? 'Mengubah Waktu Menjadi Karya, Menyiapkan Asa Menatap Masa Depan'
                 : 'Transforming Time into Craftsmanship, Preparing Hope for the Future'}
             </h2>
-            <div className="space-y-4 text-sm text-slate-600 leading-relaxed">
+            <div className="space-y-4 text-sm text-[#6B7280] leading-relaxed">
               <p>
                 {language === 'id'
                   ? 'Lembaga Pemasyarakatan (Lapas) Kelas IIA Kerobokan yang terletak di kawasan Badung, Bali, memegang peran penting tidak hanya sebagai institusi penegakan hukum, namun yang paling utama adalah sebagai wadah pembinaan dan reintegrasi sosial kemanusiaan.'
@@ -168,9 +168,9 @@ export const AboutView: React.FC<AboutViewProps> = ({ setActiveTab }) => {
             </div>
 
             <div className="pt-2">
-              <div className="bg-emerald-50 rounded-2xl p-4 border border-emerald-200/80 flex items-start gap-3">
-                <ShieldCheck className="w-5 h-5 text-emerald-700 shrink-0 mt-0.5" />
-                <p className="text-xs text-emerald-900 leading-relaxed font-medium">
+              <div className="bg-[#F8F9FC] rounded-2xl p-4 border border-slate-200/80 flex items-start gap-3">
+                <ShieldCheck className="w-5 h-5 text-[#D4A017] shrink-0 mt-0.5" />
+                <p className="text-xs text-[#1A1A1A] leading-relaxed font-medium">
                   {language === 'id'
                     ? 'Seluruh program bimbingan kerja dijalankan mengacu pada UU No. 22 Tahun 2022 tentang Pemasyarakatan yang menitikberatkan pada perlindungan hak dan pembinaan kemandirian narapidana.'
                     : 'All vocational programs operate in compliance with Indonesian Law No. 22 of 2022 on Corrections, focusing on protecting rights and nurturing prisoner self-reliance.'}
@@ -188,7 +188,7 @@ export const AboutView: React.FC<AboutViewProps> = ({ setActiveTab }) => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
                 <div>
-                  <span className="text-xs font-bold text-amber-300">
+                  <span className="text-xs font-bold text-[#E8C547]">
                     {language === 'id' ? 'Dedikasi & Ketelitian' : 'Dedication & Precision'}
                   </span>
                   <p className="text-white text-sm font-semibold">
@@ -204,26 +204,26 @@ export const AboutView: React.FC<AboutViewProps> = ({ setActiveTab }) => {
       </section>
 
       {/* Visi & Misi */}
-      <section className="bg-slate-100/70 py-16 border-y border-slate-200/60">
+      <section className="bg-[#F8F9FC] py-16 border-y border-slate-200/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Visi */}
             <div className="bg-white rounded-3xl p-8 border border-slate-200/80 shadow-xs flex flex-col justify-between">
               <div>
-                <div className="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-2xl bg-[#0B1C3D] text-[#D4A017] flex items-center justify-center mb-4">
                   <Target className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-extrabold text-slate-900 mb-3">
+                <h3 className="text-xl font-extrabold text-[#0B1C3D] mb-3">
                   {t.aboutVisionTitle}
                 </h3>
-                <p className="text-sm text-slate-600 leading-relaxed">
+                <p className="text-sm text-[#6B7280] leading-relaxed">
                   {language === 'id'
                     ? '“Menjadi sentra bimbingan kerja pemasyarakatan yang unggul, humanis, dan produktif dalam membentuk warga binaan yang terampil, mandiri, dan berkarakter mulia serta mampu menghasilkan karya berstandar industri yang berdaya saing di pasar nasional maupun internasional.”'
                     : '“To become an exemplary, humanistic, and productive correctional vocational center that shapes skilled, self-reliant, and noble-minded inmates producing industry-grade crafts competitive in domestic and global markets.”'}
                 </p>
               </div>
-              <div className="mt-6 pt-4 border-t border-slate-100 text-xs font-semibold text-emerald-800 flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+              <div className="mt-6 pt-4 border-t border-slate-100 text-xs font-semibold text-[#1A7A4C] flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-[#1A7A4C]" />
                 <span>{language === 'id' ? 'Terintegrasi dengan Rencana Strategis Kemenkumham RI' : 'Integrated with Ministry Strategic Roadmaps'}</span>
               </div>
             </div>
@@ -231,33 +231,33 @@ export const AboutView: React.FC<AboutViewProps> = ({ setActiveTab }) => {
             {/* Misi */}
             <div className="bg-white rounded-3xl p-8 border border-slate-200/80 shadow-xs flex flex-col justify-between">
               <div>
-                <div className="w-12 h-12 rounded-2xl bg-amber-100 text-amber-900 flex items-center justify-center mb-4">
-                  <Compass className="w-6 h-6" />
+                <div className="w-12 h-12 rounded-2xl bg-[#D4A017]/20 text-[#D4A017] flex items-center justify-center mb-4">
+                  <Compass className="w-6 h-6 text-[#D4A017]" />
                 </div>
-                <h3 className="text-xl font-extrabold text-slate-900 mb-3">
+                <h3 className="text-xl font-extrabold text-[#0B1C3D] mb-3">
                   {t.aboutMissionTitle}
                 </h3>
-                <ul className="space-y-3 text-xs sm:text-sm text-slate-600">
+                <ul className="space-y-3 text-xs sm:text-sm text-[#6B7280]">
                   <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-[#1A7A4C] shrink-0 mt-0.5" />
                     <span>{language === 'id' ? 'Menyelenggarakan pelatihan keterampilan kerja berbasis kompetensi dan tersertifikasi resmi.' : 'Deliver competency-based vocational training with official national certification.'}</span>
                   </li>
                   <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-[#1A7A4C] shrink-0 mt-0.5" />
                     <span>{language === 'id' ? 'Membangun ekosistem produksi yang mengedepankan kearifan lokal Bali dan kebutuhan pasar modern.' : 'Build a production ecosystem celebrating Balinese heritage and modern consumer standards.'}</span>
                   </li>
                   <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                    <span>{language === 'id' ? 'Memperluas jejaring pemasaran digital melalui e-commerce resmi seperti Tokopedia dan kemitraan industri.' : 'Expand digital market presence through our official Tokopedia store and industry B2B links.'}</span>
+                    <CheckCircle2 className="w-4 h-4 text-[#1A7A4C] shrink-0 mt-0.5" />
+                    <span>{language === 'id' ? 'Memperluas jejaring pemasaran digital melalui e-commerce resmi dan kemitraan industri.' : 'Expand digital market presence through official e-commerce stores and industry B2B links.'}</span>
                   </li>
                   <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-[#1A7A4C] shrink-0 mt-0.5" />
                     <span>{language === 'id' ? 'Menjamin pemenuhan hak upah premi warga binaan secara transparan sebagai bekal reintegrasi sosial.' : 'Guarantee transparent distribution of inmate labor wages and post-release rehabilitation savings.'}</span>
                   </li>
                 </ul>
               </div>
-              <div className="mt-6 pt-4 border-t border-slate-100 text-xs font-semibold text-amber-900 flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-amber-600" />
+              <div className="mt-6 pt-4 border-t border-slate-100 text-xs font-semibold text-[#D4A017] flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-[#D4A017]" />
                 <span>{language === 'id' ? 'Komitmen Nyata Pembinaan Kemandirian Berkelanjutan' : 'Sustainable Independence Commitment'}</span>
               </div>
             </div>
@@ -268,13 +268,13 @@ export const AboutView: React.FC<AboutViewProps> = ({ setActiveTab }) => {
       {/* Nilai-Nilai Utama */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#1A7A4C] bg-[#1A7A4C]/15 px-3 py-1 rounded-full border border-[#1A7A4C]/30">
             {language === 'id' ? 'Prinsip Kerja' : 'Operating Principles'}
           </span>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-2">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1C3D] tracking-tight mt-2">
             {t.aboutValuesTitle}
           </h2>
-          <p className="text-sm text-slate-600 mt-2">
+          <p className="text-sm text-[#6B7280] mt-2">
             {language === 'id'
               ? 'Setiap jengkal proses bimbingan kerja dibangun di atas nilai-nilai etika, profesionalitas, dan kemanusiaan.'
               : 'Every facet of our training is founded on ethics, professionalism, and genuine humanity.'}
@@ -285,14 +285,14 @@ export const AboutView: React.FC<AboutViewProps> = ({ setActiveTab }) => {
           {values.map((val, idx) => {
             const Icon = val.icon;
             return (
-              <div key={idx} className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-md transition-shadow">
-                <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-800 flex items-center justify-center mb-4">
+              <div key={idx} className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs hover:border-[#D4A017]/40 transition-colors">
+                <div className="w-10 h-10 rounded-xl bg-[#0B1C3D] text-[#D4A017] flex items-center justify-center mb-4">
                   <Icon className="w-5 h-5" />
                 </div>
-                <h4 className="font-bold text-base text-slate-900 mb-2">
+                <h4 className="font-bold text-base text-[#1A1A1A] mb-2">
                   {val.title}
                 </h4>
-                <p className="text-xs text-slate-500 leading-relaxed">
+                <p className="text-xs text-[#6B7280] leading-relaxed">
                   {val.desc}
                 </p>
               </div>
@@ -303,30 +303,30 @@ export const AboutView: React.FC<AboutViewProps> = ({ setActiveTab }) => {
 
       {/* Alur Pembinaan 5 Tahap */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-[#0f4c42] text-white rounded-3xl p-8 sm:p-12 relative overflow-hidden">
+        <div className="bg-[#0B1C3D] text-white rounded-3xl p-8 sm:p-12 relative overflow-hidden border border-[#D4A017]/30">
           <div className="max-w-2xl mb-10">
-            <span className="text-xs font-bold text-amber-300 uppercase tracking-wider bg-emerald-900/90 px-3 py-1 rounded-full border border-amber-500/20">
+            <span className="text-xs font-bold text-[#E8C547] uppercase tracking-wider bg-[#10244C] px-3 py-1 rounded-full border border-[#D4A017]/40">
               {language === 'id' ? 'SOP Pembinaan' : 'Training SOP'}
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white mt-3">
               {t.workflowTitle}
             </h2>
-            <p className="text-sm text-emerald-200/90 mt-2">
+            <p className="text-sm text-slate-200 mt-2">
               {t.workflowDesc}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-5 gap-4 relative">
             {steps.map((st, i) => (
-              <div key={i} className="bg-emerald-950/60 p-5 rounded-2xl border border-emerald-700/50 flex flex-col justify-between">
+              <div key={i} className="bg-[#10244C] p-5 rounded-2xl border border-[#D4A017]/20 flex flex-col justify-between">
                 <div>
-                  <span className="text-2xl font-black text-amber-400 font-serif block mb-2">
+                  <span className="text-2xl font-black text-[#D4A017] font-serif block mb-2">
                     {st.step}
                   </span>
                   <h4 className="font-bold text-sm text-white mb-2 leading-snug">
                     {st.title}
                   </h4>
-                  <p className="text-xs text-emerald-200/80 leading-relaxed">
+                  <p className="text-xs text-slate-300 leading-relaxed">
                     {st.desc}
                   </p>
                 </div>
@@ -335,16 +335,16 @@ export const AboutView: React.FC<AboutViewProps> = ({ setActiveTab }) => {
           </div>
 
           {/* Bottom Action */}
-          <div className="mt-10 pt-6 border-t border-emerald-800/60 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-xs text-emerald-200 text-center sm:text-left">
+          <div className="mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-xs text-slate-200 text-center sm:text-left">
               {language === 'id' 
-                ? 'Dukung karya warga binaan kami dengan memesan langsung melalui Tokopedia resmi Lapas Kerobokan.'
-                : 'Support our inmate artisans by placing orders directly on the official Kerobokan Prison Tokopedia store.'}
+                ? 'Dukung karya warga binaan kami dengan memesan langsung melalui toko resmi Lapas Kerobokan.'
+                : 'Support our inmate artisans by placing orders directly on the official store of Kerobokan Prison.'}
             </p>
             <div className="flex items-center gap-3">
               <button
                 onClick={() => setActiveTab('program')}
-                className="bg-emerald-800 hover:bg-emerald-700 text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition-colors"
+                className="bg-[#10244C] hover:bg-[#152e60] text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition-colors border border-white/20"
               >
                 {language === 'id' ? 'Lihat 10+ Program' : 'Explore 10+ Programs'}
               </button>
@@ -352,10 +352,10 @@ export const AboutView: React.FC<AboutViewProps> = ({ setActiveTab }) => {
                 href={TOKOPEDIA_CONFIG.officialStoreUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#03AC0E] hover:bg-[#02950c] text-white text-xs font-bold px-4 py-2.5 rounded-xl transition-colors flex items-center gap-1.5"
+                className="bg-[#D4A017] hover:bg-[#E8C547] text-[#1A1A1A] text-xs font-bold px-4 py-2.5 rounded-xl transition-colors flex items-center gap-1.5"
               >
                 <ShoppingBag className="w-3.5 h-3.5" />
-                <span>{t.buyOnTokopedia}</span>
+                <span>{t.visitTokopediaStore}</span>
               </a>
             </div>
           </div>

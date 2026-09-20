@@ -27,40 +27,50 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
   };
 
   return (
-    <footer id="main-footer" className="bg-[#072923] text-emerald-100 border-t border-emerald-900/80 pt-16 pb-8">
+    <footer id="main-footer" className="bg-[#0B1C3D] text-slate-200 border-t border-[#10244C] pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Feature Box: Tokopedia Official Store Invitation */}
-        <div className="bg-gradient-to-r from-[#0d443a] via-[#0f4e43] to-[#0d443a] rounded-2xl p-6 sm:p-8 border border-emerald-700/40 shadow-xl mb-14 relative overflow-hidden">
-          <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-amber-400/10 via-transparent to-transparent pointer-events-none" />
+        <div className="bg-[#10244C] rounded-2xl p-6 sm:p-8 border border-[#D4A017]/30 shadow-2xl mb-14 relative overflow-hidden">
+          <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#D4A017]/10 via-transparent to-transparent pointer-events-none" />
           <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 mb-3">
+              <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full text-xs font-semibold bg-[#1A7A4C]/25 text-emerald-300 border border-[#1A7A4C]/40 mb-3">
                 <ShoppingBag className="w-3.5 h-3.5 text-emerald-400" />
                 <span>{language === 'id' ? 'Pemasaran Resmi Karya Warga Binaan' : 'Official Store for Inmate Creations'}</span>
               </div>
               <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
-                {language === 'id' ? 'Dukung Kemandirian Warga Binaan Lewat Tokopedia' : 'Support Inmate Empowerment Through Tokopedia'}
+                {language === 'id' ? 'Dukung Kemandirian Warga Binaan Lewat Marketplace Resmi' : 'Support Inmate Empowerment Through Official Marketplaces'}
               </h3>
-              <p className="text-sm text-emerald-200/90 leading-relaxed">
+              <p className="text-sm text-slate-300 leading-relaxed">
                 {language === 'id' 
-                  ? 'Setiap rupiah dari pembelian Anda menjadi upah premi resmi bagi warga binaan dan modal tabungan bekal kembali ke masyarakat. Belanja aman, mudah, dan resmi dengan proteksi Tokopedia.'
-                  : 'Every purchase provides official wage savings for inmates to rebuild their lives after release. Safe, nationwide shipping backed by Tokopedia protection.'}
+                  ? 'Setiap rupiah dari pembelian Anda menjadi upah premi resmi bagi warga binaan dan modal tabungan bekal kembali ke masyarakat. Belanja aman, mudah, dan resmi di Shopee & Tokopedia.'
+                  : 'Every purchase provides official wage savings for inmates to rebuild their lives after release. Safe, nationwide shipping backed by Shopee and Tokopedia protection.'}
               </p>
             </div>
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full md:w-auto shrink-0">
               <a
+                href={TOKOPEDIA_CONFIG.shopeeStoreUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-[#EE4D2D] hover:bg-[#D73211] text-white font-bold px-4 py-3 rounded-xl shadow-md hover:scale-[1.02] active:scale-[0.98] transition-all text-xs sm:text-sm"
+              >
+                <ShoppingBag className="w-4 h-4 text-white" />
+                <span>Shopee LKROBO</span>
+                <ExternalLink className="w-3.5 h-3.5 opacity-80" />
+              </a>
+              <a
                 href={TOKOPEDIA_CONFIG.officialStoreUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2.5 bg-[#03AC0E] hover:bg-[#02970c] text-white font-bold px-6 py-3.5 rounded-xl shadow-lg shadow-black/20 hover:scale-[1.02] active:scale-[0.98] transition-all"
+                className="inline-flex items-center justify-center gap-2 bg-[#03AC0E] hover:bg-[#028A0B] text-white font-bold px-4 py-3 rounded-xl shadow-md hover:scale-[1.02] active:scale-[0.98] transition-all text-xs sm:text-sm"
               >
-                <ShoppingBag className="w-5 h-5" />
-                <span>{language === 'id' ? 'Kunjungi Tokopedia LKROBO' : 'Visit Tokopedia Store'}</span>
-                <ExternalLink className="w-4 h-4 opacity-80" />
+                <ShoppingBag className="w-4 h-4 text-white" />
+                <span>Tokopedia LKROBO</span>
+                <ExternalLink className="w-3.5 h-3.5 opacity-80" />
               </a>
               <button
                 onClick={() => handleNav('produk')}
-                className="inline-flex items-center justify-center px-5 py-3.5 rounded-xl bg-emerald-800/80 hover:bg-emerald-700 text-white text-sm font-semibold border border-emerald-600/50 transition-colors"
+                className="inline-flex items-center justify-center px-4 py-3 rounded-xl bg-[#D4A017] hover:bg-[#E8C547] text-[#1A1A1A] text-xs sm:text-sm font-bold transition-colors shadow-sm"
               >
                 {t.viewCatalog}
               </button>
@@ -69,7 +79,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
         </div>
 
         {/* Main Footer Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-emerald-900/60">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-[#10244C]">
           {/* Column 1: Brand & Philosophy */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
@@ -81,14 +91,14 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
               />
               <div>
                 <span className="font-bold text-lg text-white tracking-tight">BIMKER LKROBO</span>
-                <p className="text-[11px] text-amber-300 font-medium">Lapas Kelas IIA Kerobokan Bali</p>
+                <p className="text-[11px] text-[#D4A017] font-semibold">Lapas Kelas IIA Kerobokan Bali</p>
               </div>
             </div>
-            <p className="text-sm text-emerald-200/80 leading-relaxed">
+            <p className="text-sm text-slate-300 leading-relaxed">
               {t.footerAbout}
             </p>
             <div className="pt-1">
-              <span className="inline-block text-xs italic text-amber-200/90 font-serif bg-emerald-950/80 px-3 py-1.5 rounded-lg border border-amber-500/20">
+              <span className="inline-block text-xs italic text-[#E8C547] font-serif bg-[#07132B] px-3 py-1.5 rounded-lg border border-[#D4A017]/30">
                 &ldquo;{t.brandTagline}&rdquo;
               </span>
             </div>
@@ -96,43 +106,45 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
 
           {/* Column 2: Navigation Links */}
           <div className="space-y-3">
-            <h4 className="text-sm font-bold uppercase tracking-wider text-amber-400">
+            <h4 className="text-sm font-bold uppercase tracking-wider text-[#D4A017]">
               {t.footerQuickLinks}
             </h4>
-            <ul className="space-y-2 text-sm text-emerald-200/90">
+            <ul className="space-y-2 text-sm text-slate-300">
               <li>
-                <button onClick={() => handleNav('beranda')} className="hover:text-white transition-colors">
+                <button onClick={() => handleNav('beranda')} className="hover:text-white hover:text-[#D4A017] transition-colors">
                   {t.navHome}
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('tentang')} className="hover:text-white transition-colors">
+                <button onClick={() => handleNav('tentang')} className="hover:text-white hover:text-[#D4A017] transition-colors">
                   {t.navAbout}
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('program')} className="hover:text-white transition-colors">
+                <button onClick={() => handleNav('program')} className="hover:text-white hover:text-[#D4A017] transition-colors">
                   {t.navPrograms}
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('produk')} className="hover:text-white transition-colors flex items-center gap-1.5">
+                <button onClick={() => handleNav('produk')} className="hover:text-white hover:text-[#D4A017] transition-colors flex items-center gap-1.5">
                   <span>{t.navProducts}</span>
-                  <span className="text-[10px] bg-emerald-600/70 text-white px-1.5 py-0.2 rounded font-semibold">Tokopedia</span>
+                  <span className="text-[10px] bg-[#1A7A4C] text-white px-1.5 py-0.2 rounded font-semibold">
+                    {language === 'id' ? 'Katalog' : 'Catalog'}
+                  </span>
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('berita')} className="hover:text-white transition-colors">
+                <button onClick={() => handleNav('berita')} className="hover:text-white hover:text-[#D4A017] transition-colors">
                   {t.navNews}
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('kemitraan')} className="hover:text-white transition-colors">
+                <button onClick={() => handleNav('kemitraan')} className="hover:text-white hover:text-[#D4A017] transition-colors">
                   {t.navPartnership}
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNav('kontak')} className="hover:text-white transition-colors">
+                <button onClick={() => handleNav('kontak')} className="hover:text-white hover:text-[#D4A017] transition-colors">
                   {t.navContact}
                 </button>
               </li>
@@ -141,36 +153,36 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
 
           {/* Column 3: Skill Sectors */}
           <div className="space-y-3">
-            <h4 className="text-sm font-bold uppercase tracking-wider text-amber-400">
+            <h4 className="text-sm font-bold uppercase tracking-wider text-[#D4A017]">
               {t.footerPrograms}
             </h4>
-            <ul className="space-y-1.5 text-xs text-emerald-200/80">
+            <ul className="space-y-1.5 text-xs text-slate-300">
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#D4A017]" />
                 <span>{language === 'id' ? 'Kerajinan Perak' : 'Silver Craft'}</span>
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#D4A017]" />
                 <span>{language === 'id' ? 'Dapur Bakery & Pastry Antaboga' : 'Antaboga Bakery & Pastry'}</span>
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#D4A017]" />
                 <span>{language === 'id' ? 'Garmen & Busana Tenun Endek' : 'Garments & Balinese Endek Apparel'}</span>
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#D4A017]" />
                 <span>{language === 'id' ? 'Greenhouse Sayur Hidroponik' : 'Hydroponic Vegetable Greenhouse'}</span>
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#D4A017]" />
                 <span>{language === 'id' ? 'Dupa Wangi Herbal Cempaka' : 'Herbal Aromatherapy Incense'}</span>
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#D4A017]" />
                 <span>{language === 'id' ? 'Pangkas Rambut Modern & Sablon' : 'Modern Barbershop & Screen Printing'}</span>
               </li>
               <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#D4A017]" />
                 <span>{language === 'id' ? 'Peternakan Unggas & Bioflok' : 'Poultry & Biofloc Aquaculture'}</span>
               </li>
             </ul>
@@ -178,24 +190,24 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
 
           {/* Column 4: Official Contact & Address */}
           <div className="space-y-3">
-            <h4 className="text-sm font-bold uppercase tracking-wider text-amber-400">
+            <h4 className="text-sm font-bold uppercase tracking-wider text-[#D4A017]">
               {t.footerContact}
             </h4>
-            <div className="space-y-3 text-xs text-emerald-200/90 leading-relaxed">
+            <div className="space-y-3 text-xs text-slate-300 leading-relaxed">
               <div className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-[#D4A017] shrink-0 mt-0.5" />
                 <span>{TOKOPEDIA_CONFIG.address}</span>
               </div>
               <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-amber-400 shrink-0" />
+                <Phone className="w-4 h-4 text-[#D4A017] shrink-0" />
                 <span>{t.officePhone}: {TOKOPEDIA_CONFIG.phone}</span>
               </div>
               <div className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-amber-400 shrink-0" />
+                <Mail className="w-4 h-4 text-[#D4A017] shrink-0" />
                 <span className="truncate">{TOKOPEDIA_CONFIG.email}</span>
               </div>
               <div className="flex items-start gap-2.5">
-                <Clock className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                <Clock className="w-4 h-4 text-[#D4A017] shrink-0 mt-0.5" />
                 <span>{language === 'id' ? TOKOPEDIA_CONFIG.operatingHours : 'Mon - Fri: 08:00 - 15:00 WITA'}</span>
               </div>
             </div>
@@ -203,13 +215,13 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
         </div>
 
         {/* Bottom Disclaimer & Legal */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-emerald-300/70">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <div className="flex items-center gap-2 text-center sm:text-left">
             <span>© {new Date().getFullYear()} BIMKER LKROBO. {t.footerRights}</span>
           </div>
           <div className="flex items-center gap-4">
-            <span className="flex items-center gap-1.5 text-emerald-300/90">
-              <Shield className="w-3.5 h-3.5 text-amber-400" />
+            <span className="flex items-center gap-1.5 text-slate-300">
+              <Shield className="w-3.5 h-3.5 text-[#D4A017]" />
               <span>{language === 'id' ? 'Sistem Pembinaan Pemasyarakatan Humanis' : 'Humanist Correctional Rehabilitation'}</span>
             </span>
           </div>

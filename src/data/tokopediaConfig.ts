@@ -7,9 +7,12 @@ export const TOKOPEDIA_CONFIG = {
   // Logo Resmi BIMKER LKROBO
   logoUrl: "https://res.cloudinary.com/ig4uk50k/image/upload/f_auto,q_auto/bimkerlogo",
 
-  // Link toko resmi BIMKER LKROBO di Tokopedia
+  // Link toko resmi BIMKER LKROBO di Marketplace
+  tokopediaStoreUrl: "https://www.tokopedia.com/bimker-lkrobo",
   officialStoreUrl: "https://www.tokopedia.com/bimker-lkrobo",
+  shopeeStoreUrl: "https://shopee.co.id/bimker_lkrobo",
   storeName: "BIMKER LKROBO Official Store",
+  shopeeStoreName: "BIMKER LKROBO Official Shop",
   badgeText: "Official Store • Lapas Kerobokan",
   
   // Kontak WhatsApp Bimbingan Kerja

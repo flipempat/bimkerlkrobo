@@ -15,18 +15,18 @@ export const LanguageToggle: React.FC<LanguageToggleProps> = ({
 
   if (variant === 'mobile') {
     return (
-      <div className={`flex items-center justify-between p-3 rounded-2xl bg-emerald-950/40 border border-emerald-800/40 ${className}`}>
-        <div className="flex items-center gap-2 text-emerald-200 text-xs font-semibold">
-          <Globe className="w-4 h-4 text-amber-400" />
+      <div className={`flex items-center justify-between p-3 rounded-2xl bg-[#07132B]/80 border border-[#D4A017]/30 ${className}`}>
+        <div className="flex items-center gap-2 text-slate-200 text-xs font-semibold">
+          <Globe className="w-4 h-4 text-[#D4A017]" />
           <span>{language === 'id' ? 'Bahasa / Language:' : 'Language / Bahasa:'}</span>
         </div>
-        <div className="flex items-center gap-1 bg-[#072923] p-1 rounded-xl border border-emerald-700/50">
+        <div className="flex items-center gap-1 bg-[#0B1C3D] p-1 rounded-xl border border-slate-700/60">
           <button
             onClick={() => setLanguage('id')}
             className={`px-3 py-1 rounded-lg text-xs font-bold transition-all ${
               language === 'id'
-                ? 'bg-amber-400 text-slate-950 shadow-xs'
-                : 'text-emerald-300 hover:text-white'
+                ? 'bg-[#D4A017] hover:bg-[#E8C547] text-[#1A1A1A] shadow-xs'
+                : 'text-slate-300 hover:text-white'
             }`}
           >
             🇮🇩 ID
@@ -35,8 +35,8 @@ export const LanguageToggle: React.FC<LanguageToggleProps> = ({
             onClick={() => setLanguage('en')}
             className={`px-3 py-1 rounded-lg text-xs font-bold transition-all ${
               language === 'en'
-                ? 'bg-amber-400 text-slate-950 shadow-xs'
-                : 'text-emerald-300 hover:text-white'
+                ? 'bg-[#D4A017] hover:bg-[#E8C547] text-[#1A1A1A] shadow-xs'
+                : 'text-slate-300 hover:text-white'
             }`}
           >
             🇬🇧 EN
@@ -48,19 +48,19 @@ export const LanguageToggle: React.FC<LanguageToggleProps> = ({
 
   return (
     <div 
-      className={`inline-flex items-center bg-[#072923]/90 hover:bg-[#072923] p-1 rounded-xl border border-emerald-700/50 text-xs shadow-xs transition-colors ${className}`}
+      className={`inline-flex items-center bg-[#07132B]/90 hover:bg-[#07132B] p-1 rounded-xl border border-[#D4A017]/40 text-xs shadow-xs transition-colors ${className}`}
       role="group"
       aria-label="Pilih Bahasa / Select Language"
     >
-      <Globe className="w-3.5 h-3.5 text-emerald-400 ml-1.5 mr-1 shrink-0" />
+      <Globe className="w-3.5 h-3.5 text-[#D4A017] ml-1.5 mr-1 shrink-0" />
       <button
         type="button"
         onClick={() => setLanguage('id')}
         aria-pressed={language === 'id'}
         className={`px-2 py-0.5 rounded-lg font-bold text-[11px] transition-all ${
           language === 'id'
-            ? 'bg-amber-400 text-slate-950 shadow-xs'
-            : 'text-emerald-300 hover:text-white'
+            ? 'bg-[#D4A017] hover:bg-[#E8C547] text-[#1A1A1A] shadow-xs'
+            : 'text-slate-300 hover:text-white'
         }`}
         title="Bahasa Indonesia"
       >
@@ -72,8 +72,8 @@ export const LanguageToggle: React.FC<LanguageToggleProps> = ({
         aria-pressed={language === 'en'}
         className={`px-2 py-0.5 rounded-lg font-bold text-[11px] transition-all ${
           language === 'en'
-            ? 'bg-amber-400 text-slate-950 shadow-xs'
-            : 'text-emerald-300 hover:text-white'
+            ? 'bg-[#D4A017] hover:bg-[#E8C547] text-[#1A1A1A] shadow-xs'
+            : 'text-slate-300 hover:text-white'
         }`}
         title="English"
       >
@@ -82,3 +82,4 @@ export const LanguageToggle: React.FC<LanguageToggleProps> = ({
     </div>
   );
 };
+

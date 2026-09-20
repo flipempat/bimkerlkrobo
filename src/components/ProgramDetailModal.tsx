@@ -49,7 +49,7 @@ export const ProgramDetailModal: React.FC<ProgramDetailModalProps> = ({
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6">
               <div>
-                <span className="inline-block text-xs font-bold px-2.5 py-0.5 rounded-full bg-emerald-500 text-slate-950 mb-2">
+                <span className="inline-block text-xs font-bold px-2.5 py-0.5 rounded-full bg-[#D4A017] text-[#1A1A1A] mb-2">
                   {program.categoryLabel}
                 </span>
                 <h2 className="text-xl sm:text-2xl font-bold text-white">
@@ -62,28 +62,28 @@ export const ProgramDetailModal: React.FC<ProgramDetailModalProps> = ({
           <div className="p-6 sm:p-8 space-y-6">
             {/* Quick Metrics */}
             <div className="grid grid-cols-3 gap-3">
-              <div className="bg-emerald-50/70 p-3 rounded-xl border border-emerald-100 text-center">
-                <Users className="w-5 h-5 text-emerald-700 mx-auto mb-1" />
-                <span className="block text-xs text-slate-500 font-medium">
+              <div className="bg-[#F8F9FC] p-3 rounded-xl border border-slate-200 text-center">
+                <Users className="w-5 h-5 text-[#0B1C3D] mx-auto mb-1" />
+                <span className="block text-xs text-[#6B7280] font-medium">
                   {language === 'id' ? 'Kapasitas' : 'Capacity'}
                 </span>
-                <span className="font-bold text-sm text-emerald-900">
+                <span className="font-bold text-sm text-[#0B1C3D]">
                   {program.participantsCount} {language === 'id' ? 'Peserta/Tahun' : 'Trainees/Yr'}
                 </span>
               </div>
-              <div className="bg-emerald-50/70 p-3 rounded-xl border border-emerald-100 text-center">
-                <Clock className="w-5 h-5 text-emerald-700 mx-auto mb-1" />
-                <span className="block text-xs text-slate-500 font-medium">
+              <div className="bg-[#F8F9FC] p-3 rounded-xl border border-slate-200 text-center">
+                <Clock className="w-5 h-5 text-[#0B1C3D] mx-auto mb-1" />
+                <span className="block text-xs text-[#6B7280] font-medium">
                   {language === 'id' ? 'Durasi' : 'Duration'}
                 </span>
-                <span className="font-bold text-xs sm:text-sm text-emerald-900">{program.duration}</span>
+                <span className="font-bold text-xs sm:text-sm text-[#0B1C3D]">{program.duration}</span>
               </div>
-              <div className="bg-emerald-50/70 p-3 rounded-xl border border-emerald-100 text-center">
-                <Award className="w-5 h-5 text-emerald-700 mx-auto mb-1" />
-                <span className="block text-xs text-slate-500 font-medium">
+              <div className="bg-[#F8F9FC] p-3 rounded-xl border border-slate-200 text-center">
+                <Award className="w-5 h-5 text-[#D4A017] mx-auto mb-1" />
+                <span className="block text-xs text-[#6B7280] font-medium">
                   {language === 'id' ? 'Standarisasi' : 'Standard'}
                 </span>
-                <span className="font-bold text-xs sm:text-sm text-emerald-900 truncate">
+                <span className="font-bold text-xs sm:text-sm text-[#1A7A4C] truncate">
                   {language === 'id' ? 'BNSP / Teruji' : 'Certified BNSP'}
                 </span>
               </div>
@@ -91,23 +91,23 @@ export const ProgramDetailModal: React.FC<ProgramDetailModalProps> = ({
 
             {/* In-depth Description */}
             <div>
-              <h3 className="text-sm font-bold text-slate-800 uppercase tracking-wider mb-2">
+              <h3 className="text-sm font-bold text-[#1A1A1A] uppercase tracking-wider mb-2">
                 {language === 'id' ? 'Deskripsi & Silabus Pelatihan' : 'Description & Training Syllabus'}
               </h3>
-              <p className="text-sm text-slate-600 leading-relaxed">
+              <p className="text-sm text-[#6B7280] leading-relaxed">
                 {program.fullDesc}
               </p>
             </div>
 
             {/* Program Highlights */}
             <div>
-              <h3 className="text-sm font-bold text-slate-800 uppercase tracking-wider mb-3">
+              <h3 className="text-sm font-bold text-[#1A1A1A] uppercase tracking-wider mb-3">
                 {language === 'id' ? 'Keunggulan & Fasilitas' : 'Highlights & Workshop Facilities'}
               </h3>
-              <ul className="space-y-2 text-xs sm:text-sm text-slate-700">
+              <ul className="space-y-2 text-xs sm:text-sm text-[#1A1A1A]">
                 {program.highlights.map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-[#1A7A4C] shrink-0 mt-0.5" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -115,24 +115,24 @@ export const ProgramDetailModal: React.FC<ProgramDetailModalProps> = ({
             </div>
 
             {/* Certification */}
-            <div className="bg-slate-50 p-4 rounded-xl border border-slate-200/80 flex items-start gap-3">
-              <Award className="w-6 h-6 text-amber-500 shrink-0 mt-0.5" />
+            <div className="bg-[#F8F9FC] p-4 rounded-xl border border-slate-200/80 flex items-start gap-3">
+              <Award className="w-6 h-6 text-[#D4A017] shrink-0 mt-0.5" />
               <div>
-                <span className="text-xs font-bold text-slate-900 block">
+                <span className="text-xs font-bold text-[#0B1C3D] block">
                   {language === 'id' ? 'Sertifikasi Resmi:' : 'Official Certification:'}
                 </span>
-                <span className="text-xs text-slate-600">{program.certification}</span>
+                <span className="text-xs text-[#6B7280]">{program.certification}</span>
               </div>
             </div>
 
             {/* Output Products */}
             <div>
-              <h3 className="text-sm font-bold text-slate-800 uppercase tracking-wider mb-2">
+              <h3 className="text-sm font-bold text-[#1A1A1A] uppercase tracking-wider mb-2">
                 {language === 'id' ? 'Produk Hasil Karya Program' : 'Program Output Creations'}
               </h3>
               <div className="flex flex-wrap gap-2">
                 {program.outputProducts.map((prod, i) => (
-                  <span key={i} className="text-xs font-medium px-3 py-1 rounded-lg bg-emerald-100/70 text-emerald-900 border border-emerald-200">
+                  <span key={i} className="text-xs font-medium px-3 py-1 rounded-lg bg-[#1A7A4C]/10 text-[#1A7A4C] border border-[#1A7A4C]/30">
                     {prod}
                   </span>
                 ))}
@@ -146,9 +146,9 @@ export const ProgramDetailModal: React.FC<ProgramDetailModalProps> = ({
                   onClose();
                   onExploreProducts();
                 }}
-                className="flex-1 flex items-center justify-center gap-2 bg-[#0f4c42] hover:bg-[#0c3e36] text-white text-sm font-semibold py-3 px-4 rounded-xl transition-colors"
+                className="flex-1 flex items-center justify-center gap-2 bg-[#D4A017] hover:bg-[#E8C547] text-[#1A1A1A] text-sm font-bold py-3.5 px-4 rounded-xl transition-colors shadow-md"
               >
-                <ShoppingBag className="w-4 h-4 text-amber-300" />
+                <ShoppingBag className="w-4 h-4 text-[#1A1A1A]" />
                 <span>{language === 'id' ? 'Lihat Produk Karya Program Ini' : 'Explore Program Products'}</span>
                 <ArrowRight className="w-4 h-4" />
               </button>

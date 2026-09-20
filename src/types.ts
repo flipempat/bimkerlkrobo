@@ -8,7 +8,8 @@ export interface Product {
   shortDescription: string;
   fullDescription: string;
   image: string;
-  tokopediaUrl: string;
+  shopeeUrl?: string;
+  tokopediaUrl?: string;
   isFeatured: boolean;
   isBestSeller?: boolean;
   inStock: boolean;
