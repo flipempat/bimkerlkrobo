@@ -1,5 +1,5 @@
-import React from 'react';
-import { X, Award, Users, Clock, CheckCircle2, ShoppingBag, ArrowRight } from 'lucide-react';
+import React, { useState } from 'react';
+import { X, Award, Users, Clock, CheckCircle2, ShoppingBag, ArrowRight, Image as ImageIcon } from 'lucide-react';
 import { Program } from '../types';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -15,6 +15,11 @@ export const ProgramDetailModal: React.FC<ProgramDetailModalProps> = ({
   onExploreProducts
 }) => {
   const { language } = useLanguage();
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  React.useEffect(() => {
+    setSelectedImage(null);
+  }, [program?.id]);
 
   if (!program) return null;
 
@@ -22,6 +27,9 @@ export const ProgramDetailModal: React.FC<ProgramDetailModalProps> = ({
   const displayTitle = language === 'en' && program.titleEn ? program.titleEn : program.title;
   const displayCategory = language === 'en' && program.categoryLabelEn ? program.categoryLabelEn : program.categoryLabel;
   const displayDuration = language === 'en' && program.durationEn ? program.durationEn : program.duration;
+  
+  const currentImage = selectedImage || program.image;
+  const gallery = program.galleryImages && program.galleryImages.length > 0 ? program.galleryImages : [program.image];
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
@@ -48,9 +56,9 @@ export const ProgramDetailModal: React.FC<ProgramDetailModalProps> = ({
         <div className="overflow-y-auto p-0">
           <div className="relative aspect-16/9 bg-slate-900">
             <img 
-              src={program.image} 
+              src={currentImage} 
               alt={displayTitle}
-              className="w-full h-full object-cover opacity-85"
+              className="w-full h-full object-cover opacity-85 transition-all duration-300"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent flex items-end p-6">
               <div>
@@ -67,6 +75,31 @@ export const ProgramDetailModal: React.FC<ProgramDetailModalProps> = ({
               </div>
             </div>
           </div>
+
+          {/* Gallery Thumbnails if multiple images exist */}
+          {gallery.length > 1 && (
+            <div className="px-6 sm:px-8 pt-4 pb-2 bg-[#F8F9FC] border-b border-slate-200/80 flex items-center gap-3">
+              <div className="flex items-center gap-1.5 text-xs text-slate-500 font-semibold shrink-0">
+                <ImageIcon className="w-4 h-4 text-[#D4A017]" />
+                <span>{language === 'id' ? 'Galeri Unit:' : 'Unit Gallery:'}</span>
+              </div>
+              <div className="flex items-center gap-2 overflow-x-auto py-1">
+                {gallery.map((imgUrl, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setSelectedImage(imgUrl)}
+                    className={`relative w-16 h-12 rounded-lg overflow-hidden border-2 transition-all shrink-0 ${
+                      currentImage === imgUrl 
+                        ? 'border-[#D4A017] shadow-md scale-105' 
+                        : 'border-transparent opacity-60 hover:opacity-100'
+                    }`}
+                  >
+                    <img src={imgUrl} alt={`Thumbnail ${idx + 1}`} className="w-full h-full object-cover" />
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
 
           <div className="p-6 sm:p-8 space-y-6">
             {/* Quick Metrics */}

@@ -191,6 +191,11 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
                 </li>
                 <li>
                   <button onClick={() => handleNav('program')} className="hover:text-[#D4A017] transition-colors text-left">
+                    {language === 'id' ? 'Kerajinan Batik Tulis & Cap' : 'Hand-drawn & Stamped Batik'}
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => handleNav('program')} className="hover:text-[#D4A017] transition-colors text-left">
                     {language === 'id' ? 'Design Grafis & Sablon' : 'Graphic Design & Screen Printing'}
                   </button>
                 </li>
@@ -227,6 +232,11 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
                 <li>
                   <button onClick={() => handleNav('program')} className="hover:text-emerald-300 transition-colors text-left">
                     {language === 'id' ? 'Perikanan Kolam Bioflok' : 'Biofloc Aquaculture'}
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => handleNav('program')} className="hover:text-emerald-300 transition-colors text-left">
+                    {language === 'id' ? 'Budidaya Maggot BSF (Pakan Alami)' : 'BSF Maggot Cultivation'}
                   </button>
                 </li>
               </ul>

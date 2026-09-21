@@ -12,13 +12,16 @@ import {
   Sprout, 
   Trees, 
   Fish, 
+  Bug,
   ArrowRight, 
   CheckCircle2, 
   Sparkles, 
   Filter,
   Store,
   Wheat,
-  Layers
+  Layers,
+  Scissors,
+  Shirt
 } from 'lucide-react';
 import { PROGRAMS } from '../data/mockData';
 import { Program } from '../types';
@@ -56,6 +59,12 @@ export const renderProgramIcon = (iconName: string, className = "w-5 h-5") => {
       return <Trees className={className} />;
     case 'Fish':
       return <Fish className={className} />;
+    case 'Bug':
+      return <Bug className={className} />;
+    case 'Scissors':
+      return <Scissors className={className} />;
+    case 'Shirt':
+      return <Shirt className={className} />;
     default:
       return <Sparkles className={className} />;
   }
@@ -221,6 +230,35 @@ export const ProgramsView: React.FC<ProgramsViewProps> = ({
           <p className="text-slate-200 text-sm sm:text-base mt-3 leading-relaxed">
             {t.programsHeaderDesc}
           </p>
+        </div>
+      </section>
+
+      {/* SOP Kedisiplinan & Apel K3 Banner */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6">
+        <div className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 border border-slate-200/90 shadow-sm flex flex-col md:flex-row items-center gap-6">
+          <div className="w-full md:w-52 lg:w-60 aspect-16/10 rounded-xl overflow-hidden shrink-0 bg-slate-100 border border-slate-200 shadow-xs">
+            <img
+              src="https://res.cloudinary.com/ig4uk50k/image/upload/v1789968128/slefyi8iuwrmleiwhg37.webp"
+              alt="Apel Pagi Pengarahan Kerja Warga Binaan Lapas Kerobokan"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="space-y-1.5 text-center md:text-left">
+            <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#1A7A4C] bg-[#1A7A4C]/10 px-2.5 py-0.5 rounded-full border border-[#1A7A4C]/25">
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#1A7A4C]" />
+              {language === 'id' ? 'Standar Operasional Prosedur (SOP)' : 'Standard Operating Procedures'}
+            </span>
+            <h3 className="text-base sm:text-lg font-bold text-[#0B1C3D]">
+              {language === 'id' 
+                ? 'Seluruh Program Dimulai dengan Apel Pagi & Pengarahan K3' 
+                : 'All Programs Commence with Morning Roll Call & Safety Briefing'}
+            </h3>
+            <p className="text-xs text-[#6B7280] leading-relaxed max-w-3xl">
+              {language === 'id'
+                ? 'Sebelum memasuki workshop perak, bakery, garmen, maupun budidaya pangan, seluruh warga binaan wajib mengikuti apel pagi bersama instruktur guna pembekalan kedisiplinan, keselamatan kerja (K3), penggunaan APD, dan penetapan target mutu.'
+                : 'Prior to entering silvercraft, bakery, garment, or agricultural workshops, inmates participate in morning roll call assemblies covering occupational safety (OHS), discipline, and quality targets.'}
+            </p>
+          </div>
         </div>
       </section>
 

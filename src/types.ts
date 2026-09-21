@@ -1,7 +1,7 @@
 export interface Product {
   id: string;
   name: string;
-  category: 'perak' | 'bakery' | 'garmen' | 'kayu' | 'hidroponik' | 'dupa' | 'sablon';
+  category: 'perak' | 'bakery' | 'garmen' | 'kayu' | 'hidroponik' | 'dupa' | 'sablon' | 'peternakan' | 'perikanan' | 'lukisan' | 'daur_ulang' | 'batik' | 'perkebunan' | string;
   categoryLabel: string;
   price: number;
   formattedPrice: string;
@@ -35,6 +35,7 @@ export interface Program {
   certification: string;
   outputProducts: string[];
   image: string;
+  galleryImages?: string[];
   highlights: string[];
   icon: string;
 }

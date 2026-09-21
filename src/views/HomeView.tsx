@@ -39,20 +39,36 @@ export const HomeView: React.FC<HomeViewProps> = ({
   
   // Highlight programs from both categories (UMKM & Ketahanan Pangan)
   const highlightPrograms = [
+    PROGRAMS.find(p => p.id === 'prog-art-gallery'),
     PROGRAMS.find(p => p.id === 'prog-perak'),
-    PROGRAMS.find(p => p.id === 'prog-bakery'),
-    PROGRAMS.find(p => p.id === 'prog-holtikultura'),
-    PROGRAMS.find(p => p.id === 'prog-perikanan')
+    PROGRAMS.find(p => p.id === 'prog-perikanan'),
+    PROGRAMS.find(p => p.id === 'prog-peternakan')
   ].filter(Boolean) as Program[];
 
   return (
     <div className="space-y-20 pb-16">
       {/* 1. HERO SECTION */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#07132B] via-[#0B1C3D] to-[#07132B] text-white pt-12 pb-20 lg:pt-16 lg:pb-28">
-        {/* Subtle patterned background */}
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#D4A017_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-[#1A7A4C]/20 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-[#D4A017]/15 rounded-full blur-3xl pointer-events-none" />
+      <section className="relative bg-[#07132B] text-white pt-12 pb-16 lg:pt-16 lg:pb-24">
+        {/* Real Documentation Background: Apel Pagi Warga Binaan */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <img
+            src="https://res.cloudinary.com/ig4uk50k/image/upload/v1789968128/slefyi8iuwrmleiwhg37.webp"
+            alt="Apel Pagi Kegiatan Bimbingan Kerja Lapas Kerobokan"
+            className="w-full h-[160%] sm:h-full object-cover object-[78%_center] sm:object-center -translate-y-[35%] sm:translate-y-0"
+            referrerPolicy="no-referrer"
+          />
+          {/* Balanced gradient: solid on text side (left), light & translucent on photo side (right) */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#07132B]/90 via-[#07132B]/65 to-[#07132B]/35" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#07132B] via-transparent to-[#07132B]/40" />
+        </div>
+
+        {/* Subtle documentation origin credit tag at bottom-left */}
+        <div className="absolute bottom-3 left-4 sm:left-8 z-10 hidden sm:block">
+          <div className="inline-flex items-center gap-2 text-[10px] sm:text-[11px] text-slate-300/85 bg-[#07132B]/80 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 shadow-xs">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#D4A017]" />
+            <span>{language === 'id' ? 'Dokumentasi: Apel Pagi Bimbingan Kemandirian Lapas Kerobokan' : 'Documentation: Inmate Morning Assembly, Kerobokan Prison'}</span>
+          </div>
+        </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -118,26 +134,26 @@ export const HomeView: React.FC<HomeViewProps> = ({
             </div>
 
             {/* Right Column: Visual Collage Card */}
-            <div className="lg:col-span-5 relative pb-8 sm:pb-6 lg:pb-0">
-              <div className="relative mx-auto max-w-md lg:max-w-none">
-                {/* Main Featured Image Card */}
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-[#D4A017]/30 bg-[#0B1C3D] aspect-4/3 sm:aspect-1/1">
+            <div className="lg:col-span-5 relative lg:self-end pb-6 sm:pb-4 lg:pb-0">
+              <div className="relative mx-auto max-w-md lg:max-w-none translate-y-3 sm:translate-y-4 lg:translate-y-12">
+                {/* Main Featured Image Card (Height reduced by 40% to aspect-16/10) */}
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-[#D4A017]/30 bg-[#0B1C3D] aspect-16/10">
                   <img
-                    src="https://images.unsplash.com/photo-1611591475879-16a7504a5e3e?auto=format&fit=crop&w=900&q=80"
+                    src="https://res.cloudinary.com/ig4uk50k/image/upload/v1789958503/d5sw4j0cjgpqimoapz7r.webp"
                     alt="Kriya Perak Lapas Kerobokan"
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-5 sm:p-6 pb-20 sm:pb-24">
-                    <div className="mb-2">
-                      <span className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1 rounded-full bg-[#D4A017] text-[#1A1A1A] shadow-md">
-                        <Sparkles className="w-3.5 h-3.5 text-[#1A1A1A]" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-4 sm:p-5 pb-12 sm:pb-14">
+                    <div className="mb-1.5">
+                      <span className="inline-flex items-center gap-1.5 text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-[#D4A017] text-[#1A1A1A] shadow-md">
+                        <Sparkles className="w-3 h-3 text-[#1A1A1A]" />
                         {language === 'id' ? 'Karya Unggulan' : 'Featured Masterpiece'}
                       </span>
                     </div>
-                    <h3 className="text-lg sm:text-xl font-bold text-white leading-tight">
+                    <h3 className="text-base sm:text-lg font-bold text-white leading-tight">
                       {language === 'id' ? 'Kerajinan Perak' : 'Silver Craft'}
                     </h3>
-                    <p className="text-xs text-slate-200 mt-1 sm:mt-1.5 line-clamp-2">
+                    <p className="text-[11px] sm:text-xs text-slate-200 mt-1 line-clamp-1 sm:line-clamp-2">
                       {language === 'id' 
                         ? 'Kriya perak murni hasil tempaan filigree presisi oleh warga binaan terlatih Lapas Kerobokan.'
                         : 'Pure 925 sterling silver forged with precision filigree craftsmanship by trained inmates.'}
@@ -170,10 +186,10 @@ export const HomeView: React.FC<HomeViewProps> = ({
                   </div>
                   <div className="text-left">
                     <span className="text-xs font-bold text-white block">
-                      {language === 'id' ? '8 Bidang Keterampilan' : '8 Vocational Fields'}
+                      {PROGRAMS.length} {language === 'id' ? 'Program Pembinaan' : 'Vocational Programs'}
                     </span>
                     <span className="text-[10px] text-slate-300 block">
-                      {language === 'id' ? 'Kriya, Bakery, Garmen & Tani' : 'Crafts, Bakery, Garment & Agro'}
+                      {language === 'id' ? 'UMKM & Ketahanan Pangan' : 'SME & Food Security'}
                     </span>
                   </div>
                 </div>
@@ -195,10 +211,10 @@ export const HomeView: React.FC<HomeViewProps> = ({
               </p>
             </div>
             <div className="pt-4 sm:pt-0 sm:pl-6 text-center sm:text-left">
-              <div className="text-3xl sm:text-4xl font-extrabold text-[#0B1C3D] mb-1 font-serif">8</div>
+              <div className="text-3xl sm:text-4xl font-extrabold text-[#0B1C3D] mb-1 font-serif">13</div>
               <div className="text-sm font-bold text-[#1A1A1A] mb-1">{t.statsPrograms}</div>
               <p className="text-xs text-[#6B7280] leading-relaxed hidden sm:block">
-                {language === 'id' ? 'Kriya, boga, manufaktur & tani' : 'Crafts, culinary, textiles & farm'}
+                {language === 'id' ? 'UMKM & Ketahanan Pangan' : 'SME & Food Security'}
               </p>
             </div>
             <div className="pt-4 sm:pt-0 sm:pl-6 text-center sm:text-left">
@@ -402,7 +418,102 @@ export const HomeView: React.FC<HomeViewProps> = ({
         <TestimonialSlider testimonials={TESTIMONIALS} />
       </section>
 
-      {/* 7. CALL TO ACTION KEMITRAAN */}
+      {/* 7. TRANSPARANSI PREMI & DAMPAK SOSIAL */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-white rounded-3xl p-6 sm:p-10 lg:p-12 border border-slate-200/90 shadow-md">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            {/* Left Content */}
+            <div className="lg:col-span-6 space-y-4">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#1A7A4C]/15 text-[#1A7A4C] border border-[#1A7A4C]/30">
+                <HeartHandshake className="w-3.5 h-3.5 text-[#1A7A4C]" />
+                <span>{language === 'id' ? 'Dampak Sosial Nyata' : 'Real Social Impact'}</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1C3D] tracking-tight">
+                {language === 'id'
+                  ? 'Dari Setiap Pesanan, Mengalir Hak Upah Premi Warga Binaan'
+                  : 'From Every Purchase, Real Wage Premiums Reach Inmates'}
+              </h2>
+              <p className="text-sm text-[#6B7280] leading-relaxed">
+                {language === 'id'
+                  ? 'Di Lapas Kelas IIA Kerobokan, hasil karya tidak hanya dipajang—tetapi memberikan imbalan nyata. Setiap rupiah keuntungan penjualan produk di Tokopedia disalurkan secara transparan sebagai premi hasil kerja yang dicatatkan di buku rekening tabungan mandiri warga binaan.'
+                  : 'At Kerobokan Prison, craftworks generate genuine livelihoods. Proceeds from official marketplace orders are transparently shared as legitimate wage premiums deposited directly into inmates’ official savings passbooks.'}
+              </p>
+
+              <div className="pt-2 space-y-2.5 text-xs sm:text-sm text-[#1A1A1A]">
+                <div className="flex items-center gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-[#1A7A4C] shrink-0" />
+                  <span>{language === 'id' ? 'Sesuai regulasi resmi Permenkumham RI No. 29/2017' : 'Complies strictly with Indonesian Ministerial Regulation No. 29/2017'}</span>
+                </div>
+                <div className="flex items-center gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-[#1A7A4C] shrink-0" />
+                  <span>{language === 'id' ? 'Buku tabungan mandiri untuk bekal keluarga & modal pasca bebas' : 'Individual passbook savings for family support & post-release capital'}</span>
+                </div>
+                <div className="flex items-center gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-[#1A7A4C] shrink-0" />
+                  <span>{language === 'id' ? 'Transparansi penuh tanpa potongan liar' : 'Full financial transparency and zero illegal deductions'}</span>
+                </div>
+              </div>
+
+              <div className="pt-4 flex flex-wrap items-center gap-3">
+                <button
+                  onClick={() => setActiveTab('tentang')}
+                  className="inline-flex items-center gap-2 bg-[#0B1C3D] hover:bg-[#10244C] text-white text-xs sm:text-sm font-semibold px-5 py-3 rounded-xl transition-colors shadow-xs"
+                >
+                  <span>{language === 'id' ? 'Lihat Dokumentasi & SOP' : 'View Documentation & SOP'}</span>
+                  <ArrowRight className="w-4 h-4 text-[#D4A017]" />
+                </button>
+                <button
+                  onClick={() => setActiveTab('berita')}
+                  className="inline-flex items-center gap-2 bg-[#F8F9FC] hover:bg-slate-100 text-[#0B1C3D] text-xs sm:text-sm font-semibold px-5 py-3 rounded-xl border border-slate-200 transition-colors"
+                >
+                  <span>{language === 'id' ? 'Baca Berita Penyaluran' : 'Read Distribution News'}</span>
+                </button>
+              </div>
+            </div>
+
+            {/* Right Images (Dual Photo Grid) */}
+            <div className="lg:col-span-6 grid grid-cols-2 gap-4">
+              <div className="space-y-3">
+                <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-sm aspect-4/3 bg-slate-100 group">
+                  <img
+                    src="https://res.cloudinary.com/ig4uk50k/image/upload/v1789968127/l5zuxuucvytsxjfbpsuk.webp"
+                    alt="Pembagian Premi Warga Binaan"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="text-center sm:text-left">
+                  <span className="text-[11px] font-bold text-[#0B1C3D] block">
+                    {language === 'id' ? 'Seremoni Penyerahan Premi' : 'Wage Handover Ceremony'}
+                  </span>
+                  <span className="text-[10px] text-[#6B7280]">
+                    {language === 'id' ? 'Diterima perwakilan warga binaan' : 'Handed to inmate artisans'}
+                  </span>
+                </div>
+              </div>
+
+              <div className="space-y-3">
+                <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-sm aspect-4/3 bg-slate-100 group">
+                  <img
+                    src="https://res.cloudinary.com/ig4uk50k/image/upload/v1789968128/th1goquoqx8l0cbpnypi.webp"
+                    alt="Buku Rekening Tabungan Warga Binaan"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="text-center sm:text-left">
+                  <span className="text-[11px] font-bold text-[#1A7A4C] block">
+                    {language === 'id' ? 'Buku Tabungan Mandiri' : 'Individual Passbook'}
+                  </span>
+                  <span className="text-[10px] text-[#6B7280]">
+                    {language === 'id' ? 'Bekal finansial pasca bebas' : 'Reintegration capital'}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 8. CALL TO ACTION KEMITRAAN */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-gradient-to-br from-[#07132B] via-[#0B1C3D] to-[#10244C] text-white rounded-3xl p-8 sm:p-12 border border-[#D4A017]/30 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8">
           <div className="space-y-3 max-w-2xl text-center lg:text-left">

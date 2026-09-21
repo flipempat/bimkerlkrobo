@@ -30,11 +30,17 @@ export const ProductsView: React.FC<ProductsViewProps> = ({ onOpenProductDetail 
 
   const categories = [
     { id: 'all', label: t.categoryAll },
+    { id: 'lukisan', label: language === 'id' ? 'Art Gallery & Seni Lukis' : 'Art Gallery & Paintings' },
+    { id: 'batik', label: language === 'id' ? 'Kerajinan Batik' : 'Batik Crafts' },
+    { id: 'daur_ulang', label: language === 'id' ? 'Kriya Daur Ulang' : 'Upcycled Crafts' },
+    { id: 'perkebunan', label: language === 'id' ? 'Perkebunan & Pangan' : 'Plantation & Produce' },
     { id: 'perak', label: t.categorySilver },
     { id: 'bakery', label: t.categoryBakery },
     { id: 'garmen', label: t.categoryGarment },
     { id: 'dupa', label: t.categoryIncense },
     { id: 'hidroponik', label: t.categoryHydroponic },
+    { id: 'peternakan', label: language === 'id' ? 'Peternakan & Hasil Ternak' : 'Livestock & Fresh Produce' },
+    { id: 'perikanan', label: language === 'id' ? 'Perikanan & Kolam Bioflok' : 'Fishery & Biofloc Produce' },
     { id: 'sablon', label: language === 'id' ? 'Sablon & Kanvas' : 'Screen Printing & Canvas' }
   ];
 

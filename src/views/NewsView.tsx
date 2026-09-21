@@ -14,12 +14,14 @@ export const NewsView: React.FC<NewsViewProps> = ({ onOpenNewsDetail }) => {
 
   const tags = language === 'id' ? [
     { id: 'all', label: 'Semua Berita' },
+    { id: 'Pemberdayaan & Premi', label: 'Pemberdayaan & Premi' },
     { id: 'Pameran & Prestasi', label: 'Pameran & Prestasi' },
     { id: 'Pelatihan & Sertifikasi', label: 'Pelatihan & Sertifikasi' },
     { id: 'Agribisnis & Panen', label: 'Agribisnis & Panen' },
     { id: 'Kemitraan', label: 'Kemitraan' }
   ] : [
     { id: 'all', label: 'All News' },
+    { id: 'Pemberdayaan & Premi', label: 'Empowerment & Wages' },
     { id: 'Pameran & Prestasi', label: 'Exhibitions & Awards' },
     { id: 'Pelatihan & Sertifikasi', label: 'Training & Certification' },
     { id: 'Agribisnis & Panen', label: 'Agribusiness & Harvest' },
