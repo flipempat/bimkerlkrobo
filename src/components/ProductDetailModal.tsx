@@ -5,7 +5,7 @@ import {
   ExternalLink, 
   ShieldCheck, 
   HeartHandshake, 
-  MessageCircle, 
+  Mail, 
   Sparkles,
   Info
 } from 'lucide-react';
@@ -22,10 +22,6 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
   const { t, language } = useLanguage();
 
   if (!product) return null;
-
-  const waQuestionUrl = `https://wa.me/${TOKOPEDIA_CONFIG.whatsappNumber}?text=${encodeURIComponent(
-    `Halo Admin BIMKER LKROBO, saya ingin menanyakan tentang produk "${product.name}" (${product.formattedPrice}).`
-  )}`;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
@@ -193,15 +189,17 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
                   )}
                 </div>
 
-                {/* WhatsApp Bulk / Custom Inquiry - Emerald Secondary Button */}
+                {/* Official Email Custom / Bulk Inquiry */}
                 <a
-                  href={waQuestionUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full flex items-center justify-center gap-2 bg-[#1A7A4C] hover:bg-[#2E9B6A] text-white font-semibold py-2.5 px-4 rounded-xl border border-[#2E9B6A]/50 transition-colors text-xs"
+                  href={`mailto:${TOKOPEDIA_CONFIG.email}?subject=${encodeURIComponent(
+                    language === 'id'
+                      ? `Tanya Info Produk / Pemesanan Khusus - ${product.name}`
+                      : `Inquiry Product / Custom Order - ${product.name}`
+                  )}`}
+                  className="w-full flex items-center justify-center gap-2 bg-[#F8F9FC] hover:bg-slate-100 text-[#0B1C3D] font-semibold py-2.5 px-4 rounded-xl border border-slate-200 transition-colors text-xs"
                 >
-                  <MessageCircle className="w-4 h-4 text-emerald-200" />
-                  <span>{language === 'id' ? 'Tanya Info Custom / Pesanan Khusus via WhatsApp' : 'Inquire Custom / Bulk Orders via WhatsApp'}</span>
+                  <Mail className="w-4 h-4 text-[#D4A017]" />
+                  <span>{language === 'id' ? 'Tanya Info Custom / Pesanan Khusus via Email' : 'Inquire Custom / Bulk Orders via Email'}</span>
                 </a>
               </div>
             </div>

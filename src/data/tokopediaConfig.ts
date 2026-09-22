@@ -15,11 +15,6 @@ export const TOKOPEDIA_CONFIG = {
   shopeeStoreName: "BIMKER LKROBO Official Shop",
   badgeText: "Official Store • Lapas Kerobokan",
   
-  // Kontak WhatsApp Bimbingan Kerja
-  whatsappNumber: "6281238992025", // Format 628xxx tanpa tanda + atau spasi
-  whatsappDisplay: "+62 812-3899-2025",
-  whatsappDefaultMessage: "Halo Admin BIMKER LKROBO, saya ingin menanyakan informasi tentang produk karya warga binaan / kemitraan bimbingan kerja.",
-  
   // Kontak Resmi Lapas Kelas IIA Kerobokan
   institutionName: "BIMKER LKROBO (Bimbingan Kerja Lapas Kelas IIA Kerobokan)",
   parentMinistry: "Kementerian Hukum dan Hak Asasi Manusia RI / Ditjen Pemasyarakatan",

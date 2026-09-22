@@ -41,7 +41,8 @@ export const ProductsView: React.FC<ProductsViewProps> = ({ onOpenProductDetail 
     { id: 'hidroponik', label: t.categoryHydroponic },
     { id: 'peternakan', label: language === 'id' ? 'Peternakan & Hasil Ternak' : 'Livestock & Fresh Produce' },
     { id: 'perikanan', label: language === 'id' ? 'Perikanan & Kolam Bioflok' : 'Fishery & Biofloc Produce' },
-    { id: 'sablon', label: language === 'id' ? 'Sablon & Kanvas' : 'Screen Printing & Canvas' }
+    { id: 'sablon', label: language === 'id' ? 'Sablon & Kanvas' : 'Screen Printing & Canvas' },
+    { id: 'pertukangan', label: language === 'id' ? 'Pertukangan & Las' : 'Carpentry & Metalwork' }
   ];
 
   // Filtering & Sorting

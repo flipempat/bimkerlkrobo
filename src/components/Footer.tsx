@@ -199,6 +199,21 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
                     {language === 'id' ? 'Design Grafis & Sablon' : 'Graphic Design & Screen Printing'}
                   </button>
                 </li>
+                <li>
+                  <button onClick={() => handleNav('program')} className="hover:text-[#D4A017] transition-colors text-left font-medium text-[#E8C547]">
+                    {language === 'id' ? 'Pertukangan & Las' : 'Carpentry & Welding'}
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => handleNav('program')} className="hover:text-[#D4A017] transition-colors text-left">
+                    {language === 'id' ? 'Barbershop & Pangkas Rambut' : 'Barbershop & Grooming'}
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => handleNav('program')} className="hover:text-[#D4A017] transition-colors text-left">
+                    {language === 'id' ? 'Laundry & Binatu' : 'Laundry & Linen Services'}
+                  </button>
+                </li>
               </ul>
             </div>
 

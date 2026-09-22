@@ -6,7 +6,8 @@ import {
   CheckCircle2, 
   Sparkles, 
   ShieldCheck, 
-  PhoneCall, 
+  Phone, 
+  Mail,
   FileText,
   Clock,
   ArrowRight
@@ -42,14 +43,6 @@ export const PartnershipView: React.FC = () => {
       notes: ''
     });
     setIsSubmitted(false);
-  };
-
-  const handleDirectWA = () => {
-    const text = language === 'id' 
-      ? `Halo Admin BIMKER LKROBO, saya ingin menindaklanjuti pengajuan kemitraan atas nama ${formData.companyName || 'Perusahaan'} (PIC: ${formData.picName || '-'}), untuk bidang ${formData.partnershipType}.`
-      : `Hello BIMKER LKROBO Admin, I would like to follow up on a partnership inquiry on behalf of ${formData.companyName || 'Company'} (PIC: ${formData.picName || '-'}), for ${formData.partnershipType}.`;
-    const url = `https://wa.me/${TOKOPEDIA_CONFIG.whatsappNumber}?text=${encodeURIComponent(text)}`;
-    window.open(url, '_blank', 'noopener,noreferrer');
   };
 
   const partnershipSchemes = language === 'id' ? [
@@ -197,19 +190,26 @@ export const PartnershipView: React.FC = () => {
                 </div>
               </div>
 
-              <div className="bg-[#10244C] p-4 rounded-2xl border border-[#D4A017]/30">
+              <div className="bg-[#10244C] p-4 rounded-2xl border border-[#D4A017]/30 space-y-2">
                 <p className="text-xs text-slate-200">
                   {language === 'id' ? 'Butuh koordinasi mendesak atau pengadaan skala besar?' : 'Need urgent coordination or large-scale procurement?'}
                 </p>
-                <a
-                  href={`https://wa.me/${TOKOPEDIA_CONFIG.whatsappNumber}?text=${encodeURIComponent(language === 'id' ? "Halo Admin BIMKER LKROBO, kami ingin mengajukan penawaran kerja sama mendesak." : "Hello BIMKER LKROBO Admin, we would like to discuss an urgent partnership proposal.")}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-2 inline-flex items-center gap-2 text-xs font-bold text-[#D4A017] hover:text-[#E8C547]"
-                >
-                  <PhoneCall className="w-3.5 h-3.5" />
-                  <span>{language === 'id' ? `Hubungi Hotline Langsung (${TOKOPEDIA_CONFIG.whatsappDisplay})` : `Direct Hotline (${TOKOPEDIA_CONFIG.whatsappDisplay})`}</span>
-                </a>
+                <div className="flex flex-col gap-1.5 pt-1">
+                  <a
+                    href={`tel:${TOKOPEDIA_CONFIG.phone.replace(/[^0-9]/g, '')}`}
+                    className="inline-flex items-center gap-2 text-xs font-bold text-[#D4A017] hover:text-[#E8C547]"
+                  >
+                    <Phone className="w-3.5 h-3.5" />
+                    <span>{language === 'id' ? `Telepon Kantor (${TOKOPEDIA_CONFIG.phone})` : `Office Phone (${TOKOPEDIA_CONFIG.phone})`}</span>
+                  </a>
+                  <a
+                    href={`mailto:${TOKOPEDIA_CONFIG.email}`}
+                    className="inline-flex items-center gap-2 text-xs text-slate-300 hover:text-white"
+                  >
+                    <Mail className="w-3.5 h-3.5 text-[#D4A017]" />
+                    <span className="truncate">{TOKOPEDIA_CONFIG.email}</span>
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -229,13 +229,17 @@ export const PartnershipView: React.FC = () => {
                       : 'Thank you for your interest in partnering with BIMKER LKROBO. Our team will review your requirements and reach out via the provided contact information.'}
                   </p>
                   <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
-                    <button
-                      onClick={handleDirectWA}
-                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#1A7A4C] hover:bg-[#2E9B6A] text-white text-xs font-bold py-3 px-5 rounded-xl shadow-xs"
+                    <a
+                      href={`mailto:${TOKOPEDIA_CONFIG.email}?subject=${encodeURIComponent(
+                        language === 'id'
+                          ? `Tindak Lanjut Proposal Kemitraan - ${formData.companyName || 'Mitra'}`
+                          : `Follow-up Partnership Proposal - ${formData.companyName || 'Partner'}`
+                      )}`}
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0B1C3D] hover:bg-[#152e5d] text-white text-xs font-bold py-3 px-5 rounded-xl border border-[#D4A017]/40 shadow-xs"
                     >
-                      <PhoneCall className="w-4 h-4" />
-                      <span>{language === 'id' ? 'Konfirmasi Cepat via WhatsApp' : 'Fast Confirmation via WhatsApp'}</span>
-                    </button>
+                      <Mail className="w-4 h-4 text-[#D4A017]" />
+                      <span>{language === 'id' ? 'Kirim Salinan via Email' : 'Send Copy via Email'}</span>
+                    </a>
                     <button
                       onClick={handleReset}
                       className="w-full sm:w-auto text-xs font-semibold py-3 px-5 rounded-xl bg-[#F8F9FC] hover:bg-slate-200/70 text-[#1A1A1A]"

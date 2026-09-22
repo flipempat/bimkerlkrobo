@@ -154,7 +154,7 @@ export const PRODUCTS: Product[] = [
     formattedPrice: "Rp 32.000",
     shortDescription: "Selada hijau krispi dan selada merah organik hasil kebun hidroponik Lapas Kerobokan.",
     fullDescription: "Ditanam di greenhouse hidroponik modern Lapas Kerobokan dengan air nutrisi terjaga tanpa pestisida kimia sintetis. Daun sangat renyah, segar, manis alami, dan dipanen langsung saat pesanan masuk untuk menjaga kualitas prima.",
-    image: "https://images.unsplash.com/photo-1556801712-76c8eb07bbc9?auto=format&fit=crop&w=800&q=80",
+    image: "https://res.cloudinary.com/ig4uk50k/image/upload/v1790042639/iwsgaqsb6mkwack2rlhn.webp",
     shopeeUrl: "https://shopee.co.id/bimker_lkrobo/sayur-selada-hidroponik-segar-lkrobo",
     tokopediaUrl: `${TOKOPEDIA_CONFIG.officialStoreUrl}/sayur-selada-hidroponik-segar-lkrobo`,
     isFeatured: false,
@@ -202,7 +202,7 @@ export const PRODUCTS: Product[] = [
     formattedPrice: "Rp 50.000",
     shortDescription: "Oleh-oleh khas Bali dengan kulit pie renyah dan vla susu lembut lumer di mulut.",
     fullDescription: "Pie susu legendaris buatan Dapur Antaboga LKROBO yang dibuat secara higienis menggunakan susu kental manis murni, kuning telur segar pilihan peternakan sendiri, dan mentega aromatik. Tanpa bahan pengawet sintetis.",
-    image: "https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=800&q=80",
+    image: "https://res.cloudinary.com/ig4uk50k/image/upload/v1790044577/wbemrlk6alvqfaqz16aj.webp",
     shopeeUrl: "https://shopee.co.id/bimker_lkrobo/pie-susu-bali-antaboga-12pcs",
     tokopediaUrl: `${TOKOPEDIA_CONFIG.officialStoreUrl}/pie-susu-bali-antaboga-12pcs`,
     isFeatured: true,
@@ -431,6 +431,30 @@ export const PRODUCTS: Product[] = [
     ]
   },
   {
+    id: "prod-daur-ulang-koran-01",
+    name: "Keranjang & Wadah Anyaman Estetik Daur Ulang Koran LKROBO",
+    category: "daur_ulang",
+    categoryLabel: "Kriya Daur Ulang Kreatif",
+    price: 45000,
+    formattedPrice: "Rp 45.000",
+    shortDescription: "Keranjang dan wadah serbaguna estetik berbahan lintingan koran bekas pilihan berfinishing vernis tahan lembap karya warga binaan LKROBO.",
+    fullDescription: "Karya seni kriya ramah lingkungan yang memadukan kepedulian daur ulang limbah dengan seni anyaman bernilai estetika tinggi. Dibuat dari lintingan kertas koran bekas yang digulung padat, dianyam rapi secara manual dengan kekuatan setara anyaman rotan alam, serta dilapisi vernis khusus anti jamur dan tahan percikan air. Cocok untuk wadah buah meja makan, tempat pernak-pernik, suvenir pernikahan ramah lingkungan, maupun dekorasi ruangan berkonsep natural.",
+    image: "https://res.cloudinary.com/ig4uk50k/image/upload/v1790044576/bkop5z6x6qvyxgmmvtvh.webp",
+    shopeeUrl: "https://shopee.co.id/bimker_lkrobo/kerajinan-anyaman-daur-ulang-koran",
+    tokopediaUrl: `${TOKOPEDIA_CONFIG.officialStoreUrl}/kerajinan-anyaman-daur-ulang-koran`,
+    isFeatured: true,
+    isBestSeller: true,
+    inStock: true,
+    material: "100% Kertas Koran Daur Ulang, Perekat Ramah Lingkungan, Vernis Gloss Pelindung",
+    madeBy: "Unit Kerajinan Daur Ulang Koran LKROBO",
+    specifications: [
+      { label: "Bahan Baku", value: "Kertas Koran Bekas Pilihan (Lintingan Padat & Rapat)" },
+      { label: "Teknik Pembuatan", value: "Anyaman Tangan Manual (Handcrafted Woven Paper)" },
+      { label: "Pelapis Akhir", value: "Vernis Clear Gloss (Tahan Percikan Air & Anti Lembap)" },
+      { label: "Keunggulan", value: "Ramah Lingkungan, Bobot Ringan, Kuat & Bernuansa Etnik" }
+    ]
+  },
+  {
     id: "prod-batik-01",
     name: "Kain Batik Tulis & Cap Eksklusif Motif Ornamen Bali LKROBO",
     category: "batik",
@@ -477,6 +501,30 @@ export const PRODUCTS: Product[] = [
       { label: "Nutrisi Tanah", value: "Pupuk Kasgot BSF Organik Hasil Biokonversi Mandiri" },
       { label: "Kualitas", value: "Segar Alami, Bersih, Kaya Nutrisi & Serat Pangan" }
     ]
+  },
+  {
+    id: "prod-pertukangan-01",
+    name: "Meja & Bangku Kayu Solid Kombinasi Rangka Besi Industrial LKROBO",
+    category: "pertukangan",
+    categoryLabel: "Pertukangan & Las",
+    price: 450000,
+    formattedPrice: "Rp 450.000",
+    shortDescription: "Furnitur meja dan bangku kayu solid pilihan dengan rangka besi hollow kokoh berfinishing cat anti karat karya bengkel pertukangan dan las LKROBO.",
+    fullDescription: "Karya furnitur fungsional dan estetik hasil kolaborasi keterampilan pertukangan kayu dan pengelasan logam warga binaan Lapas Kelas IIA Kerobokan. Menggunakan papan kayu solid pilihan dengan serat alami yang dipertegas pelapis politur pelindung cuaca, dipadukan rangka besi hollow tebal dengan las sambungan rapi dan kuat. Sangat cocok untuk meja santai kafe, teras rumah, ruang kerja minimalis, maupun taman.",
+    image: "https://res.cloudinary.com/ig4uk50k/image/upload/v1790042758/ovxca9k9rpep6gfaph4v.webp",
+    shopeeUrl: "https://shopee.co.id/bimker_lkrobo/meja-bangku-kayu-besi-industrial-lkrobo",
+    tokopediaUrl: `${TOKOPEDIA_CONFIG.officialStoreUrl}/meja-bangku-kayu-besi-industrial-lkrobo`,
+    isFeatured: true,
+    isBestSeller: true,
+    inStock: true,
+    material: "Kayu Solid Pilihan, Rangka Besi Hollow, Finishing Politur & Cat Anti Karat",
+    madeBy: "Bengkel Pertukangan & Las LKROBO",
+    specifications: [
+      { label: "Material Daun Meja", value: "Kayu Solid Alami (Finishing Melamine Clear Gloss)" },
+      { label: "Material Rangka", value: "Besi Hollow Tebal dengan Pengelasan Presisi" },
+      { label: "Finishing Rangka", value: "Cat Primer Anti Karat & Epoxy Matte Black" },
+      { label: "Layanan Tambahan", value: "Menerima Pesanan Kustom Ukuran & Desain (Custom Order)" }
+    ]
   }
 ];
 
@@ -519,7 +567,11 @@ export const PROGRAMS: Program[] = [
     shortDesc: "Mengubah kertas koran bekas menjadi produk kreatif bernilai jual tinggi, seperti wadah anyaman estetik, vas bunga, dan dekorasi ramah lingkungan.",
     shortDescEn: "Transforming discarded newspapers into high-value creative products including aesthetic woven containers, vases, and eco-friendly home decors.",
     icon: "Newspaper",
-    image: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?auto=format&fit=crop&w=900&q=80",
+    image: "https://res.cloudinary.com/ig4uk50k/image/upload/v1790044576/bkop5z6x6qvyxgmmvtvh.webp",
+    galleryImages: [
+      "https://res.cloudinary.com/ig4uk50k/image/upload/v1790044576/bkop5z6x6qvyxgmmvtvh.webp",
+      "https://res.cloudinary.com/ig4uk50k/image/upload/v1790044788/copy_of_jua8h5hppyqakshi5rnr.webp"
+    ],
     fullDesc: "Program inovatif berbasis green economy yang melatih ketelitian dan kesabaran warga binaan dalam memilin lembaran koran menjadi lintingan rapat, lalu menganyamnya menjadi beragam produk fungsional. Melalui proses pelapisan pernis khusus tahan lembap, produk anyaman koran memiliki kekuatan yang kokoh setara anyaman rotan alam.",
     participantsCount: 25,
     duration: "3 Bulan Bimbingan Keterampilan",
@@ -570,7 +622,8 @@ export const PROGRAMS: Program[] = [
     icon: "UtensilsCrossed",
     image: "https://res.cloudinary.com/ig4uk50k/image/upload/v1789968128/uhc1sdyxogduglz2lwwd.webp",
     galleryImages: [
-      "https://res.cloudinary.com/ig4uk50k/image/upload/v1789968128/uhc1sdyxogduglz2lwwd.webp"
+      "https://res.cloudinary.com/ig4uk50k/image/upload/v1789968128/uhc1sdyxogduglz2lwwd.webp",
+      "https://res.cloudinary.com/ig4uk50k/image/upload/v1790044577/wbemrlk6alvqfaqz16aj.webp"
     ],
     fullDesc: "Dapur Bakery Antaboga merupakan salah satu unit UMKM paling produktif di Lapas Kerobokan. Beroperasi setiap hari memproduksi aneka roti manis, roti sobek, croissant renyah, kue basah, serta pie susu khas Bali. Seluruh proses produksi mengikuti prosedur ketat sanitasi makanan dan telah mengantongi Sertifikat Laik Higiene Sanitasi dari Dinas Kesehatan.",
     participantsCount: 40,
@@ -743,6 +796,35 @@ export const PROGRAMS: Program[] = [
       "Membekali alumni untuk langsung membuka wirausaha barbershop mandiri di masyarakat"
     ]
   },
+  {
+    id: "prog-pertukangan-las",
+    title: "Pertukangan dan Las",
+    titleEn: "Carpentry & Welding Workshop",
+    category: "umkm",
+    categoryLabel: "Program UMKM",
+    categoryLabelEn: "SME Program",
+    shortDesc: "Pelatihan teknik pertukangan kayu solid, permebelan estetik, fabrikasi besi, dan pengelasan presisi untuk produk interior dan eksterior.",
+    shortDescEn: "Vocational training in solid woodworking, custom furniture making, metal fabrication, and precision welding for interior and exterior furnishings.",
+    icon: "Hammer",
+    image: "https://res.cloudinary.com/ig4uk50k/image/upload/v1790042758/ovxca9k9rpep6gfaph4v.webp",
+    galleryImages: [
+      "https://res.cloudinary.com/ig4uk50k/image/upload/v1790042758/ovxca9k9rpep6gfaph4v.webp",
+      "https://res.cloudinary.com/ig4uk50k/image/upload/v1790042637/hge9osjfep9ckckixwvs.webp",
+      "https://res.cloudinary.com/ig4uk50k/image/upload/v1790042632/h393dmzkyhkml47k7vq7.webp"
+    ],
+    fullDesc: "Bengkel Kerja Pertukangan dan Las Lapas Kelas IIA Kerobokan membekali warga binaan dengan keahlian teknis pertukangan kayu solid dan fabrikasi logam yang siap bersaing di pasar industri. Peserta dilatih mengolah kayu solid menjadi beragam mebel estetik (meja, kursi, lemari, rak display), serta teknik pengelasan listrik konstruksi (SMAW & MIG) untuk pembuatan pagar teralis, rangka kanopi, dan furnitur bergaya industrial modern. Didukung standar Keselamatan dan Kesehatan Kerja (K3) ketat, unit ini siap melayani pesanan kustom perorangan maupun pengadaan kantor dan instansi mitra.",
+    participantsCount: 25,
+    duration: "4 Bulan Kursus Pertukangan & Las",
+    durationEn: "4 Months Carpentry & Welding Course",
+    certification: "Sertifikat Kejuruan Pertukangan Kayu & Pengelasan Logam",
+    outputProducts: ["Meja & Bangku Kayu Solid Rangka Besi", "Pagar, Teralis & Kanopi Minimalis", "Rak Display & Furnitur Gaya Industrial", "Aneka Kerajinan & Dekorasi Kayu Kustom"],
+    highlights: [
+      "Fasilitas lengkap mesin potong kayu, serut elektrik, mesin las SMAW, gerinda potong, dan safety gear K3",
+      "Pelatihan konstruksi kayu solid dan fabrikasi rangka besi hollow berpresisi tinggi",
+      "Menerima pengerjaan pesanan kustom (custom order) mebel interior, eksterior, dan teralis besi",
+      "Membekali keterampilan teknis tinggi dengan peluang kerja dan wirausaha mandiri yang luas"
+    ]
+  },
 
   // ==================== B. PROGRAM KETAHANAN PANGAN ====================
   {
@@ -755,10 +837,12 @@ export const PROGRAMS: Program[] = [
     shortDesc: "Penangkaran dan pemeliharaan aneka burung berkicau serta unggas hias untuk melatih ketelatenan, kesabaran, dan kepedulian lingkungan.",
     shortDescEn: "Breeding and nurturing of songbirds and ornamental poultry to cultivate patience, attentiveness, and environmental awareness.",
     icon: "Bird",
-    image: "https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=900&q=80",
+    image: "https://res.cloudinary.com/ig4uk50k/image/upload/v1790044577/tqh0zor1wnhacdkkm74y.webp",
     galleryImages: [
-      "https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=900&q=80",
-      "https://res.cloudinary.com/ig4uk50k/image/upload/v1789968126/hi6ovjcvddmbbte775gr.webp"
+      "https://res.cloudinary.com/ig4uk50k/image/upload/v1790044577/tqh0zor1wnhacdkkm74y.webp",
+      "https://res.cloudinary.com/ig4uk50k/image/upload/v1790044576/lzqgs2ne0x9hipauwcwo.webp",
+      "https://res.cloudinary.com/ig4uk50k/image/upload/v1790044576/nmwbxw5dzjba6ip5d6g8.webp",
+      "https://res.cloudinary.com/ig4uk50k/image/upload/v1790044576/fgchzov9turum34hyehs.webp"
     ],
     fullDesc: "Kubah Aviary yang asri dan hijau di kawasan Lapas Kerobokan berfungsi ganda sebagai sarana penangkaran aneka burung hias sekaligus terapi ketenangan batin warga binaan. Peserta mempelajari manajemen pakan bernutrisi berbasis pakan alami maggot BSF berprotein tinggi hasil budidaya mandiri, pemantauan kesehatan unggas, sanitasi kandang kubah, serta teknik penangkaran burung yang memiliki nilai hobi dan komersial.",
     participantsCount: 15,
@@ -780,22 +864,24 @@ export const PROGRAMS: Program[] = [
     category: "ketahanan_pangan",
     categoryLabel: "Program Ketahanan Pangan",
     categoryLabelEn: "Food Security Program",
-    shortDesc: "Pengelolaan budidaya ayam petelur dan bebek petelur produktif yang higienis guna menyuplai kebutuhan pangan segar berprotein tinggi.",
-    shortDescEn: "Productive and hygienic laying hens and laying ducks livestock management ensuring sustainable supply of fresh high-protein eggs.",
+    shortDesc: "Pengelolaan budidaya ayam petelur, ayam Bali, dan bebek petelur produktif yang higienis guna menyuplai kebutuhan pangan segar berprotein tinggi.",
+    shortDescEn: "Productive and hygienic laying hens, Balinese native chickens, and laying ducks livestock management ensuring sustainable fresh food supply.",
     icon: "Egg",
     image: "https://res.cloudinary.com/ig4uk50k/image/upload/v1789968129/z00wjpuzspy9j9ziy0yb.webp",
     galleryImages: [
       "https://res.cloudinary.com/ig4uk50k/image/upload/v1789968129/z00wjpuzspy9j9ziy0yb.webp",
+      "https://res.cloudinary.com/ig4uk50k/image/upload/v1790042640/ytuylerc7oabfwo7u6eb.webp",
       "https://res.cloudinary.com/ig4uk50k/image/upload/v1789968126/czxv95k7kjte92maptwv.webp"
     ],
-    fullDesc: "Unit peternakan unggas produktif Lapas Kelas IIA Kerobokan membudidayakan ayam petelur dan bebek petelur unggul. Memasok ratusan butir telur segar setiap hari untuk asupan gizi warga binaan serta dipasarkan luas ke masyarakat. Warga binaan dilatih dalam tata kelola perkandangan modern higienis, formulasi pakan seimbang, pemeliharaan bebek petelur air bersih, pencegahan penyakit ternak, dan pengolahan limbah organik menjadi pupuk kompos.",
+    fullDesc: "Unit peternakan unggas produktif Lapas Kelas IIA Kerobokan membudidayakan ayam petelur komersial, ayam kampung lokal / ayam Bali, dan bebek petelur unggul. Memasok ratusan butir telur segar setiap hari untuk asupan gizi warga binaan serta dipasarkan luas ke masyarakat. Warga binaan dilatih dalam tata kelola perkandangan modern higienis, formulasi pakan seimbang bernutrisi alami, pemeliharaan bebek petelur air bersih, pencegahan penyakit ternak, dan pengolahan limbah organik menjadi pupuk kompos.",
     participantsCount: 25,
     duration: "4 Bulan Siklus Pemeliharaan",
     durationEn: "4 Months Livestock Cycle",
     certification: "Sertifikasi Tata Laksana Unggas Dinas Peternakan",
-    outputProducts: ["Telur Ayam Negeri Segar", "Telur Bebek Segar Pilihan", "Pupuk Kompos Fermentasi", "Telur Asin Rasa Gurih Gurih"],
+    outputProducts: ["Telur Ayam Negeri Segar", "Ayam Kampung / Ayam Bali Sehat", "Telur Bebek Segar Pilihan", "Pupuk Kompos Fermentasi", "Telur Asin Gurih Masir"],
     highlights: [
       "Kandang ayam petelur sistem baterai modern higienis dan terawat",
+      "Area pemeliharaan ayam kampung / ayam Bali sehat dengan pakan terkontrol",
       "Kolam & kandang bebek petelur berstandar biosekuriti ramah lingkungan",
       "Produksi harian telur ayam dan telur bebek segar kaya protein",
       "Pilar utama ketahanan pangan swasembada mandiri Lapas Kerobokan"
@@ -804,14 +890,22 @@ export const PROGRAMS: Program[] = [
   {
     id: "prog-holtikultura",
     title: "Holtikultura",
-    titleEn: "Horticulture",
+    titleEn: "Horticulture & Hydroponics",
     category: "ketahanan_pangan",
     categoryLabel: "Program Ketahanan Pangan",
     categoryLabelEn: "Food Security Program",
     shortDesc: "Budidaya aneka tanaman sayur daun hidroponik, cabai, dan buah-buahan segar bernutrisi tinggi tanpa pestisida berbahaya.",
     shortDescEn: "Cultivation of fresh crisp hydroponic leafy vegetables, hot chilies, and nutritious produce without harmful synthetic pesticides.",
     icon: "Sprout",
-    image: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=900&q=80",
+    image: "https://res.cloudinary.com/ig4uk50k/image/upload/v1790042639/iwsgaqsb6mkwack2rlhn.webp",
+    galleryImages: [
+      "https://res.cloudinary.com/ig4uk50k/image/upload/v1790042639/iwsgaqsb6mkwack2rlhn.webp",
+      "https://res.cloudinary.com/ig4uk50k/image/upload/v1790042640/knj7rfxgwpnbkctsumqy.webp",
+      "https://res.cloudinary.com/ig4uk50k/image/upload/v1790042643/xaiba70jjhzz0qogkkez.webp",
+      "https://res.cloudinary.com/ig4uk50k/image/upload/v1790042641/wcs4l7ulmxtixua0onhj.webp",
+      "https://res.cloudinary.com/ig4uk50k/image/upload/v1790042639/vc1sf2vm1ybfy4euwrzp.webp",
+      "https://res.cloudinary.com/ig4uk50k/image/upload/v1790042634/uegw4sl5voz1kjoyzpky.webp"
+    ],
     fullDesc: "Memaksimalkan fasilitas greenhouse modern di dalam lapas dengan sistem NFT (Nutrient Film Technique) dan rakit apung. Warga binaan dilatih mengontrol pH air, formulasi nutrisi tanaman, serta jadwal panen berkala sayuran selada butterhead, pakcoy, dan kangkung segar yang diserap oleh restoran sehat dan hotel di seputaran Badung.",
     participantsCount: 25,
     duration: "3 Bulan Siklus Tanam Hidroponik",
@@ -837,7 +931,9 @@ export const PROGRAMS: Program[] = [
     image: "https://res.cloudinary.com/ig4uk50k/image/upload/v1789968126/zvjkbkjecpp4i5f2loo5.webp",
     galleryImages: [
       "https://res.cloudinary.com/ig4uk50k/image/upload/v1789968126/zvjkbkjecpp4i5f2loo5.webp",
-      "https://res.cloudinary.com/ig4uk50k/image/upload/v1789968127/npi1hl1sup6ztjbk1qp8.webp"
+      "https://res.cloudinary.com/ig4uk50k/image/upload/v1789968127/npi1hl1sup6ztjbk1qp8.webp",
+      "https://res.cloudinary.com/ig4uk50k/image/upload/v1790042698/eowaddkxykltoqb6a4lq.webp",
+      "https://res.cloudinary.com/ig4uk50k/image/upload/v1790042636/ultppakltocnlmdazche.webp"
     ],
     fullDesc: "Mengubah area pekarangan terbuka lapas menjadi kebun pangan yang produktif dan hijau. Warga binaan mempelajari teknik pengolahan tanah ramah lingkungan, pemupukan organik kasgot (biokonversi maggot BSF) dan bokashi alami, pemangkasan dahan, rotasi tanaman pangan pisang dan jagung, serta budidaya tanaman obat keluarga yang bermanfaat bagi kebugaran tubuh.",
     participantsCount: 20,
@@ -983,7 +1079,7 @@ export const NEWS_ITEMS: NewsItem[] = [
     category: "Agribisnis & Panen",
     author: "Unit Pertanian LKROBO",
     readTime: "3 menit baca",
-    image: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=800&q=80",
+    image: "https://res.cloudinary.com/ig4uk50k/image/upload/v1790042640/knj7rfxgwpnbkctsumqy.webp",
     excerpt: "Kebun greenhouse hidroponik BIMKER LKROBO membukukan panen 350 kg selada segar kualitas premium yang langsung diserap mitra usaha kuliner Bali.",
     content: [
       "KEROBOKAN — Senyum semringah terpancar dari wajah para warga binaan yang tergabung dalam tim hidroponik Lapas Kerobokan saat memanen ratusan kilogram selada butterhead dan romaine segar.",

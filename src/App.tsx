@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
-import { FloatingWhatsApp } from './components/FloatingWhatsApp';
+import { ScrollToTop } from './components/ScrollToTop';
 import { ProductDetailModal } from './components/ProductDetailModal';
 import { ProgramDetailModal } from './components/ProgramDetailModal';
 import { NewsDetailModal } from './components/NewsDetailModal';
@@ -97,8 +97,8 @@ function MainApp() {
       {/* Comprehensive Footer */}
       <Footer setActiveTab={handleTabChange} />
 
-      {/* Floating WhatsApp Action Button */}
-      <FloatingWhatsApp />
+      {/* Floating Scroll To Top Button */}
+      <ScrollToTop />
 
       {/* Product Detail Modal */}
       <ProductDetailModal

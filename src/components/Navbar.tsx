@@ -5,7 +5,8 @@ import {
   X, 
   ChevronRight, 
   Sparkles, 
-  PhoneCall, 
+  Phone, 
+  Mail,
   ExternalLink 
 } from 'lucide-react';
 import { TOKOPEDIA_CONFIG } from '../data/tokopediaConfig';
@@ -63,14 +64,20 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
           </div>
           <div className="flex items-center gap-4 text-[11px]">
             <a 
-              href={`https://wa.me/${TOKOPEDIA_CONFIG.whatsappNumber}?text=${encodeURIComponent(TOKOPEDIA_CONFIG.whatsappDefaultMessage)}`}
-              target="_blank" 
-              rel="noopener noreferrer"
+              href={`tel:${TOKOPEDIA_CONFIG.phone.replace(/[^0-9]/g, '')}`}
               className="flex items-center gap-1.5 text-slate-300 hover:text-[#D4A017] transition-colors"
             >
-              <PhoneCall className="w-3 h-3 text-[#D4A017]" />
-              <span>{t.hotline}</span>
-              <span className="font-medium text-white">{TOKOPEDIA_CONFIG.whatsappDisplay}</span>
+              <Phone className="w-3 h-3 text-[#D4A017]" />
+              <span>{t.officePhone}:</span>
+              <span className="font-medium text-white">{TOKOPEDIA_CONFIG.phone}</span>
+            </a>
+            <span className="text-slate-600 hidden md:inline">|</span>
+            <a 
+              href={`mailto:${TOKOPEDIA_CONFIG.email}`}
+              className="hidden md:flex items-center gap-1.5 text-slate-300 hover:text-[#D4A017] transition-colors"
+            >
+              <Mail className="w-3 h-3 text-[#D4A017]" />
+              <span className="font-medium text-white">{TOKOPEDIA_CONFIG.email}</span>
             </a>
             <span className="text-slate-600 hidden lg:inline">|</span>
             {/* Topbar Language Toggle (Desktop only) */}
@@ -188,16 +195,14 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
 
             <div className="pt-3 border-t border-[#10244C] mt-3 space-y-2">
               <a
-                href={`https://wa.me/${TOKOPEDIA_CONFIG.whatsappNumber}?text=${encodeURIComponent(TOKOPEDIA_CONFIG.whatsappDefaultMessage)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full flex items-center justify-center gap-2 bg-[#1A7A4C] hover:bg-[#2E9B6A] text-white text-xs font-semibold py-2.5 px-3 rounded-lg transition-colors"
+                href={`tel:${TOKOPEDIA_CONFIG.phone.replace(/[^0-9]/g, '')}`}
+                className="w-full flex items-center justify-center gap-2 bg-[#10244C] hover:bg-[#152e5d] text-white text-xs font-semibold py-2.5 px-3 rounded-lg border border-[#D4A017]/30 transition-colors"
               >
-                <PhoneCall className="w-3.5 h-3.5 text-[#D4A017]" />
+                <Phone className="w-3.5 h-3.5 text-[#D4A017]" />
                 <span>
                   {language === 'id' 
-                    ? `Konsultasi Hotline WhatsApp (${TOKOPEDIA_CONFIG.whatsappDisplay})` 
-                    : `WhatsApp Hotline Consultation (${TOKOPEDIA_CONFIG.whatsappDisplay})`}
+                    ? `Telepon Kantor (${TOKOPEDIA_CONFIG.phone})` 
+                    : `Office Phone (${TOKOPEDIA_CONFIG.phone})`}
                 </span>
               </a>
             </div>

@@ -21,7 +21,8 @@ import {
   Wheat,
   Layers,
   Scissors,
-  Shirt
+  Shirt,
+  Hammer
 } from 'lucide-react';
 import { PROGRAMS } from '../data/mockData';
 import { Program } from '../types';
@@ -65,6 +66,8 @@ export const renderProgramIcon = (iconName: string, className = "w-5 h-5") => {
       return <Scissors className={className} />;
     case 'Shirt':
       return <Shirt className={className} />;
+    case 'Hammer':
+      return <Hammer className={className} />;
     default:
       return <Sparkles className={className} />;
   }

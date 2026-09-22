@@ -15,7 +15,6 @@ import {
   HeartHandshake
 } from 'lucide-react';
 import { STATS, PRODUCTS, PROGRAMS, TESTIMONIALS } from '../data/mockData';
-import { TOKOPEDIA_CONFIG } from '../data/tokopediaConfig';
 import { ProductCard } from '../components/ProductCard';
 import { TestimonialSlider } from '../components/TestimonialSlider';
 import { Product, Program } from '../types';
@@ -537,15 +536,13 @@ export const HomeView: React.FC<HomeViewProps> = ({
               <span>{t.partnerCtaBtn}</span>
               <ArrowRight className="w-4 h-4" />
             </button>
-            {/* Secondary CTA - Emerald */}
-            <a
-              href={`https://wa.me/${TOKOPEDIA_CONFIG.whatsappNumber}?text=${encodeURIComponent(language === 'id' ? "Halo Admin BIMKER LKROBO, saya tertarik untuk mendiskusikan peluang kemitraan usaha." : "Hello Admin BIMKER LKROBO, I am interested in discussing business partnership opportunities.")}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#1A7A4C] hover:bg-[#2E9B6A] text-white font-semibold px-5 py-3.5 rounded-xl border border-[#2E9B6A]/50 transition-colors text-sm"
+            {/* Secondary CTA - Slate/Border */}
+            <button
+              onClick={() => setActiveTab('kontak')}
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-5 py-3.5 rounded-xl border border-white/20 transition-colors text-sm"
             >
-              <span>{language === 'id' ? 'Konsultasi Cepat via WA' : 'Quick WA Consultation'}</span>
-            </a>
+              <span>{language === 'id' ? 'Hubungi Kantor BIMKER' : 'Contact BIMKER Office'}</span>
+            </button>
           </div>
         </div>
       </section>

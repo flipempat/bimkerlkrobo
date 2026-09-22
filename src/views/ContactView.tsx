@@ -4,7 +4,6 @@ import {
   Phone, 
   Mail, 
   Clock, 
-  MessageCircle, 
   Send, 
   CheckCircle2, 
   ExternalLink,
@@ -95,25 +94,6 @@ export const ContactView: React.FC = () => {
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-[#1A7A4C]/15 text-[#1A7A4C] flex items-center justify-center shrink-0">
-                    <MessageCircle className="w-4 h-4 text-[#1A7A4C]" />
-                  </div>
-                  <div>
-                    <span className="text-[10px] text-[#6B7280] block font-medium">
-                      {t.whatsappCenter}
-                    </span>
-                    <a
-                      href={`https://wa.me/${TOKOPEDIA_CONFIG.whatsappNumber}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-bold text-[#1A7A4C] hover:underline"
-                    >
-                      {TOKOPEDIA_CONFIG.whatsappDisplay}
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-lg bg-[#0B1C3D] text-[#D4A017] flex items-center justify-center shrink-0">
                     <Mail className="w-4 h-4" />
                   </div>
@@ -121,7 +101,12 @@ export const ContactView: React.FC = () => {
                     <span className="text-[10px] text-[#6B7280] block font-medium">
                       {t.officialEmail}
                     </span>
-                    <span className="font-bold text-[#1A1A1A] break-all">{TOKOPEDIA_CONFIG.email}</span>
+                    <a 
+                      href={`mailto:${TOKOPEDIA_CONFIG.email}`}
+                      className="font-bold text-[#1A1A1A] hover:text-[#D4A017] transition-colors break-all"
+                    >
+                      {TOKOPEDIA_CONFIG.email}
+                    </a>
                   </div>
                 </div>
 
@@ -187,8 +172,8 @@ export const ContactView: React.FC = () => {
                   </h4>
                   <p className="text-xs text-[#6B7280] max-w-sm mx-auto">
                     {language === 'id' 
-                      ? 'Terima kasih telah menghubungi Bimbingan Kerja Lapas Kerobokan Bali. Kami akan membalas via email atau WhatsApp yang Anda sediakan.'
-                      : 'Thank you for reaching out to Kerobokan Prison Vocational Guidance. We will reply via your provided email or WhatsApp.'}
+                      ? 'Terima kasih telah menghubungi Bimbingan Kerja Lapas Kerobokan Bali. Kami akan membalas via email atau kontak telepon yang Anda sediakan.'
+                      : 'Thank you for reaching out to Kerobokan Prison Vocational Guidance. We will reply via your provided email or phone number.'}
                   </p>
                   <button
                     onClick={() => {
