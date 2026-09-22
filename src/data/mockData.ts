@@ -702,7 +702,8 @@ export const PROGRAMS: Program[] = [
     icon: "Printer",
     image: "https://res.cloudinary.com/ig4uk50k/image/upload/v1789972519/ibv1quezbsvwqzrgthxg.webp",
     galleryImages: [
-      "https://res.cloudinary.com/ig4uk50k/image/upload/v1789972519/ibv1quezbsvwqzrgthxg.webp"
+      "https://res.cloudinary.com/ig4uk50k/image/upload/v1789972519/ibv1quezbsvwqzrgthxg.webp",
+      "https://res.cloudinary.com/ig4uk50k/image/upload/v1790046463/yddlpoqbzdmgm9lbesdz.webp"
     ],
     fullDesc: "Menyiapkan warga binaan untuk siap bekerja di industri kreatif dan periklanan digital. Peserta dilatih menguasai software desain grafis komputer, teknik separasi warna, pembuatan film sablon (afdruk), serta teknik cetak manual plastisol maupun polyflex heatpress. Menerima pesanan maklon kaos komunitas, seminar kit, dan suvenir khas Bali.",
     participantsCount: 25,

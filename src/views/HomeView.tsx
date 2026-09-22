@@ -135,15 +135,15 @@ export const HomeView: React.FC<HomeViewProps> = ({
             {/* Right Column: Visual Collage Card */}
             <div className="lg:col-span-5 relative lg:self-end pb-6 sm:pb-4 lg:pb-0">
               <div className="relative mx-auto max-w-md lg:max-w-none translate-y-3 sm:translate-y-4 lg:translate-y-12">
-                {/* Main Featured Image Card (Height reduced by 40% to aspect-16/10) */}
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-[#D4A017]/30 bg-[#0B1C3D] aspect-16/10">
+                {/* Main Featured Image Card */}
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-[#D4A017]/30 bg-[#0B1C3D] aspect-[4/3] sm:aspect-16/10">
                   <img
                     src="https://res.cloudinary.com/ig4uk50k/image/upload/v1789958503/d5sw4j0cjgpqimoapz7r.webp"
                     alt="Kriya Perak Lapas Kerobokan"
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-4 sm:p-5 pb-12 sm:pb-14">
-                    <div className="mb-1.5">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-4 sm:p-5 pb-11 sm:pb-12">
+                    <div className="mb-1">
                       <span className="inline-flex items-center gap-1.5 text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-[#D4A017] text-[#1A1A1A] shadow-md">
                         <Sparkles className="w-3 h-3 text-[#1A1A1A]" />
                         {language === 'id' ? 'Karya Unggulan' : 'Featured Masterpiece'}
@@ -152,7 +152,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                     <h3 className="text-base sm:text-lg font-bold text-white leading-tight">
                       {language === 'id' ? 'Kerajinan Perak' : 'Silver Craft'}
                     </h3>
-                    <p className="text-[11px] sm:text-xs text-slate-200 mt-1 line-clamp-1 sm:line-clamp-2">
+                    <p className="text-[11px] sm:text-xs text-slate-200 mt-1 leading-relaxed sm:leading-relaxed">
                       {language === 'id' 
                         ? 'Kriya perak murni hasil tempaan filigree presisi oleh warga binaan terlatih Lapas Kerobokan.'
                         : 'Pure 925 sterling silver forged with precision filigree craftsmanship by trained inmates.'}
@@ -161,7 +161,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 </div>
 
                 {/* Floating Micro Badge: Certified Craftsmanship */}
-                <div className="absolute -bottom-5 left-2 sm:-left-4 bg-white text-[#1A1A1A] rounded-2xl p-3.5 sm:p-4 shadow-xl border border-slate-200/90 max-w-[230px] sm:max-w-[250px] flex items-center gap-3 z-10 backdrop-blur-xs">
+                <div className="absolute -bottom-8 sm:-bottom-9 left-2 sm:-left-4 bg-white text-[#1A1A1A] rounded-2xl p-3.5 sm:p-4 shadow-xl border border-slate-200/90 max-w-[230px] sm:max-w-[250px] flex items-center gap-3 z-10 backdrop-blur-xs">
                   <div className="w-10 h-10 rounded-xl bg-[#1A7A4C]/15 flex items-center justify-center shrink-0 shadow-xs">
                     <Award className="w-5 h-5 text-[#1A7A4C]" />
                   </div>
