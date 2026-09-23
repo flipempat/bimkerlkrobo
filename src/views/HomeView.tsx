@@ -54,12 +54,12 @@ export const HomeView: React.FC<HomeViewProps> = ({
           <img
             src="https://res.cloudinary.com/ig4uk50k/image/upload/v1790143608/nuyvcuk4ussarazmfa0r.webp"
             alt="Kegiatan Bimbingan Kerja Lapas Kerobokan"
-            className="w-full h-full object-cover object-center scale-105 transition-transform duration-1000"
+            className="w-full h-full object-cover object-center"
             referrerPolicy="no-referrer"
           />
           {/* Balanced gradient: solid on text side (left), light & translucent on photo side (right) */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#07132B]/92 via-[#07132B]/75 to-[#07132B]/45" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#07132B] via-transparent to-[#07132B]/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#07132B]/90 via-[#07132B]/70 to-[#07132B]/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#07132B] via-transparent to-[#07132B]/35" />
         </div>
 
         {/* Subtle documentation origin credit tag at bottom-left */}
