@@ -105,29 +105,49 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onOpenDetail 
             </span>
           </div>
 
-          {/* Shopee Action Button */}
-          <div>
+          {/* Marketplace Action Buttons */}
+          <div className="grid grid-cols-2 gap-2">
+            {product.tokopediaUrl ? (
+              <a
+                href={product.tokopediaUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className={`inline-flex items-center justify-center gap-1.5 bg-[#03AC0E] hover:bg-[#028b0b] text-white text-xs font-bold py-2.5 px-3 rounded-xl shadow-xs transition-all hover:shadow-md text-center active:scale-95 group ${
+                  !product.shopeeUrl ? 'col-span-2' : ''
+                }`}
+                title={language === 'id' ? 'Beli di Tokopedia' : 'Buy on Tokopedia'}
+              >
+                <ShoppingBag className="w-3.5 h-3.5 shrink-0 group-hover:scale-110 transition-transform" />
+                <span className="truncate">Tokopedia</span>
+              </a>
+            ) : null}
+
             {product.shopeeUrl ? (
               <a
                 href={product.shopeeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
-                className="w-full inline-flex items-center justify-center gap-2 bg-[#EE4D2D] hover:bg-[#D73211] text-white text-xs sm:text-sm font-bold py-2.5 px-4 rounded-xl shadow-xs transition-all hover:shadow-md text-center active:scale-95 group"
-                title={language === 'id' ? 'Beli Sekarang di Shopee' : 'Buy Now on Shopee'}
+                className={`inline-flex items-center justify-center gap-1.5 bg-[#EE4D2D] hover:bg-[#D73211] text-white text-xs font-bold py-2.5 px-3 rounded-xl shadow-xs transition-all hover:shadow-md text-center active:scale-95 group ${
+                  !product.tokopediaUrl ? 'col-span-2' : ''
+                }`}
+                title={language === 'id' ? 'Beli di Shopee' : 'Buy on Shopee'}
               >
-                <ShoppingBag className="w-4 h-4 shrink-0 group-hover:scale-110 transition-transform" />
-                <span className="truncate">{t.buyOnShopee}</span>
+                <ShoppingBag className="w-3.5 h-3.5 shrink-0 group-hover:scale-110 transition-transform" />
+                <span className="truncate">Shopee</span>
               </a>
-            ) : (
+            ) : null}
+
+            {!product.tokopediaUrl && !product.shopeeUrl && (
               <button
                 type="button"
                 disabled
                 onClick={(e) => e.stopPropagation()}
-                className="w-full inline-flex items-center justify-center gap-2 bg-slate-100 text-slate-400 text-xs font-medium py-2.5 px-4 rounded-xl border border-slate-200 cursor-not-allowed opacity-60 text-center"
+                className="col-span-2 inline-flex items-center justify-center gap-2 bg-slate-100 text-slate-400 text-xs font-medium py-2.5 px-4 rounded-xl border border-slate-200 cursor-not-allowed opacity-60 text-center"
               >
                 <ShoppingBag className="w-4 h-4 shrink-0" />
-                <span>{t.buyOnShopee}</span>
+                <span>{language === 'id' ? 'Tersedia di Toko' : 'In-Store Only'}</span>
               </button>
             )}
           </div>

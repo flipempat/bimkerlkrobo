@@ -25,7 +25,7 @@ export const STATS: StatItem[] = [
 ];
 
 export const PRODUCTS: Product[] = [
-  // ==================== 10 PRODUK RESMI SESUAI KATALOG SHOPEE LKROBO ====================
+  // ==================== 10 PRODUK RESMI SESUAI KATALOG SHOPEE & TOKOPEDIA LKROBO ====================
   {
     id: "prod-perak-01",
     name: "Perhiasan Silver",
@@ -44,6 +44,7 @@ export const PRODUCTS: Product[] = [
       "https://down-id.img.susercontent.com/file/id-11134207-81ztj-mt8yjtlu07igfe"
     ],
     shopeeUrl: "https://shopee.co.id/Perhiasan-Silver-i.1325294054.56067950873?extraParams=%7B%22display_model_id%22%3A218877173676%2C%22model_selection_logic%22%3A3%7D",
+    tokopediaUrl: "https://www.tokopedia.com/jker-kerobokan/perhiasan-silver-handmade-premium-1737567473267803341?extParam=src%3Dshop%26whid%3D7686508921809176321&aff_unique_id=&channel=others&chain_key=",
     isFeatured: true,
     isBestSeller: true,
     inStock: true,
@@ -51,9 +52,9 @@ export const PRODUCTS: Product[] = [
     madeBy: "BIMKER Lapas Kelas IIA Kerobokan",
     specifications: [
       { label: "Produk", value: "Perhiasan Silver Handmade" },
-      { label: "Kategori Shopee", value: "Aksesoris Fashion > Kalung / Liontin / Gelang" },
+      { label: "Kategori Toko", value: "Aksesoris Fashion > Kalung / Liontin / Gelang" },
       { label: "Asal Produk", value: "BIMKER Lapas Kelas IIA Kerobokan Bali" },
-      { label: "Status Toko", value: "Produk Resmi di Toko Shopee LKROBO" }
+      { label: "Status Toko", value: "Tersedia Resmi di Shopee & Tokopedia J'KER" }
     ]
   },
   {
@@ -71,6 +72,7 @@ export const PRODUCTS: Product[] = [
       "https://down-id.img.susercontent.com/file/id-11134207-81ztg-mt8wc2g12uix6e"
     ],
     shopeeUrl: "https://shopee.co.id/Isi-100-Stik-Dupa-Wangi-Harum-Natural-Model-Lidi-Panjang-27cm-i.1325294054.51717893560?extraParams=%7B%22display_model_id%22%3A316515434418%2C%22model_selection_logic%22%3A3%7D",
+    tokopediaUrl: "https://www.tokopedia.com/jker-kerobokan/isi-100-stik-dupa-wangi-harum-natural-model-lidi-panjang-27cm-1737566602225091789?extParam=whid%3D7686508921809176321%26src%3Dshop&aff_unique_id=&channel=others&chain_key=",
     isFeatured: true,
     isBestSeller: true,
     inStock: true,
@@ -79,7 +81,7 @@ export const PRODUCTS: Product[] = [
     specifications: [
       { label: "Isi", value: "100 Stik Lidi" },
       { label: "Panjang", value: "27 cm" },
-      { label: "Kategori Shopee", value: "Perlengkapan Rumah > Perlengkapan Keagamaan" },
+      { label: "Kategori Toko", value: "Perlengkapan Rumah > Perlengkapan Keagamaan" },
       { label: "Karakteristik", value: "Wangi Harum Natural, Abu Dingin, Asap Halus" }
     ]
   },
@@ -99,6 +101,7 @@ export const PRODUCTS: Product[] = [
       "https://down-id.img.susercontent.com/file/id-11134207-81zte-mt7v90u9p3ph69"
     ],
     shopeeUrl: "https://shopee.co.id/Miniatur-Kapal-Laut-i.1325294054.41534488412?extraParams=%7B%22display_model_id%22%3A336518793160%2C%22model_selection_logic%22%3A3%7D",
+    tokopediaUrl: "https://www.tokopedia.com/jker-kerobokan/miniatur-kapal-laut-handmade-1737566884761732301?extParam=src%3Dshop%26whid%3D7686508921809176321&aff_unique_id=&channel=others&chain_key=",
     isFeatured: true,
     isBestSeller: true,
     inStock: true,
@@ -106,7 +109,7 @@ export const PRODUCTS: Product[] = [
     madeBy: "BIMKER Lapas Kelas IIA Kerobokan",
     specifications: [
       { label: "Produk", value: "Miniatur Kapal Laut Handmade" },
-      { label: "Kategori Shopee", value: "Hobi & Koleksi > Koleksi > Vehicle Model & Diecast" },
+      { label: "Kategori Toko", value: "Hobi & Koleksi > Koleksi > Vehicle Model & Diecast" },
       { label: "Bahan", value: "Upcycled Bungkus Rokok Pilihan Bersih & Rapi" },
       { label: "Pemanfaatan", value: "Pajangan Meja, Hiasan Interior, Koleksi Unik" }
     ]
@@ -128,6 +131,7 @@ export const PRODUCTS: Product[] = [
       "https://down-id.img.susercontent.com/file/id-11134207-81ztd-mt8yjtlu5ts881"
     ],
     shopeeUrl: "https://shopee.co.id/Keben-(Sokasi)-i.1325294054.53917950563?extraParams=%7B%22display_model_id%22%3A381518647593%2C%22model_selection_logic%22%3A3%7D",
+    tokopediaUrl: "https://www.tokopedia.com/jker-kerobokan/keben-sokasi-khas-bali-handmade-1737567897335334093?extParam=src%3Dshop%26whid%3D7686508921809176321&aff_unique_id=&channel=others&chain_key=",
     isFeatured: true,
     isBestSeller: true,
     inStock: true,
@@ -135,7 +139,7 @@ export const PRODUCTS: Product[] = [
     madeBy: "BIMKER Lapas Kelas IIA Kerobokan",
     specifications: [
       { label: "Nama Produk", value: "Keben (Sokasi)" },
-      { label: "Kategori Shopee", value: "Souvenir & Perlengkapan Pesta > Souvenir & Hadiah" },
+      { label: "Kategori Toko", value: "Souvenir & Perlengkapan Pesta > Souvenir & Hadiah" },
       { label: "Fungsi", value: "Wadah Canang Banten, Hantaran, Souvenir Adat" },
       { label: "Pembuatan", value: "Handmade Anyaman Tradisional Bali" }
     ]
@@ -155,6 +159,7 @@ export const PRODUCTS: Product[] = [
       "https://down-id.img.susercontent.com/file/id-11134207-81zth-mt8wc2g101e192"
     ],
     shopeeUrl: "https://shopee.co.id/Bokoran-Banten-Handmade-i.1325294054.46968004439?extraParams=%7B%22display_model_id%22%3A441521839738%2C%22model_selection_logic%22%3A3%7D",
+    tokopediaUrl: "https://www.tokopedia.com/jker-kerobokan/bokoran-banten-bali-handmade-1737566799261959373?extParam=src%3Dshop%26whid%3D7686508921809176321&aff_unique_id=&channel=others&chain_key=",
     isFeatured: true,
     isBestSeller: false,
     inStock: true,
@@ -162,7 +167,7 @@ export const PRODUCTS: Product[] = [
     madeBy: "BIMKER Lapas Kelas IIA Kerobokan",
     specifications: [
       { label: "Nama Produk", value: "Bokoran Banten Handmade" },
-      { label: "Kategori Shopee", value: "Perlengkapan Rumah > Perlengkapan Keagamaan" },
+      { label: "Kategori Toko", value: "Perlengkapan Rumah > Perlengkapan Keagamaan" },
       { label: "Peruntukan", value: "Wadah Upakara Banten Sesajen Bali" },
       { label: "Karakter", value: "Kokoh, Awet, Ringan & Berornamen Rapi" }
     ]
@@ -183,6 +188,7 @@ export const PRODUCTS: Product[] = [
       "https://down-id.img.susercontent.com/file/id-11134207-81zti-mt7u0jhkzn61ba"
     ],
     shopeeUrl: "https://shopee.co.id/Baju-Custom-i.1325294054.50117952561?extraParams=%7B%22display_model_id%22%3A341519307912%2C%22model_selection_logic%22%3A3%7D",
+    tokopediaUrl: "https://www.tokopedia.com/jker-kerobokan/baju-kaos-sablon-bebas-custom-1737567578671580365-1737567752882324685?extParam=src%3Dshop%26whid%3D7686508921809176321&aff_unique_id=&channel=others&chain_key=",
     isFeatured: true,
     isBestSeller: true,
     inStock: true,
@@ -190,7 +196,7 @@ export const PRODUCTS: Product[] = [
     madeBy: "BIMKER Lapas Kelas IIA Kerobokan",
     specifications: [
       { label: "Nama Produk", value: "Baju Custom" },
-      { label: "Kategori Shopee", value: "Pakaian Pria > Atasan > Kaos" },
+      { label: "Kategori Toko", value: "Pakaian Pria > Atasan > Kaos" },
       { label: "Layanan", value: "Sablon Desain Custom & Konveksi Rapi" },
       { label: "Kenyamanan", value: "Bahan Adem, Menyerap Keringat, Jahitan Kuat" }
     ]
@@ -210,6 +216,7 @@ export const PRODUCTS: Product[] = [
       "https://down-id.img.susercontent.com/file/id-11134207-81ztm-mteqviayek8y87"
     ],
     shopeeUrl: "https://shopee.co.id/BAKERY-J'KER-%E2%80%93-PIE-SUSU-DONAT-HANDMADE-i.1325294054.51618247185?extraParams=%7B%22display_model_id%22%3A277973805331%2C%22model_selection_logic%22%3A3%7D",
+    tokopediaUrl: "https://www.tokopedia.com/jker-kerobokan/bakery-j-ker-pie-susu-donat-handmade-1737639217290839245?extParam=src%3Dshop%26whid%3D7686508921809176321&aff_unique_id=&channel=others&chain_key=",
     isFeatured: true,
     isBestSeller: true,
     inStock: true,
@@ -217,7 +224,7 @@ export const PRODUCTS: Product[] = [
     madeBy: "Dapur Bakery J'KER Lapas Kerobokan",
     specifications: [
       { label: "Nama Produk", value: "BAKERY J'KER – PIE SUSU & DONAT HANDMADE" },
-      { label: "Kategori Shopee", value: "Makanan & Minuman > Roti & Kue > Roti" },
+      { label: "Kategori Toko", value: "Makanan & Minuman > Roti & Kue > Roti" },
       { label: "Varian", value: "Pie Susu Renyah Legit & Donat Lembut Handmade" },
       { label: "Kondisi", value: "Fresh Made (Dibuat Segar & Higienis)" }
     ]
@@ -237,6 +244,7 @@ export const PRODUCTS: Product[] = [
       "https://down-id.img.susercontent.com/file/id-11134207-81zte-mt7rvoqskcg8ca"
     ],
     shopeeUrl: "https://shopee.co.id/Asbak-Rokok-i.1325294054.54617955664?extraParams=%7B%22display_model_id%22%3A416518962713%2C%22model_selection_logic%22%3A3%7D",
+    tokopediaUrl: "https://www.tokopedia.com/jker-kerobokan/asbak-unik-minimalis-handmade-1737567752866006221?extParam=whid%3D7686508921809176321%26src%3Dshop&aff_unique_id=&channel=others&chain_key=",
     isFeatured: true,
     isBestSeller: false,
     inStock: true,
@@ -244,7 +252,7 @@ export const PRODUCTS: Product[] = [
     madeBy: "BIMKER Lapas Kelas IIA Kerobokan",
     specifications: [
       { label: "Nama Produk", value: "Asbak Rokok" },
-      { label: "Kategori Shopee", value: "Perlengkapan Rumah > Dekorasi > Vas & Bejana" },
+      { label: "Kategori Toko", value: "Perlengkapan Rumah > Dekorasi > Vas & Bejana" },
       { label: "Karakteristik", value: "Kuat, Tahan Panas, Finishing Halus" },
       { label: "Perawatan", value: "Mudah dibersihkan dan awet digunakan" }
     ]
@@ -265,6 +273,7 @@ export const PRODUCTS: Product[] = [
       "https://down-id.img.susercontent.com/file/id-11134207-81ztk-mt8wc2g0uf49fb"
     ],
     shopeeUrl: "https://shopee.co.id/Kotak-Tisu-Kertas-Koran-Handmade-dengan-Tutup-Kotak-Tisu-Meja-i.1325294054.53967929473?extraParams=%7B%22display_model_id%22%3A441518182640%2C%22model_selection_logic%22%3A3%7D",
+    tokopediaUrl: "https://www.tokopedia.com/jker-kerobokan/kotak-tisu-kertas-koran-handmade-dengan-tutup-kotak-tisu-meja-1737566823800669389?extParam=src%3Dshop%26whid%3D7686508921809176321&aff_unique_id=&channel=others&chain_key=",
     isFeatured: true,
     isBestSeller: true,
     inStock: true,
@@ -272,7 +281,7 @@ export const PRODUCTS: Product[] = [
     madeBy: "BIMKER Lapas Kelas IIA Kerobokan",
     specifications: [
       { label: "Nama Produk", value: "Kotak Tisu Kertas Koran - Handmade dengan Tutup, Kotak Tisu Meja" },
-      { label: "Kategori Shopee", value: "Perlengkapan Rumah > Organizer Rumah > Tempat Tisu" },
+      { label: "Kategori Toko", value: "Perlengkapan Rumah > Organizer Rumah > Tempat Tisu" },
       { label: "Fitur", value: "Lengkap dengan Tutup Atas Rapi" },
       { label: "Finishing", value: "Lapisan Vernis Pelindung Anti Lembap" }
     ]
@@ -292,6 +301,7 @@ export const PRODUCTS: Product[] = [
       "https://down-id.img.susercontent.com/file/id-11134207-81ztq-mt8yjtlr01sa78"
     ],
     shopeeUrl: "https://shopee.co.id/Vas-Bunga-Kulit-Rokok-Ramah-Lingkungan-Handmade-i.1325294054.54617940494?extraParams=%7B%22display_model_id%22%3A287963886532%2C%22model_selection_logic%22%3A3%7D",
+    tokopediaUrl: "https://www.tokopedia.com/jker-kerobokan/vas-bunga-kulit-rokok-ramah-lingkungan-handmade-1737566183642399949?extParam=whid%3D7686508921809176321%26src%3Dshop&aff_unique_id=&channel=others&chain_key=",
     isFeatured: true,
     isBestSeller: false,
     inStock: true,
@@ -299,7 +309,7 @@ export const PRODUCTS: Product[] = [
     madeBy: "BIMKER Lapas Kelas IIA Kerobokan",
     specifications: [
       { label: "Nama Produk", value: "Vas Bunga Kulit Rokok Ramah Lingkungan Handmade" },
-      { label: "Kategori Shopee", value: "Perlengkapan Rumah > Dekorasi > Vas & Bejana" },
+      { label: "Kategori Toko", value: "Perlengkapan Rumah > Dekorasi > Vas & Bejana" },
       { label: "Kelebihan", value: "Unik, Ramah Lingkungan, Aksen Kilap Metalik" },
       { label: "Kegunaan", value: "Pajangan Meja, Vas Bunga Kering & Ruang Santai" }
     ]

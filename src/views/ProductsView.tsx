@@ -84,7 +84,7 @@ export const ProductsView: React.FC<ProductsViewProps> = ({ onOpenProductDetail 
             </p>
           </div>
 
-          {/* Big Prominent Official Marketplace Store Buttons (Shopee & Tokopedia) */}
+          {/* Big Prominent Official Marketplace Store Buttons (Tokopedia & Shopee) */}
           <div className="mt-8 max-w-4xl mx-auto bg-[#0B1C3D] rounded-3xl p-6 sm:p-8 text-white shadow-2xl border border-[#D4A017]/40 relative overflow-hidden">
             <div className="absolute right-0 top-0 bottom-0 w-1/2 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#D4A017]/10 via-transparent to-transparent pointer-events-none" />
             <div className="relative z-10 space-y-6">
@@ -92,21 +92,46 @@ export const ProductsView: React.FC<ProductsViewProps> = ({ onOpenProductDetail 
                 <div className="space-y-1">
                   <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#10244C] text-[#E8C547] border border-[#D4A017]/30 text-xs font-bold">
                     <ShieldCheck className="w-3.5 h-3.5 text-[#D4A017]" />
-                    <span>{language === 'id' ? 'Toko Resmi Terverifikasi di Shopee (Official Shop)' : 'Verified Official Shop on Shopee'}</span>
+                    <span>{language === 'id' ? 'Toko Resmi Terverifikasi di Tokopedia & Shopee' : 'Verified Official Stores on Tokopedia & Shopee'}</span>
                   </div>
                   <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-white">
-                    {language === 'id' ? 'Toko Resmi Shopee BIMKER LKROBO' : 'BIMKER LKROBO Official Shopee Shop'}
+                    {language === 'id' ? 'Official Store Marketplace BIMKER LKROBO' : 'BIMKER LKROBO Official Marketplace Stores'}
                   </h3>
                   <p className="text-xs sm:text-sm text-slate-300 max-w-2xl">
                     {language === 'id' 
-                      ? 'Dukung kemandirian dan upah kerja warga binaan Lapas Kelas IIA Kerobokan dengan berbelanja langsung di toko resmi Shopee:' 
-                      : 'Support the empowerment and wages of inmates by shopping directly on our official Shopee shop:'}
+                      ? 'Dukung kemandirian dan upah premi kerja warga binaan Lapas Kelas IIA Kerobokan dengan berbelanja langsung di toko resmi:' 
+                      : 'Support the empowerment and wages of inmates by shopping directly at our official stores:'}
                   </p>
                 </div>
               </div>
 
-              {/* Large Shopee Store Button */}
-              <div>
+              {/* Large Dual Store Buttons: Tokopedia & Shopee */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {/* Tokopedia Store Link */}
+                <a
+                  id="tokopedia-official-store-header-btn"
+                  href={TOKOPEDIA_CONFIG.tokopediaStoreUrl || "https://www.tokopedia.com/jker-kerobokan"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between gap-4 bg-[#03AC0E] hover:bg-[#028b0b] text-white p-5 rounded-2xl shadow-lg transition-all hover:scale-[1.01] active:scale-[0.99] border border-white/10 group"
+                >
+                  <div className="flex items-center gap-3.5">
+                    <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center shrink-0 group-hover:rotate-6 transition-transform">
+                      <ShoppingBag className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="text-left">
+                      <span className="block text-[11px] uppercase tracking-wider text-green-100 font-semibold">
+                        Tokopedia • jker-kerobokan
+                      </span>
+                      <span className="block text-base sm:text-lg font-extrabold leading-tight">
+                        {language === 'id' ? 'Buka Tokopedia Resmi' : 'Visit Tokopedia Store'}
+                      </span>
+                    </div>
+                  </div>
+                  <ExternalLink className="w-5 h-5 shrink-0 text-white/80 group-hover:text-white transition-colors" />
+                </a>
+
+                {/* Shopee Store Link */}
                 <a
                   id="shopee-official-store-header-btn"
                   href={TOKOPEDIA_CONFIG.shopeeStoreUrl}
@@ -120,7 +145,7 @@ export const ProductsView: React.FC<ProductsViewProps> = ({ onOpenProductDetail 
                     </div>
                     <div className="text-left">
                       <span className="block text-[11px] uppercase tracking-wider text-orange-200 font-semibold">
-                        Shopee Official Shop • Lapas Kerobokan
+                        Shopee Official • LKROBO
                       </span>
                       <span className="block text-base sm:text-lg font-extrabold leading-tight">
                         {t.visitShopeeStore}

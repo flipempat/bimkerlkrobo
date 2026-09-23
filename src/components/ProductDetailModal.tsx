@@ -96,11 +96,11 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
                 </div>
               </div>
 
-              {/* Shopee Photo Gallery Thumbnails */}
+              {/* Official Photo Gallery Thumbnails */}
               {product.galleryImages && product.galleryImages.length > 1 && (
                 <div className="p-3 bg-white border-t border-slate-100">
                   <p className="text-[11px] font-semibold text-[#6B7280] mb-2">
-                    {language === 'id' ? 'Foto Produk Shopee:' : 'Shopee Product Photos:'}
+                    {language === 'id' ? 'Galeri Foto Produk Resmi:' : 'Official Product Photos:'}
                   </p>
                   <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-thin">
                     {product.galleryImages.map((imgUrl, idx) => (
@@ -110,7 +110,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
                         onClick={() => setActiveImage(imgUrl)}
                         className={`relative shrink-0 w-14 h-14 rounded-lg overflow-hidden border-2 transition-all ${
                           (activeImage || product.image) === imgUrl
-                            ? 'border-[#EE4D2D] ring-2 ring-[#EE4D2D]/20 scale-105'
+                            ? 'border-[#03AC0E] ring-2 ring-[#03AC0E]/20 scale-105'
                             : 'border-slate-200 opacity-70 hover:opacity-100'
                         }`}
                       >
@@ -147,7 +147,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
                     {product.formattedPrice}
                   </span>
                   <span className="text-xs text-[#6B7280] font-medium">
-                    {language === 'id' ? '/ pcs di marketplace' : '/ piece on marketplace'}
+                    {language === 'id' ? '/ pcs di official store' : '/ piece at official stores'}
                   </span>
                 </div>
 
@@ -203,8 +203,22 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
 
               {/* Action Buttons */}
               <div className="space-y-2.5 pt-2 border-t border-slate-100">
-                {/* Shopee Purchase Button */}
-                <div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {/* Tokopedia Purchase Button */}
+                  {product.tokopediaUrl ? (
+                    <a
+                      href={product.tokopediaUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-center gap-2 bg-[#03AC0E] hover:bg-[#028b0b] text-white font-bold py-3.5 px-4 rounded-xl shadow-md hover:shadow-lg transition-all text-xs sm:text-sm group"
+                    >
+                      <ShoppingBag className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                      <span>{language === 'id' ? 'Beli di Tokopedia' : 'Buy on Tokopedia'}</span>
+                      <ExternalLink className="w-3.5 h-3.5 opacity-80" />
+                    </a>
+                  ) : null}
+
+                  {/* Shopee Purchase Button */}
                   {product.shopeeUrl ? (
                     <a
                       href={product.shopeeUrl}
@@ -213,19 +227,10 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
                       className="w-full flex items-center justify-center gap-2 bg-[#EE4D2D] hover:bg-[#D73211] text-white font-bold py-3.5 px-4 rounded-xl shadow-md hover:shadow-lg transition-all text-xs sm:text-sm group"
                     >
                       <ShoppingBag className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                      <span>{t.buyOnShopee}</span>
+                      <span>{language === 'id' ? 'Beli di Shopee' : 'Buy on Shopee'}</span>
                       <ExternalLink className="w-3.5 h-3.5 opacity-80" />
                     </a>
-                  ) : (
-                    <button
-                      type="button"
-                      disabled
-                      className="w-full flex items-center justify-center gap-2 bg-slate-100 text-slate-400 font-medium py-3.5 px-4 rounded-xl border border-slate-200 cursor-not-allowed opacity-60 text-xs sm:text-sm"
-                    >
-                      <ShoppingBag className="w-4 h-4" />
-                      <span>{t.buyOnShopee} {language === 'id' ? '(Belum Tersedia)' : '(Unavailable)'}</span>
-                    </button>
-                  )}
+                  ) : null}
                 </div>
 
                 {/* Official Email Custom / Bulk Inquiry */}

@@ -49,16 +49,16 @@ export const HomeView: React.FC<HomeViewProps> = ({
     <div className="space-y-20 pb-16">
       {/* 1. HERO SECTION */}
       <section className="relative bg-[#07132B] text-white pt-12 pb-16 lg:pt-16 lg:pb-24">
-        {/* Real Documentation Background: Apel Pagi Warga Binaan */}
+        {/* Real Documentation Background */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img
-            src="https://res.cloudinary.com/ig4uk50k/image/upload/v1789968128/slefyi8iuwrmleiwhg37.webp"
-            alt="Apel Pagi Kegiatan Bimbingan Kerja Lapas Kerobokan"
-            className="w-full h-[160%] sm:h-full object-cover object-[78%_center] sm:object-center -translate-y-[35%] sm:translate-y-0"
+            src="https://res.cloudinary.com/ig4uk50k/image/upload/v1790143608/nuyvcuk4ussarazmfa0r.webp"
+            alt="Kegiatan Bimbingan Kerja Lapas Kerobokan"
+            className="w-full h-full object-cover object-center scale-105 transition-transform duration-1000"
             referrerPolicy="no-referrer"
           />
           {/* Balanced gradient: solid on text side (left), light & translucent on photo side (right) */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#07132B]/90 via-[#07132B]/65 to-[#07132B]/35" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#07132B]/92 via-[#07132B]/75 to-[#07132B]/45" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#07132B] via-transparent to-[#07132B]/40" />
         </div>
 
@@ -66,7 +66,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
         <div className="absolute bottom-3 left-4 sm:left-8 z-10 hidden sm:block">
           <div className="inline-flex items-center gap-2 text-[10px] sm:text-[11px] text-slate-300/85 bg-[#07132B]/80 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 shadow-xs">
             <span className="w-1.5 h-1.5 rounded-full bg-[#D4A017]" />
-            <span>{language === 'id' ? 'Dokumentasi: Apel Pagi Bimbingan Kemandirian Lapas Kerobokan' : 'Documentation: Inmate Morning Assembly, Kerobokan Prison'}</span>
+            <span>{language === 'id' ? 'Dokumentasi: Kegiatan Bimbingan Kemandirian Lapas Kelas IIA Kerobokan' : 'Documentation: Vocational Training Activities, Kerobokan Prison'}</span>
           </div>
         </div>
 

@@ -1,6 +1,6 @@
 /**
- * Konfigurasi Resmi BIMKER LKROBO (Lapas Kelas IIA Kerobokan)
- * Toko Resmi Shopee & Kontak Layanan Resmi LKROBO
+ * Konfigurasi Toko Resmi BIMKER LKROBO (Lapas Kelas IIA Kerobokan)
+ * Toko Resmi Tokopedia & Shopee serta Kontak Layanan Resmi LKROBO
  */
 
 export const SHOPEE_CONFIG = {
@@ -14,6 +14,11 @@ export const SHOPEE_CONFIG = {
   shopeeStoreName: "BIMKER LKROBO Official Shop",
   badgeText: "Official Store Shopee • Lapas Kerobokan",
   
+  // Link toko resmi BIMKER J'KER di Tokopedia
+  tokopediaStoreUrl: "https://www.tokopedia.com/jker-kerobokan",
+  tokopediaStoreName: "J'KER Lapas Kerobokan di Tokopedia",
+  tokopediaBadgeText: "Official Store Tokopedia • jker-kerobokan",
+
   // Kontak Resmi Lapas Kelas IIA Kerobokan
   institutionName: "BIMKER LKROBO (Bimbingan Kerja Lapas Kelas IIA Kerobokan)",
   parentMinistry: "Kementerian Imigrasi & Pemasyarakatan RI / Ditjen Pemasyarakatan",
