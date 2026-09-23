@@ -16,10 +16,29 @@ export const ProgramDetailModal: React.FC<ProgramDetailModalProps> = ({
 }) => {
   const { language } = useLanguage();
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [activeIdx, setActiveIdx] = useState<number>(0);
+  const [isManual, setIsManual] = useState<boolean>(false);
+
+  const gallery = program?.galleryImages && program.galleryImages.length > 0 
+    ? program.galleryImages 
+    : (program ? [program.image] : []);
 
   React.useEffect(() => {
     setSelectedImage(null);
+    setActiveIdx(0);
+    setIsManual(false);
   }, [program?.id]);
+
+  // Auto rotate modal header image if not manually paused
+  React.useEffect(() => {
+    if (!program || gallery.length <= 1 || isManual) return;
+
+    const timer = setInterval(() => {
+      setActiveIdx((prev) => (prev + 1) % gallery.length);
+    }, 4000);
+
+    return () => clearInterval(timer);
+  }, [program, gallery.length, isManual]);
 
   if (!program) return null;
 
@@ -28,8 +47,7 @@ export const ProgramDetailModal: React.FC<ProgramDetailModalProps> = ({
   const displayCategory = language === 'en' && program.categoryLabelEn ? program.categoryLabelEn : program.categoryLabel;
   const displayDuration = language === 'en' && program.durationEn ? program.durationEn : program.duration;
   
-  const currentImage = selectedImage || program.image;
-  const gallery = program.galleryImages && program.galleryImages.length > 0 ? program.galleryImages : [program.image];
+  const currentImage = selectedImage || gallery[activeIdx] || program.image;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
@@ -87,7 +105,11 @@ export const ProgramDetailModal: React.FC<ProgramDetailModalProps> = ({
                 {gallery.map((imgUrl, idx) => (
                   <button
                     key={idx}
-                    onClick={() => setSelectedImage(imgUrl)}
+                    onClick={() => {
+                      setSelectedImage(imgUrl);
+                      setActiveIdx(idx);
+                      setIsManual(true);
+                    }}
                     className={`relative w-16 h-12 rounded-lg overflow-hidden border-2 transition-all shrink-0 ${
                       currentImage === imgUrl 
                         ? 'border-[#D4A017] shadow-md scale-105' 
@@ -137,7 +159,7 @@ export const ProgramDetailModal: React.FC<ProgramDetailModalProps> = ({
                 {language === 'id' ? 'Deskripsi & Silabus Pelatihan' : 'Description & Training Syllabus'}
               </h3>
               <p className="text-sm text-[#6B7280] leading-relaxed">
-                {program.fullDesc}
+                {language === 'en' && program.fullDescEn ? program.fullDescEn : program.fullDesc}
               </p>
             </div>
 

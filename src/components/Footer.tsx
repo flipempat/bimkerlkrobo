@@ -29,22 +29,22 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
   return (
     <footer id="main-footer" className="bg-[#0B1C3D] text-slate-200 border-t border-[#10244C] pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Top Feature Box: Tokopedia Official Store Invitation */}
+        {/* Top Feature Box: Shopee Official Store Invitation */}
         <div className="bg-[#10244C] rounded-2xl p-6 sm:p-8 border border-[#D4A017]/30 shadow-2xl mb-14 relative overflow-hidden">
           <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#D4A017]/10 via-transparent to-transparent pointer-events-none" />
           <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full text-xs font-semibold bg-[#1A7A4C]/25 text-emerald-300 border border-[#1A7A4C]/40 mb-3">
-                <ShoppingBag className="w-3.5 h-3.5 text-emerald-400" />
-                <span>{language === 'id' ? 'Pemasaran Resmi Karya Warga Binaan' : 'Official Store for Inmate Creations'}</span>
+              <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full text-xs font-semibold bg-[#EE4D2D]/20 text-orange-300 border border-[#EE4D2D]/40 mb-3">
+                <ShoppingBag className="w-3.5 h-3.5 text-[#EE4D2D]" />
+                <span>{language === 'id' ? 'Toko Resmi Shopee LKROBO' : 'Official Shopee Shop LKROBO'}</span>
               </div>
               <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
-                {language === 'id' ? 'Dukung Kemandirian Warga Binaan Lewat Marketplace Resmi' : 'Support Inmate Empowerment Through Official Marketplaces'}
+                {language === 'id' ? 'Dukung Kemandirian Warga Binaan Lewat Toko Shopee Resmi' : 'Support Inmate Empowerment Through Official Shopee Shop'}
               </h3>
               <p className="text-sm text-slate-300 leading-relaxed">
                 {language === 'id' 
-                  ? 'Setiap rupiah dari pembelian Anda menjadi upah premi resmi bagi warga binaan dan modal tabungan bekal kembali ke masyarakat. Belanja aman, mudah, dan resmi di Shopee & Tokopedia.'
-                  : 'Every purchase provides official wage savings for inmates to rebuild their lives after release. Safe, nationwide shipping backed by Shopee and Tokopedia protection.'}
+                  ? 'Setiap rupiah dari pembelian Anda menjadi upah premi resmi bagi warga binaan dan modal tabungan bekal kembali ke masyarakat. Belanja aman, terverifikasi, dan resmi di Shopee LKROBO.'
+                  : 'Every purchase provides official wage savings for inmates to rebuild their lives after release. Safe, nationwide shipping backed by Shopee buyer protection.'}
               </p>
             </div>
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full md:w-auto shrink-0">
@@ -52,20 +52,10 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
                 href={TOKOPEDIA_CONFIG.shopeeStoreUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-[#EE4D2D] hover:bg-[#D73211] text-white font-bold px-4 py-3 rounded-xl shadow-md hover:scale-[1.02] active:scale-[0.98] transition-all text-xs sm:text-sm"
+                className="inline-flex items-center justify-center gap-2 bg-[#EE4D2D] hover:bg-[#D73211] text-white font-bold px-5 py-3 rounded-xl shadow-md hover:scale-[1.02] active:scale-[0.98] transition-all text-xs sm:text-sm"
               >
                 <ShoppingBag className="w-4 h-4 text-white" />
-                <span>Shopee LKROBO</span>
-                <ExternalLink className="w-3.5 h-3.5 opacity-80" />
-              </a>
-              <a
-                href={TOKOPEDIA_CONFIG.officialStoreUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-[#03AC0E] hover:bg-[#028A0B] text-white font-bold px-4 py-3 rounded-xl shadow-md hover:scale-[1.02] active:scale-[0.98] transition-all text-xs sm:text-sm"
-              >
-                <ShoppingBag className="w-4 h-4 text-white" />
-                <span>Tokopedia LKROBO</span>
+                <span>Buka Toko Shopee</span>
                 <ExternalLink className="w-3.5 h-3.5 opacity-80" />
               </a>
               <button

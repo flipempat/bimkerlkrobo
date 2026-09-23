@@ -14,11 +14,19 @@ export const NewsDetailModal: React.FC<NewsDetailModalProps> = ({ news, onClose 
 
   if (!news) return null;
 
+  const displayTitle = language === 'en' && news.titleEn ? news.titleEn : news.title;
+  const displayDate = language === 'en' && news.dateEn ? news.dateEn : news.date;
+  const displayCategory = language === 'en' && news.categoryEn ? news.categoryEn : news.category;
+  const displayAuthor = language === 'en' && news.authorEn ? news.authorEn : news.author;
+  const displayReadTime = language === 'en' && news.readTimeEn ? news.readTimeEn : news.readTime;
+  const displayExcerpt = language === 'en' && news.excerptEn ? news.excerptEn : news.excerpt;
+  const displayContent = language === 'en' && news.contentEn && news.contentEn.length > 0 ? news.contentEn : news.content;
+
   const handleShare = () => {
     if (navigator.share) {
       navigator.share({
-        title: news.title,
-        text: news.excerpt,
+        title: displayTitle,
+        text: displayExcerpt,
         url: window.location.href,
       }).catch(() => {});
     } else {
@@ -54,13 +62,13 @@ export const NewsDetailModal: React.FC<NewsDetailModalProps> = ({ news, onClose 
           <div className="relative aspect-16/9 bg-slate-100">
             <img 
               src={news.image} 
-              alt={news.title}
+              alt={displayTitle}
               className="w-full h-full object-cover"
             />
             <div className="absolute top-4 left-4">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#0B1C3D]/90 text-[#E8C547] border border-[#D4A017]/30 backdrop-blur-sm">
                 <Tag className="w-3 h-3 text-[#D4A017]" />
-                <span>{news.category}</span>
+                <span>{displayCategory}</span>
               </span>
             </div>
           </div>
@@ -71,30 +79,51 @@ export const NewsDetailModal: React.FC<NewsDetailModalProps> = ({ news, onClose 
               <div className="flex flex-wrap items-center gap-4 text-xs text-[#6B7280] mb-3">
                 <span className="flex items-center gap-1.5">
                   <Calendar className="w-3.5 h-3.5 text-[#1A7A4C]" />
-                  <span>{news.date}</span>
+                  <span>{displayDate}</span>
                 </span>
                 <span className="flex items-center gap-1.5">
                   <User className="w-3.5 h-3.5 text-[#1A7A4C]" />
-                  <span>{news.author}</span>
+                  <span>{displayAuthor}</span>
                 </span>
                 <span className="flex items-center gap-1.5">
                   <Clock className="w-3.5 h-3.5 text-[#1A7A4C]" />
-                  <span>{news.readTime}</span>
+                  <span>{displayReadTime}</span>
                 </span>
               </div>
 
               {/* Title */}
               <h2 className="text-xl sm:text-2xl font-bold text-[#1A1A1A] leading-tight">
-                {news.title}
+                {displayTitle}
               </h2>
             </div>
 
             {/* Paragraphs */}
             <div className="space-y-4 text-sm text-[#1A1A1A]/90 leading-relaxed border-t border-slate-100 pt-4">
-              {news.content.map((paragraph, idx) => (
+              {displayContent.map((paragraph, idx) => (
                 <p key={idx}>{paragraph}</p>
               ))}
             </div>
+
+            {/* Event Photo Gallery if available */}
+            {news.galleryImages && news.galleryImages.length > 1 && (
+              <div className="pt-4 border-t border-slate-100">
+                <h3 className="text-xs font-bold uppercase tracking-wider text-[#6B7280] mb-3">
+                  {language === 'id' ? 'Dokumentasi Kegiatan' : 'Event Documentation'}
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {news.galleryImages.map((imgUrl, i) => (
+                    <div key={i} className="rounded-xl overflow-hidden border border-slate-200 shadow-xs bg-slate-100 group">
+                      <img 
+                        src={imgUrl} 
+                        alt={`${displayTitle} - Foto ${i + 1}`}
+                        className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                        loading="lazy"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* Footer actions */}
             <div className="pt-4 border-t border-slate-100 flex items-center justify-between">

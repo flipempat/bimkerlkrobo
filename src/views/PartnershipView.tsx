@@ -10,7 +10,11 @@ import {
   Mail,
   FileText,
   Clock,
-  ArrowRight
+  ArrowRight,
+  Loader2,
+  Award,
+  Gem,
+  Shirt
 } from 'lucide-react';
 import { TOKOPEDIA_CONFIG } from '../data/tokopediaConfig';
 import { useLanguage } from '../context/LanguageContext';
@@ -27,10 +31,38 @@ export const PartnershipView: React.FC = () => {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
+    setIsSubmitting(true);
+
+    try {
+      await fetch(`https://formsubmit.co/ajax/${TOKOPEDIA_CONFIG.email}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          _subject: `[Kemitraan BIMKER LKROBO] Proposal dari ${formData.companyName || formData.picName} (${formData.partnershipType})`,
+          nama_perusahaan: formData.companyName,
+          pic_penanggung_jawab: formData.picName,
+          email_mitra: formData.email,
+          telepon: formData.phone,
+          skema_kemitraan: formData.partnershipType,
+          catatan_kebutuhan: formData.notes,
+          tujuan: TOKOPEDIA_CONFIG.email,
+          _template: 'table',
+          _captcha: 'false'
+        })
+      });
+    } catch (error) {
+      console.warn('Partnership submit dispatch error:', error);
+    } finally {
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+    }
   };
 
   const handleReset = () => {
@@ -140,6 +172,145 @@ export const PartnershipView: React.FC = () => {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Dokumentasi Kemitraan Strategis Terkini: PKS Yin Jewelry & Go Laundry */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-gradient-to-br from-[#07132B] via-[#0B1C3D] to-[#10244C] rounded-3xl p-6 sm:p-10 border-2 border-[#D4A017]/30 shadow-2xl text-white relative overflow-hidden">
+          {/* Subtle glow accent */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#D4A017]/10 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="relative z-10 space-y-8">
+            <div className="text-center max-w-3xl mx-auto space-y-2.5">
+              <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#E8C547] bg-[#10244C] px-3.5 py-1.5 rounded-full border border-[#D4A017]/40 shadow-inner">
+                <Sparkles className="w-3.5 h-3.5 text-[#D4A017]" />
+                {language === 'id' ? 'Dokumentasi Resmi PKS Terbaru' : 'Recent Official MoU Signing'}
+              </span>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
+                {language === 'id' 
+                  ? 'Kemitraan Strategis: Yin Jewelry & Go Laundry' 
+                  : 'Strategic Partnership: Yin Jewelry & Go Laundry'}
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-300 max-w-2xl mx-auto leading-relaxed">
+                {language === 'id'
+                  ? 'Momen resmi penandatanganan Perjanjian Kerjasama (PKS) antara Bimbingan Kerja Lapas Kelas IIA Kerobokan bersama Yin Jewelry untuk kriya perak ekspor dan Go Laundry untuk standarisasi binatu profesional.'
+                  : 'Official signing ceremony of the Memorandum of Understanding (MoU) between Kerobokan Prison Vocational Hub with Yin Jewelry for export silvercraft and Go Laundry for professional laundry standardization.'}
+              </p>
+            </div>
+
+            {/* 2 Big Visual Cards with Photos */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+              {/* Card 1: Yin Jewelry */}
+              <div className="bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:border-[#D4A017]/50 overflow-hidden transition-all flex flex-col group">
+                <div className="relative aspect-16/10 overflow-hidden bg-black/40">
+                  <img
+                    src="https://res.cloudinary.com/ig4uk50k/image/upload/v1790128217/pkd4gihrpeadub9xoeiq.webp"
+                    alt="Penandatanganan Kerjasama Lapas Kerobokan dengan Yin Jewelry"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
+                  <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+                    <span className="inline-flex items-center gap-1.5 text-[10px] font-bold px-2.5 py-1 rounded-full bg-[#D4A017] text-[#1A1A1A] shadow-md">
+                      <Gem className="w-3 h-3" />
+                      {language === 'id' ? 'Kemitraan Kriya Perak 925' : '925 Silvercraft Partnership'}
+                    </span>
+                    <span className="text-[10px] font-medium text-slate-300 bg-black/60 backdrop-blur-xs px-2.5 py-0.5 rounded-full border border-white/10">
+                      Yin Jewelry
+                    </span>
+                  </div>
+                </div>
+
+                <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-4">
+                  <div className="space-y-2">
+                    <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-[#E8C547] transition-colors">
+                      Yin Jewelry × BIMKER LKROBO
+                    </h3>
+                    <p className="text-xs text-slate-300 leading-relaxed">
+                      {language === 'id'
+                        ? 'Kerja sama resmi dalam pembinaan keterampilan kriya perak filigree Bali, kurasi kontrol kualitas perhiasan perak 925 standar butik ekspor, serta integrasi pemesanan langsung dari wisatawan dan galeri perhiasan mancanegara.'
+                        : 'Official collaboration in training Balinese filigree silvercraft, quality control curation for export-grade 925 silver jewelry, and direct supply integration with international jewelry boutiques.'}
+                    </p>
+                  </div>
+
+                  <div className="pt-3 border-t border-white/10 grid grid-cols-2 gap-2 text-[11px] text-slate-300">
+                    <div className="flex items-center gap-1.5">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#D4A017] shrink-0" />
+                      <span>{language === 'id' ? 'Kurikulum Perak Modern' : 'Modern Silver Syllabus'}</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#D4A017] shrink-0" />
+                      <span>{language === 'id' ? 'Standar Butik Ekspor' : 'Export Boutique Grade'}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 2: Go Laundry */}
+              <div className="bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:border-[#1A7A4C]/60 overflow-hidden transition-all flex flex-col group">
+                <div className="relative aspect-16/10 overflow-hidden bg-black/40">
+                  <img
+                    src="https://res.cloudinary.com/ig4uk50k/image/upload/v1790128206/bhods4st9kp0myxyqriq.webp"
+                    alt="Penandatanganan Kerjasama Lapas Kerobokan dengan Go Laundry"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
+                  <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+                    <span className="inline-flex items-center gap-1.5 text-[10px] font-bold px-2.5 py-1 rounded-full bg-[#1A7A4C] text-white shadow-md">
+                      <Shirt className="w-3 h-3" />
+                      {language === 'id' ? 'Kemitraan Mutu Binatu' : 'Laundry Quality Partnership'}
+                    </span>
+                    <span className="text-[10px] font-medium text-slate-300 bg-black/60 backdrop-blur-xs px-2.5 py-0.5 rounded-full border border-white/10">
+                      Go Laundry
+                    </span>
+                  </div>
+                </div>
+
+                <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-4">
+                  <div className="space-y-2">
+                    <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-emerald-300 transition-colors">
+                      Go Laundry × BIMKER LKROBO
+                    </h3>
+                    <p className="text-xs text-slate-300 leading-relaxed">
+                      {language === 'id'
+                        ? 'Penguatan standarisasi higienitas operasional binatu, pelatihan metode pencucian kimia ramah lingkungan, teknik pemeliharaan linen hotel berbintang, dan perluasan jaringan serapan jasa binatu di Badung & sekitarnya.'
+                        : 'Strengthening laundry operational hygiene standards, eco-friendly chemical washing training, hospitality linen maintenance methods, and market expansion across the Badung resort area.'}
+                    </p>
+                  </div>
+
+                  <div className="pt-3 border-t border-white/10 grid grid-cols-2 gap-2 text-[11px] text-slate-300">
+                    <div className="flex items-center gap-1.5">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                      <span>{language === 'id' ? 'SOP Higienitas Industri' : 'Industrial Hygiene SOP'}</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                      <span>{language === 'id' ? 'Mitra Linen Hospitality' : 'Hospitality Linen Partner'}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom trust footer */}
+            <div className="bg-[#10244C]/80 rounded-2xl p-4 sm:p-5 border border-[#D4A017]/30 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-300">
+              <div className="flex items-center gap-3 text-center sm:text-left">
+                <div className="w-10 h-10 rounded-xl bg-[#D4A017]/20 text-[#D4A017] flex items-center justify-center shrink-0">
+                  <Award className="w-5 h-5" />
+                </div>
+                <div>
+                  <span className="font-bold text-white block">
+                    {language === 'id' ? 'Pintu Kemitraan Terbuka Lebar' : 'Open Doors for Industry Partners'}
+                  </span>
+                  <span className="text-[11px] text-slate-300">
+                    {language === 'id' 
+                      ? 'Lapas Kerobokan menyambut pelaku usaha ritel, hotel, kafe, dan UMKM Bali untuk menjalin kolaborasi produksi terpercaya.'
+                      : 'Kerobokan Prison welcomes retail, hospitality, culinary, and SME partners for trusted production collaborations.'}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -342,10 +513,20 @@ export const PartnershipView: React.FC = () => {
                   <div className="pt-2">
                     <button
                       type="submit"
-                      className="w-full inline-flex items-center justify-center gap-2 bg-[#D4A017] hover:bg-[#E8C547] text-[#1A1A1A] text-sm font-bold py-3.5 px-6 rounded-xl shadow-md transition-colors"
+                      disabled={isSubmitting}
+                      className="w-full inline-flex items-center justify-center gap-2 bg-[#D4A017] hover:bg-[#E8C547] text-[#1A1A1A] text-sm font-bold py-3.5 px-6 rounded-xl shadow-md transition-colors disabled:opacity-75 disabled:cursor-not-allowed"
                     >
-                      <Send className="w-4 h-4" />
-                      <span>{t.formSubmitBtn}</span>
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="w-4 h-4 animate-spin" />
+                          <span>{language === 'id' ? 'Mengirim Proposal...' : 'Submitting Proposal...'}</span>
+                        </>
+                      ) : (
+                        <>
+                          <Send className="w-4 h-4" />
+                          <span>{t.formSubmitBtn}</span>
+                        </>
+                      )}
                     </button>
                     <p className="text-[11px] text-[#6B7280] text-center mt-2">
                       {language === 'id'

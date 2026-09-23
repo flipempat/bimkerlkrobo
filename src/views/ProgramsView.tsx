@@ -27,6 +27,7 @@ import {
 import { PROGRAMS } from '../data/mockData';
 import { Program } from '../types';
 import { useLanguage } from '../context/LanguageContext';
+import { ProgramImageCarousel } from '../components/ProgramImageCarousel';
 
 interface ProgramsViewProps {
   onOpenProgramDetail: (program: Program) => void;
@@ -110,6 +111,10 @@ export const ProgramsView: React.FC<ProgramsViewProps> = ({
     const displayDesc = language === 'en' && prog.shortDescEn ? prog.shortDescEn : prog.shortDesc;
     const displayCategoryLabel = language === 'en' && prog.categoryLabelEn ? prog.categoryLabelEn : prog.categoryLabel;
 
+    const images = prog.galleryImages && prog.galleryImages.length > 0 
+      ? prog.galleryImages 
+      : [prog.image];
+
     return (
       <div
         key={prog.id}
@@ -117,36 +122,35 @@ export const ProgramsView: React.FC<ProgramsViewProps> = ({
         className="group bg-white rounded-2xl sm:rounded-3xl border border-slate-200 shadow-xs hover:shadow-xl hover:border-[#D4A017]/40 transition-all duration-300 overflow-hidden flex flex-col justify-between"
       >
         <div>
-          {/* Card Image Banner with dynamic tag & icon overlay */}
-          <div className="relative aspect-16/10 bg-slate-100 overflow-hidden">
-            <img
-              src={prog.image}
-              alt={displayTitle}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              loading="lazy"
-            />
-            {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
-            
-            {/* Top Category Badge */}
-            <div className="absolute top-3 left-3 flex items-center gap-1.5">
-              <span className={`inline-flex items-center gap-1.5 text-[11px] font-bold px-3 py-1 rounded-full backdrop-blur-md shadow-xs ${
-                isUmkm 
-                  ? 'bg-[#0B1C3D]/90 text-[#D4A017] border border-[#D4A017]/40' 
-                  : 'bg-[#1A7A4C]/90 text-white border border-[#2E9B6A]/50'
-              }`}>
-                {renderProgramIcon(prog.icon, "w-3.5 h-3.5")}
-                <span>{displayCategoryLabel}</span>
-              </span>
-            </div>
+          {/* Card Image Banner with dynamic auto-sliding carousel & tag/icon overlay */}
+          <ProgramImageCarousel
+            images={images}
+            alt={displayTitle}
+            interval={3800}
+            aspectRatioClass="aspect-16/10"
+            overlayChildren={
+              <>
+                {/* Top Category Badge */}
+                <div className="absolute top-3 left-3 flex items-center gap-1.5">
+                  <span className={`inline-flex items-center gap-1.5 text-[11px] font-bold px-3 py-1 rounded-full backdrop-blur-md shadow-xs ${
+                    isUmkm 
+                      ? 'bg-[#0B1C3D]/90 text-[#D4A017] border border-[#D4A017]/40' 
+                      : 'bg-[#1A7A4C]/90 text-white border border-[#2E9B6A]/50'
+                  }`}>
+                    {renderProgramIcon(prog.icon, "w-3.5 h-3.5")}
+                    <span>{displayCategoryLabel}</span>
+                  </span>
+                </div>
 
-            {/* Bottom title overlay on hover / image corner */}
-            <div className="absolute bottom-3 right-3">
-              <div className="w-8 h-8 rounded-full bg-white/90 backdrop-blur-xs text-[#0B1C3D] flex items-center justify-center shadow-xs group-hover:bg-[#D4A017] group-hover:text-white transition-colors">
-                {renderProgramIcon(prog.icon, "w-4 h-4")}
-              </div>
-            </div>
-          </div>
+                {/* Bottom title overlay on hover / image corner */}
+                <div className="absolute bottom-3 right-3">
+                  <div className="w-8 h-8 rounded-full bg-white/90 backdrop-blur-xs text-[#0B1C3D] flex items-center justify-center shadow-xs group-hover:bg-[#D4A017] group-hover:text-white transition-colors">
+                    {renderProgramIcon(prog.icon, "w-4 h-4")}
+                  </div>
+                </div>
+              </>
+            }
+          />
 
           {/* Card Body */}
           <div className="p-6">

@@ -28,22 +28,25 @@ export const ProductsView: React.FC<ProductsViewProps> = ({ onOpenProductDetail 
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [sortBy, setSortBy] = useState<'featured' | 'price-asc' | 'price-desc' | 'name'>('featured');
 
-  const categories = [
-    { id: 'all', label: t.categoryAll },
-    { id: 'lukisan', label: language === 'id' ? 'Art Gallery & Seni Lukis' : 'Art Gallery & Paintings' },
-    { id: 'batik', label: language === 'id' ? 'Kerajinan Batik' : 'Batik Crafts' },
-    { id: 'daur_ulang', label: language === 'id' ? 'Kriya Daur Ulang' : 'Upcycled Crafts' },
-    { id: 'perkebunan', label: language === 'id' ? 'Perkebunan & Pangan' : 'Plantation & Produce' },
-    { id: 'perak', label: t.categorySilver },
-    { id: 'bakery', label: t.categoryBakery },
-    { id: 'garmen', label: t.categoryGarment },
-    { id: 'dupa', label: t.categoryIncense },
-    { id: 'hidroponik', label: t.categoryHydroponic },
-    { id: 'peternakan', label: language === 'id' ? 'Peternakan & Hasil Ternak' : 'Livestock & Fresh Produce' },
-    { id: 'perikanan', label: language === 'id' ? 'Perikanan & Kolam Bioflok' : 'Fishery & Biofloc Produce' },
-    { id: 'sablon', label: language === 'id' ? 'Sablon & Kanvas' : 'Screen Printing & Canvas' },
-    { id: 'pertukangan', label: language === 'id' ? 'Pertukangan & Las' : 'Carpentry & Metalwork' }
-  ];
+  const categories = useMemo(() => {
+    const rawCategories = [
+      { id: 'all', label: t.categoryAll },
+      { id: 'daur_ulang', label: language === 'id' ? 'Kriya Daur Ulang' : 'Upcycled Crafts' },
+      { id: 'perak', label: t.categorySilver },
+      { id: 'dupa', label: t.categoryIncense },
+      { id: 'garmen', label: t.categoryGarment },
+      { id: 'bakery', label: t.categoryBakery },
+      { id: 'lukisan', label: language === 'id' ? 'Art Gallery & Seni Lukis' : 'Art Gallery & Paintings' },
+      { id: 'batik', label: language === 'id' ? 'Kerajinan Batik' : 'Batik Crafts' },
+      { id: 'perkebunan', label: language === 'id' ? 'Perkebunan & Pangan' : 'Plantation & Produce' },
+      { id: 'hidroponik', label: t.categoryHydroponic },
+      { id: 'peternakan', label: language === 'id' ? 'Peternakan & Hasil Ternak' : 'Livestock & Fresh Produce' },
+      { id: 'perikanan', label: language === 'id' ? 'Perikanan & Kolam Bioflok' : 'Fishery & Biofloc Produce' },
+      { id: 'sablon', label: language === 'id' ? 'Sablon & Kanvas' : 'Screen Printing & Canvas' },
+      { id: 'pertukangan', label: language === 'id' ? 'Pertukangan & Las' : 'Carpentry & Metalwork' }
+    ];
+    return rawCategories.filter(c => c.id === 'all' || PRODUCTS.some(p => p.category === c.id));
+  }, [t, language]);
 
   // Filtering & Sorting
   const filteredProducts = useMemo(() => {
@@ -89,28 +92,27 @@ export const ProductsView: React.FC<ProductsViewProps> = ({ onOpenProductDetail 
                 <div className="space-y-1">
                   <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#10244C] text-[#E8C547] border border-[#D4A017]/30 text-xs font-bold">
                     <ShieldCheck className="w-3.5 h-3.5 text-[#D4A017]" />
-                    <span>{language === 'id' ? 'Toko Resmi Terverifikasi (Official Store)' : 'Verified Official Store'}</span>
+                    <span>{language === 'id' ? 'Toko Resmi Terverifikasi di Shopee (Official Shop)' : 'Verified Official Shop on Shopee'}</span>
                   </div>
                   <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-white">
-                    {language === 'id' ? 'Kunjungi Toko Resmi BIMKER LKROBO' : 'Visit BIMKER LKROBO Official Stores'}
+                    {language === 'id' ? 'Toko Resmi Shopee BIMKER LKROBO' : 'BIMKER LKROBO Official Shopee Shop'}
                   </h3>
                   <p className="text-xs sm:text-sm text-slate-300 max-w-2xl">
                     {language === 'id' 
-                      ? 'Dukung kemandirian warga binaan Lapas Kelas IIA Kerobokan dengan berbelanja langsung di platform marketplace pilihan Anda:' 
-                      : 'Support the empowerment of inmates by shopping directly on your preferred marketplace platform:'}
+                      ? 'Dukung kemandirian dan upah kerja warga binaan Lapas Kelas IIA Kerobokan dengan berbelanja langsung di toko resmi Shopee:' 
+                      : 'Support the empowerment and wages of inmates by shopping directly on our official Shopee shop:'}
                   </p>
                 </div>
               </div>
 
-              {/* Two Large Buttons for Shopee & Tokopedia */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {/* 1. Tombol Besar Shopee (Oranye #EE4D2D) */}
+              {/* Large Shopee Store Button */}
+              <div>
                 <a
                   id="shopee-official-store-header-btn"
                   href={TOKOPEDIA_CONFIG.shopeeStoreUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between gap-4 bg-[#EE4D2D] hover:bg-[#D73211] text-white p-5 rounded-2xl shadow-lg transition-all hover:scale-[1.02] active:scale-[0.98] border border-white/10 group"
+                  className="flex items-center justify-between gap-4 bg-[#EE4D2D] hover:bg-[#D73211] text-white p-5 rounded-2xl shadow-lg transition-all hover:scale-[1.01] active:scale-[0.99] border border-white/10 group"
                 >
                   <div className="flex items-center gap-3.5">
                     <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center shrink-0 group-hover:rotate-6 transition-transform">
@@ -118,34 +120,10 @@ export const ProductsView: React.FC<ProductsViewProps> = ({ onOpenProductDetail 
                     </div>
                     <div className="text-left">
                       <span className="block text-[11px] uppercase tracking-wider text-orange-200 font-semibold">
-                        Shopee Official Shop
+                        Shopee Official Shop • Lapas Kerobokan
                       </span>
                       <span className="block text-base sm:text-lg font-extrabold leading-tight">
                         {t.visitShopeeStore}
-                      </span>
-                    </div>
-                  </div>
-                  <ExternalLink className="w-5 h-5 shrink-0 text-white/80 group-hover:text-white transition-colors" />
-                </a>
-
-                {/* 2. Tombol Besar Tokopedia (Hijau #03AC0E) */}
-                <a
-                  id="tokopedia-official-store-header-btn"
-                  href={TOKOPEDIA_CONFIG.tokopediaStoreUrl || TOKOPEDIA_CONFIG.officialStoreUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between gap-4 bg-[#03AC0E] hover:bg-[#028A0B] text-white p-5 rounded-2xl shadow-lg transition-all hover:scale-[1.02] active:scale-[0.98] border border-white/10 group"
-                >
-                  <div className="flex items-center gap-3.5">
-                    <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center shrink-0 group-hover:rotate-6 transition-transform">
-                      <ShoppingBag className="w-6 h-6 text-white" />
-                    </div>
-                    <div className="text-left">
-                      <span className="block text-[11px] uppercase tracking-wider text-emerald-100 font-semibold">
-                        Tokopedia Official Store
-                      </span>
-                      <span className="block text-base sm:text-lg font-extrabold leading-tight">
-                        {t.visitTokopediaStore}
                       </span>
                     </div>
                   </div>

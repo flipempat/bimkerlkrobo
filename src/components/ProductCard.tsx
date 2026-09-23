@@ -8,8 +8,29 @@ interface ProductCardProps {
   onOpenDetail: (product: Product) => void;
 }
 
+const CATEGORY_NAMES_EN: Record<string, string> = {
+  perak: '925 Silver Jewelry',
+  bakery: 'Bakery & Pastry',
+  garmen: 'Garment & Textiles',
+  hidroponik: 'Fresh Hydroponics',
+  dupa: 'Incense & Cultural',
+  sablon: 'Screen Printing & Canvas',
+  lukisan: 'Art Gallery & Paintings',
+  daur_ulang: 'Upcycled Crafts',
+  batik: 'Batik Creations',
+  perkebunan: 'Agro & Crops',
+  peternakan: 'Livestock Farm',
+  perikanan: 'Biofloc Fishery',
+  pertukangan: 'Carpentry & Metal',
+  kayu: 'Woodcraft'
+};
+
 export const ProductCard: React.FC<ProductCardProps> = ({ product, onOpenDetail }) => {
   const { t, language } = useLanguage();
+
+  const displayCategory = language === 'en' && CATEGORY_NAMES_EN[product.category]
+    ? CATEGORY_NAMES_EN[product.category]
+    : product.categoryLabel;
 
   return (
     <div 
@@ -19,7 +40,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onOpenDetail 
       {/* Top Badges */}
       <div className="absolute top-3 left-3 z-10 flex flex-col gap-1.5 items-start">
         <span className="inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-white/95 backdrop-blur-sm text-[#0B1C3D] border border-slate-200/80 shadow-xs">
-          {product.categoryLabel}
+          {displayCategory}
         </span>
         {product.isBestSeller && (
           <span className="inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#D4A017] text-[#1A1A1A] shadow-xs">
@@ -36,6 +57,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onOpenDetail 
           alt={product.name}
           className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
           loading="lazy"
+          referrerPolicy="no-referrer"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-end p-3">
           <button
@@ -83,19 +105,18 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onOpenDetail 
             </span>
           </div>
 
-          {/* Marketplace Dual Action Buttons (Shopee & Tokopedia Side-by-Side) */}
-          <div className="grid grid-cols-2 gap-2">
-            {/* Tombol Beli di Shopee (Oranye #EE4D2D) */}
+          {/* Shopee Action Button */}
+          <div>
             {product.shopeeUrl ? (
               <a
                 href={product.shopeeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
-                className="inline-flex items-center justify-center gap-1.5 bg-[#EE4D2D] hover:bg-[#D73211] text-white text-[11px] sm:text-xs font-bold py-2.5 px-2 rounded-xl shadow-xs transition-all hover:shadow-md text-center active:scale-95"
-                title={language === 'id' ? 'Beli di Shopee' : 'Buy on Shopee'}
+                className="w-full inline-flex items-center justify-center gap-2 bg-[#EE4D2D] hover:bg-[#D73211] text-white text-xs sm:text-sm font-bold py-2.5 px-4 rounded-xl shadow-xs transition-all hover:shadow-md text-center active:scale-95 group"
+                title={language === 'id' ? 'Beli Sekarang di Shopee' : 'Buy Now on Shopee'}
               >
-                <ShoppingBag className="w-3.5 h-3.5 shrink-0" />
+                <ShoppingBag className="w-4 h-4 shrink-0 group-hover:scale-110 transition-transform" />
                 <span className="truncate">{t.buyOnShopee}</span>
               </a>
             ) : (
@@ -103,37 +124,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onOpenDetail 
                 type="button"
                 disabled
                 onClick={(e) => e.stopPropagation()}
-                className="inline-flex items-center justify-center gap-1.5 bg-slate-100 text-slate-400 text-[11px] sm:text-xs font-medium py-2.5 px-2 rounded-xl border border-slate-200 cursor-not-allowed opacity-60 text-center"
-                title={language === 'id' ? 'Belum tersedia di Shopee' : 'Not available on Shopee'}
+                className="w-full inline-flex items-center justify-center gap-2 bg-slate-100 text-slate-400 text-xs font-medium py-2.5 px-4 rounded-xl border border-slate-200 cursor-not-allowed opacity-60 text-center"
               >
-                <ShoppingBag className="w-3.5 h-3.5 shrink-0" />
-                <span className="truncate">{t.buyOnShopee}</span>
-              </button>
-            )}
-
-            {/* Tombol Beli di Tokopedia (Hijau #03AC0E) */}
-            {product.tokopediaUrl ? (
-              <a
-                href={product.tokopediaUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                className="inline-flex items-center justify-center gap-1.5 bg-[#03AC0E] hover:bg-[#028A0B] text-white text-[11px] sm:text-xs font-bold py-2.5 px-2 rounded-xl shadow-xs transition-all hover:shadow-md text-center active:scale-95"
-                title={language === 'id' ? 'Beli di Tokopedia' : 'Buy on Tokopedia'}
-              >
-                <ShoppingBag className="w-3.5 h-3.5 shrink-0" />
-                <span className="truncate">{t.buyOnTokopedia}</span>
-              </a>
-            ) : (
-              <button
-                type="button"
-                disabled
-                onClick={(e) => e.stopPropagation()}
-                className="inline-flex items-center justify-center gap-1.5 bg-slate-100 text-slate-400 text-[11px] sm:text-xs font-medium py-2.5 px-2 rounded-xl border border-slate-200 cursor-not-allowed opacity-60 text-center"
-                title={language === 'id' ? 'Belum tersedia di Tokopedia' : 'Not available on Tokopedia'}
-              >
-                <ShoppingBag className="w-3.5 h-3.5 shrink-0" />
-                <span className="truncate">{t.buyOnTokopedia}</span>
+                <ShoppingBag className="w-4 h-4 shrink-0" />
+                <span>{t.buyOnShopee}</span>
               </button>
             )}
           </div>

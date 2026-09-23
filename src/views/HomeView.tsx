@@ -17,6 +17,7 @@ import {
 import { STATS, PRODUCTS, PROGRAMS, TESTIMONIALS } from '../data/mockData';
 import { ProductCard } from '../components/ProductCard';
 import { TestimonialSlider } from '../components/TestimonialSlider';
+import { ProgramImageCarousel } from '../components/ProgramImageCarousel';
 import { Product, Program } from '../types';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -133,26 +134,26 @@ export const HomeView: React.FC<HomeViewProps> = ({
             </div>
 
             {/* Right Column: Visual Collage Card */}
-            <div className="lg:col-span-5 relative lg:self-end pb-6 sm:pb-4 lg:pb-0">
-              <div className="relative mx-auto max-w-md lg:max-w-none translate-y-3 sm:translate-y-4 lg:translate-y-12">
+            <div className="lg:col-span-5 relative lg:self-end pb-8 sm:pb-4 lg:pb-0 w-full min-w-0 max-w-full">
+              <div className="relative mx-auto w-full max-w-md lg:max-w-none translate-y-3 sm:translate-y-4 lg:translate-y-12">
                 {/* Main Featured Image Card */}
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-[#D4A017]/30 bg-[#0B1C3D] aspect-[4/3] sm:aspect-16/10">
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-[#D4A017]/30 bg-[#0B1C3D] w-full max-w-full aspect-[16/9] sm:aspect-[16/9]">
                   <img
                     src="https://res.cloudinary.com/ig4uk50k/image/upload/v1789958503/d5sw4j0cjgpqimoapz7r.webp"
                     alt="Kriya Perak Lapas Kerobokan"
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-4 sm:p-5 pb-11 sm:pb-12">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent flex flex-col justify-end p-3.5 sm:p-5 pb-8 sm:pb-12">
                     <div className="mb-1">
-                      <span className="inline-flex items-center gap-1.5 text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-[#D4A017] text-[#1A1A1A] shadow-md">
+                      <span className="inline-flex items-center gap-1.5 text-[10px] sm:text-[11px] font-bold px-2 py-0.5 sm:px-2.5 rounded-full bg-[#D4A017] text-[#1A1A1A] shadow-md">
                         <Sparkles className="w-3 h-3 text-[#1A1A1A]" />
                         {language === 'id' ? 'Karya Unggulan' : 'Featured Masterpiece'}
                       </span>
                     </div>
-                    <h3 className="text-base sm:text-lg font-bold text-white leading-tight">
+                    <h3 className="text-sm sm:text-base font-bold text-white leading-tight">
                       {language === 'id' ? 'Kerajinan Perak' : 'Silver Craft'}
                     </h3>
-                    <p className="text-[11px] sm:text-xs text-slate-200 mt-1 leading-relaxed sm:leading-relaxed">
+                    <p className="text-[11px] sm:text-xs text-slate-200 mt-0.5 sm:mt-1 leading-snug">
                       {language === 'id' 
                         ? 'Kriya perak murni hasil tempaan filigree presisi oleh warga binaan terlatih Lapas Kerobokan.'
                         : 'Pure 925 sterling silver forged with precision filigree craftsmanship by trained inmates.'}
@@ -161,7 +162,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 </div>
 
                 {/* Floating Micro Badge: Certified Craftsmanship */}
-                <div className="absolute -bottom-8 sm:-bottom-9 left-2 sm:-left-4 bg-white text-[#1A1A1A] rounded-2xl p-3.5 sm:p-4 shadow-xl border border-slate-200/90 max-w-[230px] sm:max-w-[250px] flex items-center gap-3 z-10 backdrop-blur-xs">
+                <div className="absolute -bottom-11 sm:-bottom-9 left-2 sm:-left-4 bg-white text-[#1A1A1A] rounded-2xl p-3 sm:p-4 shadow-xl border border-slate-200/90 max-w-[calc(100%-1.5rem)] sm:max-w-[250px] flex items-center gap-3 z-10 backdrop-blur-xs">
                   <div className="w-10 h-10 rounded-xl bg-[#1A7A4C]/15 flex items-center justify-center shrink-0 shadow-xs">
                     <Award className="w-5 h-5 text-[#1A7A4C]" />
                   </div>
@@ -322,27 +323,33 @@ export const HomeView: React.FC<HomeViewProps> = ({
               const displayTitle = language === 'en' && program.titleEn ? program.titleEn : program.title;
               const displayDesc = language === 'en' && program.shortDescEn ? program.shortDescEn : program.shortDesc;
               const displayCategory = language === 'en' && program.categoryLabelEn ? program.categoryLabelEn : program.categoryLabel;
+              const images = program.galleryImages && program.galleryImages.length > 0
+                ? program.galleryImages
+                : [program.image];
 
               return (
                 <div
                   key={program.id}
                   onClick={() => onOpenProgramDetail(program)}
-                  className="group bg-white rounded-2xl p-5 border border-slate-200/80 hover:border-[#D4A017]/50 shadow-xs hover:shadow-lg transition-all cursor-pointer flex flex-col justify-between"
+                  className="group bg-white rounded-2xl p-4 sm:p-5 border border-slate-200/80 hover:border-[#D4A017]/50 shadow-xs hover:shadow-lg transition-all cursor-pointer flex flex-col justify-between"
                 >
                   <div>
-                    <div className="relative aspect-16/10 rounded-xl overflow-hidden mb-4 bg-slate-100">
-                      <img
-                        src={program.image}
+                    <div className="rounded-xl overflow-hidden mb-4 shadow-inner">
+                      <ProgramImageCarousel
+                        images={images}
                         alt={displayTitle}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        interval={4000}
+                        aspectRatioClass="aspect-16/10"
+                        overlayChildren={
+                          <span className={`absolute top-2.5 left-2.5 text-[10px] font-bold px-2.5 py-0.5 rounded-full backdrop-blur-md shadow-xs ${
+                            isUmkm
+                              ? 'bg-[#0B1C3D]/90 text-[#D4A017] border border-[#D4A017]/40'
+                              : 'bg-[#1A7A4C]/90 text-white border border-[#2E9B6A]/50'
+                          }`}>
+                            {displayCategory}
+                          </span>
+                        }
                       />
-                      <span className={`absolute top-2 left-2 text-[10px] font-bold px-2.5 py-0.5 rounded-full backdrop-blur-xs ${
-                        isUmkm
-                          ? 'bg-[#0B1C3D]/90 text-[#D4A017] border border-[#D4A017]/40'
-                          : 'bg-[#1A7A4C]/90 text-white border border-[#2E9B6A]/50'
-                      }`}>
-                        {displayCategory}
-                      </span>
                     </div>
                     <h3 className="font-bold text-base text-[#1A1A1A] group-hover:text-[#0B1C3D] transition-colors mb-2">
                       {displayTitle}
@@ -434,8 +441,8 @@ export const HomeView: React.FC<HomeViewProps> = ({
               </h2>
               <p className="text-sm text-[#6B7280] leading-relaxed">
                 {language === 'id'
-                  ? 'Di Lapas Kelas IIA Kerobokan, hasil karya tidak hanya dipajang—tetapi memberikan imbalan nyata. Setiap rupiah keuntungan penjualan produk di Tokopedia disalurkan secara transparan sebagai premi hasil kerja yang dicatatkan di buku rekening tabungan mandiri warga binaan.'
-                  : 'At Kerobokan Prison, craftworks generate genuine livelihoods. Proceeds from official marketplace orders are transparently shared as legitimate wage premiums deposited directly into inmates’ official savings passbooks.'}
+                  ? 'Di Lapas Kelas IIA Kerobokan, hasil karya tidak hanya dipajang—tetapi memberikan imbalan nyata. Setiap rupiah keuntungan penjualan produk di toko Shopee resmi LKROBO disalurkan secara transparan sebagai premi hasil kerja yang dicatatkan di buku rekening tabungan mandiri warga binaan.'
+                  : 'At Kerobokan Prison, craftworks generate genuine livelihoods. Proceeds from official Shopee marketplace orders are transparently shared as legitimate wage premiums deposited directly into inmates’ official savings passbooks.'}
               </p>
 
               <div className="pt-2 space-y-2.5 text-xs sm:text-sm text-[#1A1A1A]">

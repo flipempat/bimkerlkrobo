@@ -361,10 +361,10 @@ export const AboutView: React.FC<AboutViewProps> = ({ setActiveTab }) => {
                 href={TOKOPEDIA_CONFIG.officialStoreUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#D4A017] hover:bg-[#E8C547] text-[#1A1A1A] text-xs font-bold px-4 py-2.5 rounded-xl transition-colors flex items-center gap-1.5"
+                className="bg-[#EE4D2D] hover:bg-[#D73211] text-white text-xs font-bold px-4 py-2.5 rounded-xl transition-colors flex items-center gap-1.5 shadow-sm"
               >
                 <ShoppingBag className="w-3.5 h-3.5" />
-                <span>{t.visitTokopediaStore}</span>
+                <span>{t.visitShopeeStore}</span>
               </a>
             </div>
           </div>

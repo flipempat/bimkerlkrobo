@@ -8,6 +8,7 @@ export interface Product {
   shortDescription: string;
   fullDescription: string;
   image: string;
+  galleryImages?: string[];
   shopeeUrl?: string;
   tokopediaUrl?: string;
   isFeatured: boolean;
@@ -43,23 +44,35 @@ export interface Program {
 export interface NewsItem {
   id: string;
   title: string;
+  titleEn?: string;
   date: string;
+  dateEn?: string;
   category: string;
+  categoryEn?: string;
   excerpt: string;
+  excerptEn?: string;
   content: string[];
+  contentEn?: string[];
   author: string;
+  authorEn?: string;
   image: string;
+  galleryImages?: string[];
   readTime: string;
+  readTimeEn?: string;
 }
 
 export interface Testimonial {
   id: string;
   name: string;
   role: string;
+  roleEn?: string;
   program: string;
+  programEn?: string;
   quote: string;
+  quoteEn?: string;
   avatar: string;
   year?: string;
+  yearEn?: string;
 }
 
 export interface StatItem {

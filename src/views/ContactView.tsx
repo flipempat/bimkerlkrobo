@@ -8,7 +8,9 @@ import {
   CheckCircle2, 
   ExternalLink,
   ShieldCheck,
-  ShoppingBag
+  ShoppingBag,
+  Loader2,
+  AlertCircle
 } from 'lucide-react';
 import { TOKOPEDIA_CONFIG } from '../data/tokopediaConfig';
 import { useLanguage } from '../context/LanguageContext';
@@ -23,11 +25,48 @@ export const ContactView: React.FC = () => {
     message: ''
   });
   const [isSent, setIsSent] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [lastSubmittedData, setLastSubmittedData] = useState<typeof formData | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSent(true);
+    setIsSubmitting(true);
+    setLastSubmittedData({ ...formData });
+
+    try {
+      await fetch(`https://formsubmit.co/ajax/${TOKOPEDIA_CONFIG.email}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          _subject: `[Web BIMKER LKROBO] Pesan dari ${formData.name}: ${formData.subject || 'Kontak Umum'}`,
+          nama_pengirim: formData.name,
+          email_pengirim: formData.email,
+          telepon: formData.phone,
+          perihal: formData.subject,
+          pesan: formData.message,
+          tujuan: TOKOPEDIA_CONFIG.email,
+          _template: 'table',
+          _captcha: 'false'
+        })
+      });
+    } catch (error) {
+      console.warn('Form submit dispatch error:', error);
+    } finally {
+      setIsSubmitting(false);
+      setIsSent(true);
+    }
   };
+
+  const mailtoUrl = lastSubmittedData
+    ? `mailto:${TOKOPEDIA_CONFIG.email}?subject=${encodeURIComponent(
+        `[Kontak BIMKER LKROBO] ${lastSubmittedData.subject || 'Pesan Pengunjung'} - ${lastSubmittedData.name}`
+      )}&body=${encodeURIComponent(
+        `Halo Tim Bimbingan Kerja Lapas Kerobokan,\n\nSaya menghubungi melalui formulir kontak website BIMKER LKROBO:\n\n• Nama: ${lastSubmittedData.name}\n• Email: ${lastSubmittedData.email}\n• Telepon/WhatsApp: ${lastSubmittedData.phone}\n• Perihal: ${lastSubmittedData.subject}\n\n• Pesan:\n${lastSubmittedData.message}\n\n---\nDikirim dari Website Resmi BIMKER LKROBO`
+      )}`
+    : `mailto:${TOKOPEDIA_CONFIG.email}`;
 
   return (
     <div className="space-y-16 pb-16">
@@ -126,27 +165,27 @@ export const ContactView: React.FC = () => {
               </div>
             </div>
 
-            {/* Tokopedia Store Callout */}
+            {/* Shopee Store Callout */}
             <div className="bg-[#0B1C3D] text-white rounded-3xl p-6 shadow-md border border-[#D4A017]/30 flex items-center justify-between gap-4">
               <div>
                 <span className="text-[11px] font-bold uppercase tracking-wider block text-[#E8C547]">
                   {language === 'id' ? 'Belanja Karya Warga Binaan' : 'Shop Inmate Artisans\' Works'}
                 </span>
                 <h4 className="font-bold text-base mt-0.5 text-white">
-                  {language === 'id' ? 'Toko Resmi Tokopedia LKROBO' : 'Official Tokopedia Store'}
+                  {language === 'id' ? 'Toko Resmi Shopee LKROBO' : 'Official Shopee Store'}
                 </h4>
                 <p className="text-xs text-slate-300 mt-1">
-                  {language === 'id' ? 'Pengiriman ke seluruh Indonesia dengan garansi resmi.' : 'Nationwide delivery with buyer protection guarantee.'}
+                  {language === 'id' ? 'Katalog lengkap dan transaksi terverifikasi langsung di Shopee.' : 'Complete catalog and verified checkout directly on Shopee.'}
                 </p>
               </div>
               <a
                 href={TOKOPEDIA_CONFIG.officialStoreUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#D4A017] hover:bg-[#E8C547] text-[#1A1A1A] text-xs font-bold py-2.5 px-4 rounded-xl shrink-0 shadow-sm flex items-center gap-1.5 transition-colors"
+                className="bg-[#EE4D2D] hover:bg-[#D73211] text-white text-xs font-bold py-2.5 px-4 rounded-xl shrink-0 shadow-sm flex items-center gap-1.5 transition-colors"
               >
-                <ShoppingBag className="w-3.5 h-3.5 text-[#1A1A1A]" />
-                <span>{language === 'id' ? 'Kunjungi Toko' : 'Visit Store'}</span>
+                <ShoppingBag className="w-3.5 h-3.5 text-white" />
+                <span>{language === 'id' ? 'Buka Shopee' : 'Open Shopee'}</span>
               </a>
             </div>
           </div>
@@ -163,27 +202,44 @@ export const ContactView: React.FC = () => {
               </p>
 
               {isSent ? (
-                <div className="py-8 text-center space-y-3">
-                  <div className="w-12 h-12 rounded-full bg-[#1A7A4C]/15 text-[#1A7A4C] flex items-center justify-center mx-auto">
-                    <CheckCircle2 className="w-7 h-7" />
+                <div className="py-8 text-center space-y-4">
+                  <div className="w-14 h-14 rounded-full bg-[#1A7A4C]/15 text-[#1A7A4C] flex items-center justify-center mx-auto shadow-inner">
+                    <CheckCircle2 className="w-8 h-8" />
                   </div>
-                  <h4 className="font-bold text-lg text-[#1A1A1A]">
-                    {language === 'id' ? 'Pesan Anda Berhasil Terkirim!' : 'Your Message Has Been Sent!'}
+                  <h4 className="font-bold text-xl text-[#1A1A1A]">
+                    {language === 'id' ? 'Pesan Anda Telah Diproses!' : 'Your Message Has Been Processed!'}
                   </h4>
-                  <p className="text-xs text-[#6B7280] max-w-sm mx-auto">
+                  <p className="text-xs sm:text-sm text-[#4A5568] max-w-md mx-auto leading-relaxed">
                     {language === 'id' 
-                      ? 'Terima kasih telah menghubungi Bimbingan Kerja Lapas Kerobokan Bali. Kami akan membalas via email atau kontak telepon yang Anda sediakan.'
-                      : 'Thank you for reaching out to Kerobokan Prison Vocational Guidance. We will reply via your provided email or phone number.'}
+                      ? `Pesan telah diteruskan ke email resmi kami: ${TOKOPEDIA_CONFIG.email}. Tim BIMKER LKROBO akan segera menghubungi Anda.`
+                      : `Your message has been forwarded to our official email: ${TOKOPEDIA_CONFIG.email}. The LKROBO vocational team will contact you shortly.`}
                   </p>
-                  <button
-                    onClick={() => {
-                      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
-                      setIsSent(false);
-                    }}
-                    className="text-xs font-bold text-[#0B1C3D] bg-[#F8F9FC] hover:bg-slate-200 px-4 py-2 rounded-xl transition-colors border border-slate-200"
-                  >
-                    {language === 'id' ? 'Kirim Pesan Lain' : 'Send Another Message'}
-                  </button>
+
+                  {/* Direct mailto action fallback */}
+                  <div className="pt-2 pb-1 flex flex-col sm:flex-row items-center justify-center gap-3">
+                    <a
+                      href={mailtoUrl}
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0B1C3D] hover:bg-[#152e5d] text-white text-xs font-bold py-3 px-5 rounded-xl border border-[#D4A017]/40 shadow-sm transition-all"
+                    >
+                      <Mail className="w-4 h-4 text-[#D4A017]" />
+                      <span>{language === 'id' ? 'Buka Salinan di Gmail / Aplikasi Email' : 'Open in Gmail / Email App'}</span>
+                    </a>
+                    <button
+                      onClick={() => {
+                        setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+                        setIsSent(false);
+                      }}
+                      className="w-full sm:w-auto text-xs font-semibold py-3 px-5 rounded-xl bg-[#F8F9FC] hover:bg-slate-200/70 text-[#1A1A1A] border border-slate-200 transition-colors"
+                    >
+                      {language === 'id' ? 'Kirim Pesan Lain' : 'Send Another Message'}
+                    </button>
+                  </div>
+
+                  <p className="text-[11px] text-[#6B7280] italic max-w-sm mx-auto">
+                    {language === 'id'
+                      ? 'Catatan: Jika baru pertama kali mengirim, pastikan memeriksa folder Spam/Update atau klik tombol di atas untuk mengirim langsung dari akun email Anda.'
+                      : 'Note: If this is your first submission, please also check your Spam folder or click above to dispatch directly from your email app.'}
+                  </p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -261,10 +317,20 @@ export const ContactView: React.FC = () => {
 
                   <button
                     type="submit"
-                    className="w-full inline-flex items-center justify-center gap-2 bg-[#D4A017] hover:bg-[#E8C547] text-[#1A1A1A] text-xs sm:text-sm font-bold py-3.5 px-6 rounded-xl shadow-md transition-colors"
+                    disabled={isSubmitting}
+                    className="w-full inline-flex items-center justify-center gap-2 bg-[#D4A017] hover:bg-[#E8C547] text-[#1A1A1A] text-xs sm:text-sm font-bold py-3.5 px-6 rounded-xl shadow-md transition-colors disabled:opacity-75 disabled:cursor-not-allowed"
                   >
-                    <Send className="w-4 h-4 text-[#1A1A1A]" />
-                    <span>{t.sendMessageBtn}</span>
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-4 h-4 text-[#1A1A1A] animate-spin" />
+                        <span>{language === 'id' ? 'Mengirim Pesan...' : 'Sending Message...'}</span>
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-4 h-4 text-[#1A1A1A]" />
+                        <span>{t.sendMessageBtn}</span>
+                      </>
+                    )}
                   </button>
                 </form>
               )}

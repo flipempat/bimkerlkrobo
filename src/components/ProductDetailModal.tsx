@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   X, 
   ShoppingBag, 
@@ -18,10 +18,38 @@ interface ProductDetailModalProps {
   onClose: () => void;
 }
 
+const CATEGORY_NAMES_EN: Record<string, string> = {
+  perak: '925 Silver Jewelry',
+  bakery: 'Bakery & Pastry',
+  garmen: 'Garment & Textiles',
+  hidroponik: 'Fresh Hydroponics',
+  dupa: 'Incense & Cultural',
+  sablon: 'Screen Printing & Canvas',
+  lukisan: 'Art Gallery & Paintings',
+  daur_ulang: 'Upcycled Crafts',
+  batik: 'Batik Creations',
+  perkebunan: 'Agro & Crops',
+  peternakan: 'Livestock Farm',
+  perikanan: 'Biofloc Fishery',
+  pertukangan: 'Carpentry & Metal',
+  kayu: 'Woodcraft'
+};
+
 export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product, onClose }) => {
   const { t, language } = useLanguage();
+  const [activeImage, setActiveImage] = useState<string>('');
+
+  useEffect(() => {
+    if (product) {
+      setActiveImage(product.image);
+    }
+  }, [product]);
 
   if (!product) return null;
+
+  const displayCategory = language === 'en' && CATEGORY_NAMES_EN[product.category]
+    ? CATEGORY_NAMES_EN[product.category]
+    : product.categoryLabel;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
@@ -38,7 +66,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
           <button
             onClick={onClose}
             className="w-10 h-10 rounded-full bg-black/40 hover:bg-black/60 text-white flex items-center justify-center transition-colors backdrop-blur-xs"
-            aria-label="Tutup Detail"
+            aria-label={language === 'id' ? "Tutup Detail" : "Close Details"}
           >
             <X className="w-5 h-5" />
           </button>
@@ -47,23 +75,56 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
         {/* Modal Content Body */}
         <div className="overflow-y-auto p-0">
           <div className="grid grid-cols-1 md:grid-cols-2">
-            {/* Left Column: Image */}
-            <div className="relative aspect-4/3 md:aspect-auto md:h-full bg-slate-100 min-h-[300px]">
-              <img
-                src={product.image}
-                alt={product.name}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs text-white">
-                <span className="bg-[#0B1C3D]/90 backdrop-blur-sm px-2.5 py-1 rounded-lg border border-[#D4A017]/30 text-[#D4A017] font-semibold">
-                  {product.categoryLabel}
-                </span>
-                {product.isBestSeller && (
-                  <span className="bg-[#D4A017] text-[#1A1A1A] font-bold px-2.5 py-1 rounded-lg">
-                    {t.bestSeller}
+            {/* Left Column: Image & Gallery */}
+            <div className="flex flex-col bg-slate-50 border-r border-slate-100">
+              <div className="relative aspect-square sm:aspect-4/3 md:aspect-square w-full bg-slate-100 min-h-[280px]">
+                <img
+                  src={activeImage || product.image}
+                  alt={product.name}
+                  className="w-full h-full object-cover"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs text-white">
+                  <span className="bg-[#0B1C3D]/90 backdrop-blur-sm px-2.5 py-1 rounded-lg border border-[#D4A017]/30 text-[#D4A017] font-semibold">
+                    {displayCategory}
                   </span>
-                )}
+                  {product.isBestSeller && (
+                    <span className="bg-[#D4A017] text-[#1A1A1A] font-bold px-2.5 py-1 rounded-lg">
+                      {t.bestSeller}
+                    </span>
+                  )}
+                </div>
               </div>
+
+              {/* Shopee Photo Gallery Thumbnails */}
+              {product.galleryImages && product.galleryImages.length > 1 && (
+                <div className="p-3 bg-white border-t border-slate-100">
+                  <p className="text-[11px] font-semibold text-[#6B7280] mb-2">
+                    {language === 'id' ? 'Foto Produk Shopee:' : 'Shopee Product Photos:'}
+                  </p>
+                  <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-thin">
+                    {product.galleryImages.map((imgUrl, idx) => (
+                      <button
+                        key={idx}
+                        type="button"
+                        onClick={() => setActiveImage(imgUrl)}
+                        className={`relative shrink-0 w-14 h-14 rounded-lg overflow-hidden border-2 transition-all ${
+                          (activeImage || product.image) === imgUrl
+                            ? 'border-[#EE4D2D] ring-2 ring-[#EE4D2D]/20 scale-105'
+                            : 'border-slate-200 opacity-70 hover:opacity-100'
+                        }`}
+                      >
+                        <img 
+                          src={imgUrl} 
+                          alt={`${product.name} - ${idx + 1}`} 
+                          className="w-full h-full object-cover"
+                          referrerPolicy="no-referrer"
+                        />
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Right Column: Details & CTA */}
@@ -85,7 +146,9 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
                   <span className="text-2xl font-extrabold text-[#0B1C3D]">
                     {product.formattedPrice}
                   </span>
-                  <span className="text-xs text-[#6B7280] font-medium">/ pcs di Tokopedia</span>
+                  <span className="text-xs text-[#6B7280] font-medium">
+                    {language === 'id' ? '/ pcs di marketplace' : '/ piece on marketplace'}
+                  </span>
                 </div>
 
                 {/* Made By & Unit */}
@@ -140,15 +203,14 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
 
               {/* Action Buttons */}
               <div className="space-y-2.5 pt-2 border-t border-slate-100">
-                {/* Dual Marketplace Purchase Buttons */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                  {/* Shopee Button (#EE4D2D) */}
+                {/* Shopee Purchase Button */}
+                <div>
                   {product.shopeeUrl ? (
                     <a
                       href={product.shopeeUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 bg-[#EE4D2D] hover:bg-[#D73211] text-white font-bold py-3.5 px-4 rounded-xl shadow-md hover:shadow-lg transition-all text-xs sm:text-sm group"
+                      className="w-full flex items-center justify-center gap-2 bg-[#EE4D2D] hover:bg-[#D73211] text-white font-bold py-3.5 px-4 rounded-xl shadow-md hover:shadow-lg transition-all text-xs sm:text-sm group"
                     >
                       <ShoppingBag className="w-4 h-4 group-hover:scale-110 transition-transform" />
                       <span>{t.buyOnShopee}</span>
@@ -158,33 +220,10 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
                     <button
                       type="button"
                       disabled
-                      className="flex items-center justify-center gap-2 bg-slate-100 text-slate-400 font-medium py-3.5 px-4 rounded-xl border border-slate-200 cursor-not-allowed opacity-60 text-xs sm:text-sm"
+                      className="w-full flex items-center justify-center gap-2 bg-slate-100 text-slate-400 font-medium py-3.5 px-4 rounded-xl border border-slate-200 cursor-not-allowed opacity-60 text-xs sm:text-sm"
                     >
                       <ShoppingBag className="w-4 h-4" />
-                      <span>{t.buyOnShopee} (Belum Tersedia)</span>
-                    </button>
-                  )}
-
-                  {/* Tokopedia Button (#03AC0E) */}
-                  {product.tokopediaUrl ? (
-                    <a
-                      href={product.tokopediaUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 bg-[#03AC0E] hover:bg-[#028A0B] text-white font-bold py-3.5 px-4 rounded-xl shadow-md hover:shadow-lg transition-all text-xs sm:text-sm group"
-                    >
-                      <ShoppingBag className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                      <span>{t.buyOnTokopedia}</span>
-                      <ExternalLink className="w-3.5 h-3.5 opacity-80" />
-                    </a>
-                  ) : (
-                    <button
-                      type="button"
-                      disabled
-                      className="flex items-center justify-center gap-2 bg-slate-100 text-slate-400 font-medium py-3.5 px-4 rounded-xl border border-slate-200 cursor-not-allowed opacity-60 text-xs sm:text-sm"
-                    >
-                      <ShoppingBag className="w-4 h-4" />
-                      <span>{t.buyOnTokopedia} (Belum Tersedia)</span>
+                      <span>{t.buyOnShopee} {language === 'id' ? '(Belum Tersedia)' : '(Unavailable)'}</span>
                     </button>
                   )}
                 </div>

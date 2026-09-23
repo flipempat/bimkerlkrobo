@@ -25,505 +25,283 @@ export const STATS: StatItem[] = [
 ];
 
 export const PRODUCTS: Product[] = [
+  // ==================== 10 PRODUK RESMI SESUAI KATALOG SHOPEE LKROBO ====================
   {
     id: "prod-perak-01",
-    name: "Gelang Perak Bali Motif Jawan Solid 925",
+    name: "Perhiasan Silver",
     category: "perak",
-    categoryLabel: "Kerajinan Perak",
-    price: 345000,
-    formattedPrice: "Rp 345.000",
-    shortDescription: "Gelang perak murni 925 buatan tangan warga binaan dengan detail ukir jawan khas pengrajin Celuk Bali.",
-    fullDescription: "Karya seni perak bernilai tinggi hasil tangan terampil warga binaan bimbingan kerja Lapas Kelas IIA Kerobokan. Dibuat menggunakan teknik filigree dan jawan tradisional Bali yang membutuhkan ketelitian tinggi. Setiap butir ukiran merefleksikan dedikasi dan harapan baru pengrajin.",
-    image: "https://res.cloudinary.com/ig4uk50k/image/upload/v1789958503/d5sw4j0cjgpqimoapz7r.webp",
-    shopeeUrl: "https://shopee.co.id/bimker_lkrobo/gelang-perak-jawan-bali-925",
-    tokopediaUrl: `${TOKOPEDIA_CONFIG.officialStoreUrl}/gelang-perak-jawan-bali-925`,
+    categoryLabel: "Aksesoris Fashion",
+    price: 250000,
+    formattedPrice: "Rp 250.000",
+    shortDescription: "Perhiasan silver / perak buatan tangan warga binaan dengan ukiran etnik khas pengrajin perak Lapas Kerobokan.",
+    fullDescription: "Produk perhiasan silver (perak) handmade berkualitas hasil karya ketelitian warga binaan Bimbingan Kerja Lapas Kelas IIA Kerobokan. Dirancang dengan sentuhan detail etnik Bali yang anggun dan bernilai seni tinggi, cocok untuk pemakaian pribadi maupun cinderamata khas Bali.",
+    image: "https://down-id.img.susercontent.com/file/id-11134207-81ztc-mt8yjtlu8mx485",
+    galleryImages: [
+      "https://down-id.img.susercontent.com/file/id-11134207-81ztc-mt8yjtlu8mx485",
+      "https://down-id.img.susercontent.com/file/id-11134207-81zti-mt7prpaymby9b0",
+      "https://down-id.img.susercontent.com/file/id-11134207-81ztp-mt7prpayjitd24",
+      "https://down-id.img.susercontent.com/file/id-11134207-81ztn-mt7prpayp5350a",
+      "https://down-id.img.susercontent.com/file/id-11134207-81ztj-mt8yjtlu07igfe"
+    ],
+    shopeeUrl: "https://shopee.co.id/Perhiasan-Silver-i.1325294054.56067950873?extraParams=%7B%22display_model_id%22%3A218877173676%2C%22model_selection_logic%22%3A3%7D",
     isFeatured: true,
     isBestSeller: true,
     inStock: true,
-    material: "Perak Murni 925 (Sterling Silver)",
-    madeBy: "Bengkel Kriya Logam & Perak LKROBO",
+    material: "Silver / Perak Handmade",
+    madeBy: "BIMKER Lapas Kelas IIA Kerobokan",
     specifications: [
-      { label: "Bahan", value: "Sterling Silver 925" },
-      { label: "Berat", value: "± 18 gram" },
-      { label: "Diameter", value: "Adjustable 6.0 - 6.8 cm" },
-      { label: "Finishing", value: "Oxidized Antique Polish" },
-      { label: "Sertifikat", value: "Sertifikat Keaslian Perak LKROBO" }
-    ]
-  },
-  {
-    id: "prod-bakery-01",
-    name: "Roti Manis & Roti Sobek Lembut Dapur Bakery Antaboga LKROBO",
-    category: "bakery",
-    categoryLabel: "Tata Boga & Bakery",
-    price: 35000,
-    formattedPrice: "Rp 35.000",
-    shortDescription: "Roti manis dan sobek bertekstur empuk lembut panggang harian buatan Dapur Bakery Antaboga Lapas Kerobokan.",
-    fullDescription: "Diproduksi segar setiap pagi oleh warga binaan terlatih di Dapur Bakery Antaboga Lapas Kelas IIA Kerobokan. Menggunakan tepung gandum bermutu tinggi, telur segar dari unit peternakan sendiri, dan mentega aromatik. Roti memiliki serat sangat lembut, rasa manis gurih pas, tanpa bahan pengawet sintetis, serta mengantongi Sertifikat Laik Higiene Sanitasi resmi.",
-    image: "https://res.cloudinary.com/ig4uk50k/image/upload/v1789968128/uhc1sdyxogduglz2lwwd.webp",
-    shopeeUrl: "https://shopee.co.id/bimker_lkrobo/roti-manis-sobek-antaboga",
-    tokopediaUrl: `${TOKOPEDIA_CONFIG.officialStoreUrl}/roti-manis-sobek-antaboga`,
-    isFeatured: true,
-    isBestSeller: true,
-    inStock: true,
-    material: "Tepung Gandum Protein Tinggi, Telur Segar Peternakan LKROBO, Mentega & Ragi Alami",
-    madeBy: "Dapur Bakery Antaboga LKROBO",
-    specifications: [
-      { label: "Isi Kemasan", value: "Paket Roti Aneka Varian (Cokelat Lumer, Keju Susu, Sobek Manis)" },
-      { label: "Kondisi", value: "Fresh Baked Daily (Dipanggang Baru Setiap Hari)" },
-      { label: "Ketahanan", value: "3-4 hari suhu ruang, 7 hari di lemari pendingin" },
-      { label: "Higienitas", value: "Tersertifikasi Laik Higiene Sanitasi Dinkes" }
-    ]
-  },
-  {
-    id: "prod-garmen-01",
-    name: "Kemeja Pria Tenun Endek Bali Kasual Modifikasi",
-    category: "garmen",
-    categoryLabel: "Garmen & Konveksi",
-    price: 195000,
-    formattedPrice: "Rp 195.000",
-    shortDescription: "Kemeja katun beraksen kain tenun Endek Bali dengan jahitan rapi berstandar butik kemeja pria.",
-    fullDescription: "Kemeja berdesain smart-casual modern yang memadukan kenyamanan bahan katun combed premium dengan keanggunan motif tenun Endek khas Klungkung. Dikerjakan dengan kontrol kualitas presisi oleh tim konveksi bimbingan kerja, cocok untuk acara formal maupun santai di Bali.",
-    image: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=800&q=80",
-    shopeeUrl: "https://shopee.co.id/bimker_lkrobo/kemeja-pria-tenun-endek-lkrobo",
-    tokopediaUrl: `${TOKOPEDIA_CONFIG.officialStoreUrl}/kemeja-pria-tenun-endek-lkrobo`,
-    isFeatured: true,
-    isBestSeller: true,
-    inStock: true,
-    material: "Katun Dobby Halus & Aksen Tenun Endek Katun",
-    madeBy: "Unit Konveksi & Garment LKROBO",
-    specifications: [
-      { label: "Ukuran", value: "S, M, L, XL, XXL (Slim Fit)" },
-      { label: "Kancing", value: "Batok Kelapa Alami Berukir" },
-      { label: "Kerah", value: "Mandarin Collar / Kerah Koko Elegan" },
-      { label: "Perawatan", value: "Cuci tangan dengan lerak / detergen lembut" }
-    ]
-  },
-  {
-    id: "prod-perak-02",
-    name: "Cincin Perak Tridatu Motif Bun Bali 925",
-    category: "perak",
-    categoryLabel: "Kerajinan Perak",
-    price: 185000,
-    formattedPrice: "Rp 185.000",
-    shortDescription: "Cincin perak pria & wanita bermotif sulur tanaman Bun khas Bali dengan ornamen Tridatu.",
-    fullDescription: "Karya perhiasan yang mengangkat kearifan lokal Bali. Motif sulur (bun) melambangkan kesinambungan kehidupan dan pertumbuhan diri ke arah yang lebih baik. Nyaman digunakan sehari-hari dan tidak menyebabkan iritasi kulit.",
-    image: "https://res.cloudinary.com/ig4uk50k/image/upload/v1789958410/lnxmwwpxt1sffmxrqemq.webp",
-    shopeeUrl: "https://shopee.co.id/bimker_lkrobo/cincin-perak-tridatu-bun-bali-925",
-    tokopediaUrl: `${TOKOPEDIA_CONFIG.officialStoreUrl}/cincin-perak-tridatu-bun-bali-925`,
-    isFeatured: false,
-    isBestSeller: true,
-    inStock: true,
-    material: "Perak Murni 925",
-    madeBy: "Bengkel Kriya Logam & Perak LKROBO",
-    specifications: [
-      { label: "Bahan", value: "Perak 925 (Bebas Nikel)" },
-      { label: "Ukuran Ring", value: "Size 14 - 22 (Standar Indonesia)" },
-      { label: "Lebar Cincin", value: "6 mm" }
+      { label: "Produk", value: "Perhiasan Silver Handmade" },
+      { label: "Kategori Shopee", value: "Aksesoris Fashion > Kalung / Liontin / Gelang" },
+      { label: "Asal Produk", value: "BIMKER Lapas Kelas IIA Kerobokan Bali" },
+      { label: "Status Toko", value: "Produk Resmi di Toko Shopee LKROBO" }
     ]
   },
   {
     id: "prod-dupa-01",
-    name: "Dupa Herbal Aromaterapi Bunga Cempaka Bali (800g)",
+    name: "Isi 100 Stik Dupa  Wangi Harum Natural Model Lidi Panjang 27cm",
     category: "dupa",
-    categoryLabel: "Dupa & Souvenir",
-    price: 55000,
-    formattedPrice: "Rp 55.000",
-    shortDescription: "Dupa wangi alami aroma bunga Cempaka Bali dengan abu tidak panas di tangan dan asap sejuk.",
-    fullDescription: "Dibuat dari campuran serbuk kayu cendana, getah kemenyan, dan minyak atsiri bunga cempaka kuning asli Bali. Proses pencelupan dan pengeringan alami menghasilkan aroma menenangkan yang cocok untuk relaksasi, meditasi, yoga, maupun upacara ritual.",
-    image: "https://res.cloudinary.com/ig4uk50k/image/upload/v1789958557/IMG_3895.webp",
-    shopeeUrl: "https://shopee.co.id/bimker_lkrobo/dupa-herbal-cempaka-bali-800g",
-    tokopediaUrl: `${TOKOPEDIA_CONFIG.officialStoreUrl}/dupa-herbal-cempaka-bali-800g`,
+    categoryLabel: "Perlengkapan Keagamaan",
+    price: 10000,
+    formattedPrice: "Rp 10.000",
+    shortDescription: "Dupa wangi harum natural model lidi panjang 27cm kemasan isi 100 stik untuk sembahyang dan aromaterapi harian.",
+    fullDescription: "Isi 100 stik dupa wangi harum natural model lidi panjang 27cm hasil produksi warga binaan Lapas Kelas IIA Kerobokan. Menghadirkan aroma wangi semerbak yang segar menenangkan, abu dingin aman di tangan, sangat cocok untuk sarana persembahyangan harian maupun pengharum ruangan.",
+    image: "https://down-id.img.susercontent.com/file/id-11134207-81ztm-mt662wyk8miq70",
+    galleryImages: [
+      "https://down-id.img.susercontent.com/file/id-11134207-81ztm-mt662wyk8miq70",
+      "https://down-id.img.susercontent.com/file/id-11134207-81ztg-mt8wc2g12uix6e"
+    ],
+    shopeeUrl: "https://shopee.co.id/Isi-100-Stik-Dupa-Wangi-Harum-Natural-Model-Lidi-Panjang-27cm-i.1325294054.51717893560?extraParams=%7B%22display_model_id%22%3A316515434418%2C%22model_selection_logic%22%3A3%7D",
     isFeatured: true,
     isBestSeller: true,
     inStock: true,
-    material: "Serbuk Cendana Alami, Minyak Esensial Cempaka",
-    madeBy: "Unit Pembuatan Dupa Wangi LKROBO",
+    material: "Serbuk Dupa Herbal & Aroma Wangi Alami",
+    madeBy: "BIMKER Lapas Kelas IIA Kerobokan",
     specifications: [
-      { label: "Berat Bersih", value: "800 gram (± 450 batang)" },
-      { label: "Panjang Stick", value: "28 cm" },
-      { label: "Durasi Bakar", value: "± 90 menit per batang" },
-      { label: "Karakter Abu", value: "Abu dingin, tidak perih di mata" }
+      { label: "Isi", value: "100 Stik Lidi" },
+      { label: "Panjang", value: "27 cm" },
+      { label: "Kategori Shopee", value: "Perlengkapan Rumah > Perlengkapan Keagamaan" },
+      { label: "Karakteristik", value: "Wangi Harum Natural, Abu Dingin, Asap Halus" }
     ]
   },
   {
-    id: "prod-hidroponik-01",
-    name: "Paket Sayur Selada Hidroponik Segar Krispi (1 kg)",
-    category: "hidroponik",
-    categoryLabel: "Pertanian Hidroponik",
-    price: 32000,
-    formattedPrice: "Rp 32.000",
-    shortDescription: "Selada hijau krispi dan selada merah organik hasil kebun hidroponik Lapas Kerobokan.",
-    fullDescription: "Ditanam di greenhouse hidroponik modern Lapas Kerobokan dengan air nutrisi terjaga tanpa pestisida kimia sintetis. Daun sangat renyah, segar, manis alami, dan dipanen langsung saat pesanan masuk untuk menjaga kualitas prima.",
-    image: "https://res.cloudinary.com/ig4uk50k/image/upload/v1790042639/iwsgaqsb6mkwack2rlhn.webp",
-    shopeeUrl: "https://shopee.co.id/bimker_lkrobo/sayur-selada-hidroponik-segar-lkrobo",
-    tokopediaUrl: `${TOKOPEDIA_CONFIG.officialStoreUrl}/sayur-selada-hidroponik-segar-lkrobo`,
-    isFeatured: false,
-    isBestSeller: false,
-    inStock: true,
-    material: "Bibit Unggul Non-GMO, Nutrisi AB Mix Teruji",
-    madeBy: "Greenhouse Hidroponik LKROBO",
-    specifications: [
-      { label: "Varian", value: "Mix Selada Romaine, Butterhead & Red Rapid" },
-      { label: "Berat", value: "1.000 gram (1 kg)" },
-      { label: "Kondisi", value: "Akar basah disertakan (Fresh Root)" },
-      { label: "Penyimpanan", value: "Tahan 7-10 hari di chiller kulkas" }
-    ]
-  },
-  {
-    id: "prod-sablon-01",
-    name: "Tote Bag Kanvas Premium 'Harapan di Balik Terali'",
-    category: "sablon",
-    categoryLabel: "Sablon & Desain",
-    price: 75000,
-    formattedPrice: "Rp 75.000",
-    shortDescription: "Tas jinjing kanvas katun tebal dengan sablon grafis inspiratif karya desainer binaan LKROBO.",
-    fullDescription: "Tas kanvas ramah lingkungan dengan daya tampung besar. Menggunakan bahan kanvas marsoto tebal dengan sablon plastisol tahan lama. Desain visual mengangkat filosofi burung kepodang yang siap terbang bebas membawa kebaikan baru.",
-    image: "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80",
-    shopeeUrl: "https://shopee.co.id/bimker_lkrobo/tote-bag-kanvas-harapan-lkrobo",
-    tokopediaUrl: `${TOKOPEDIA_CONFIG.officialStoreUrl}/tote-bag-kanvas-harapan-lkrobo`,
-    isFeatured: false,
+    id: "prod-miniatur-kapal-01",
+    name: "Miniatur Kapal Laut",
+    category: "daur_ulang",
+    categoryLabel: "Hobi & Koleksi",
+    price: 400000,
+    formattedPrice: "Rp 400.000",
+    shortDescription: "Miniatur kapal laut handmade kreatif hasil olahan daur ulang kemasan rokok dengan ketelitian anyaman tingkat tinggi.",
+    fullDescription: "Karya kerajinan miniatur kapal laut unik yang dibuat secara handmade oleh warga binaan Lapas Kelas IIA Kerobokan dengan memanfaatkan kemasan rokok yang disortir bersih. Melalui teknik lipat dan anyaman teliti, tercipta miniatur kapal laut berkarakter estetis yang kokoh dan bernilai seni tinggi untuk hiasan meja maupun koleksi.",
+    image: "https://down-id.img.susercontent.com/file/id-11134207-81zti-mt7prpayry81bf",
+    galleryImages: [
+      "https://down-id.img.susercontent.com/file/id-11134207-81zti-mt7prpayry81bf",
+      "https://down-id.img.susercontent.com/file/id-11134207-81ztl-mt7v90u9np51d0",
+      "https://down-id.img.susercontent.com/file/id-11134207-81zte-mt7v90u9p3ph69"
+    ],
+    shopeeUrl: "https://shopee.co.id/Miniatur-Kapal-Laut-i.1325294054.41534488412?extraParams=%7B%22display_model_id%22%3A336518793160%2C%22model_selection_logic%22%3A3%7D",
+    isFeatured: true,
     isBestSeller: true,
     inStock: true,
-    material: "Kanvas Marsoto Katun 14 oz",
-    madeBy: "Studio Desain & Sablon LKROBO",
+    material: "Daur Ulang Kemasan Bungkus Rokok Pilihan",
+    madeBy: "BIMKER Lapas Kelas IIA Kerobokan",
     specifications: [
-      { label: "Dimensi", value: "40 cm x 35 cm x 8 cm" },
-      { label: "Penutup", value: "Resleting YKK Berkualitas" },
-      { label: "Sablon", value: "Plastisol HD Curing Heatpress" },
-      { label: "Kompartemen", value: "Saku dalam untuk smartphone & dompet" }
+      { label: "Produk", value: "Miniatur Kapal Laut Handmade" },
+      { label: "Kategori Shopee", value: "Hobi & Koleksi > Koleksi > Vehicle Model & Diecast" },
+      { label: "Bahan", value: "Upcycled Bungkus Rokok Pilihan Bersih & Rapi" },
+      { label: "Pemanfaatan", value: "Pajangan Meja, Hiasan Interior, Koleksi Unik" }
+    ]
+  },
+  {
+    id: "prod-keben-sokasi-01",
+    name: "Keben (Sokasi)",
+    category: "daur_ulang",
+    categoryLabel: "Souvenir & Hadiah",
+    price: 300000,
+    formattedPrice: "Rp 300.000",
+    shortDescription: "Keben (sokasi) wadah sarana banten dan sesajen tradisional Bali handmade dengan anyaman rapi dan kuat.",
+    fullDescription: "Keben atau Sokasi tradisional Bali buatan tangan warga binaan Bimbingan Kerja Lapas Kerobokan. Berfungsi sebagai wadah banten, sesajen persembahyangan, maupun tempat hantaran adat Bali dengan anyaman kokoh, rapi, dan sentuhan motif khas Bali.",
+    image: "https://down-id.img.susercontent.com/file/id-11134207-81ztq-mt7lsx0zusqq61",
+    galleryImages: [
+      "https://down-id.img.susercontent.com/file/id-11134207-81ztq-mt7lsx0zusqq61",
+      "https://down-id.img.susercontent.com/file/id-11134207-81ztq-mt7lsx0zw7b66b",
+      "https://down-id.img.susercontent.com/file/id-11134207-81ztl-mt8yjtlu30nc9c",
+      "https://down-id.img.susercontent.com/file/id-11134207-81ztd-mt8yjtlu5ts881"
+    ],
+    shopeeUrl: "https://shopee.co.id/Keben-(Sokasi)-i.1325294054.53917950563?extraParams=%7B%22display_model_id%22%3A381518647593%2C%22model_selection_logic%22%3A3%7D",
+    isFeatured: true,
+    isBestSeller: true,
+    inStock: true,
+    material: "Bahan Anyaman Pilihan Berkualitas",
+    madeBy: "BIMKER Lapas Kelas IIA Kerobokan",
+    specifications: [
+      { label: "Nama Produk", value: "Keben (Sokasi)" },
+      { label: "Kategori Shopee", value: "Souvenir & Perlengkapan Pesta > Souvenir & Hadiah" },
+      { label: "Fungsi", value: "Wadah Canang Banten, Hantaran, Souvenir Adat" },
+      { label: "Pembuatan", value: "Handmade Anyaman Tradisional Bali" }
+    ]
+  },
+  {
+    id: "prod-bokoran-01",
+    name: "Bokoran Banten Handmade",
+    category: "daur_ulang",
+    categoryLabel: "Perlengkapan Keagamaan",
+    price: 150000,
+    formattedPrice: "Rp 150.000",
+    shortDescription: "Bokoran banten wadah sesajen persembahyangan adat Bali buatan tangan dengan ukiran rapi dan finishing menawan.",
+    fullDescription: "Bokoran banten handmade sarana upakara dan persembahyangan khas Bali karya warga binaan Lapas Kelas IIA Kerobokan. Dibuat dengan konstruksi kokoh, lekukan ornamen rapi, dan sentuhan warna berkilau yang pas untuk upacara keagamaan maupun dekorasi etnik.",
+    image: "https://down-id.img.susercontent.com/file/id-11134207-81zti-mt8wc2g0x895a3",
+    galleryImages: [
+      "https://down-id.img.susercontent.com/file/id-11134207-81zti-mt8wc2g0x895a3",
+      "https://down-id.img.susercontent.com/file/id-11134207-81zth-mt8wc2g101e192"
+    ],
+    shopeeUrl: "https://shopee.co.id/Bokoran-Banten-Handmade-i.1325294054.46968004439?extraParams=%7B%22display_model_id%22%3A441521839738%2C%22model_selection_logic%22%3A3%7D",
+    isFeatured: true,
+    isBestSeller: false,
+    inStock: true,
+    material: "Material Pilihan Berkualitas & Cat Ornamen Etnik",
+    madeBy: "BIMKER Lapas Kelas IIA Kerobokan",
+    specifications: [
+      { label: "Nama Produk", value: "Bokoran Banten Handmade" },
+      { label: "Kategori Shopee", value: "Perlengkapan Rumah > Perlengkapan Keagamaan" },
+      { label: "Peruntukan", value: "Wadah Upakara Banten Sesajen Bali" },
+      { label: "Karakter", value: "Kokoh, Awet, Ringan & Berornamen Rapi" }
+    ]
+  },
+  {
+    id: "prod-baju-custom-01",
+    name: "Baju Custom",
+    category: "garmen",
+    categoryLabel: "Pakaian Pria",
+    price: 120000,
+    formattedPrice: "Rp 120.000",
+    shortDescription: "Baju kaos custom konveksi dan sablon berkualitas buatan warga binaan unit bimbingan kerja Lapas Kerobokan.",
+    fullDescription: "Produk baju custom kaos hasil pengerjaan konveksi dan sablon warga binaan Lapas Kelas IIA Kerobokan. Menggunakan bahan kain yang nyaman digunakan sehari-hari, jahitan rapi kuat, dan sablon warna solid untuk kebutuhan seragam, kaos komunitas, event, atau pesanan khusus.",
+    image: "https://down-id.img.susercontent.com/file/id-11134207-81ztn-mt7u0jhky8ll06",
+    galleryImages: [
+      "https://down-id.img.susercontent.com/file/id-11134207-81ztn-mt7u0jhky8ll06",
+      "https://down-id.img.susercontent.com/file/id-11134207-81ztk-mt7u0jhkwu15e6",
+      "https://down-id.img.susercontent.com/file/id-11134207-81zti-mt7u0jhkzn61ba"
+    ],
+    shopeeUrl: "https://shopee.co.id/Baju-Custom-i.1325294054.50117952561?extraParams=%7B%22display_model_id%22%3A341519307912%2C%22model_selection_logic%22%3A3%7D",
+    isFeatured: true,
+    isBestSeller: true,
+    inStock: true,
+    material: "Kain Kaos Katun Pilihan & Sablon Berkualitas",
+    madeBy: "BIMKER Lapas Kelas IIA Kerobokan",
+    specifications: [
+      { label: "Nama Produk", value: "Baju Custom" },
+      { label: "Kategori Shopee", value: "Pakaian Pria > Atasan > Kaos" },
+      { label: "Layanan", value: "Sablon Desain Custom & Konveksi Rapi" },
+      { label: "Kenyamanan", value: "Bahan Adem, Menyerap Keringat, Jahitan Kuat" }
     ]
   },
   {
     id: "prod-bakery-02",
-    name: "Pie Susu Bali Antaboga Special Box (Isi 12 pcs)",
+    name: "BAKERY J'KER – PIE SUSU & DONAT HANDMADE",
     category: "bakery",
-    categoryLabel: "Tata Boga & Bakery",
+    categoryLabel: "Makanan & Minuman",
+    price: 30000,
+    formattedPrice: "Rp 30.000",
+    shortDescription: "Pie susu khas Bali yang renyah manis dan aneka donat lezat buatan harian Dapur Bakery J'KER Lapas Kerobokan.",
+    fullDescription: "Koleksi olahan tata boga Bakery J'KER Lapas Kelas IIA Kerobokan yang memproduksi pie susu lezat khas Bali dan donat handmade empuk bergizi. Dibuat dari bahan-bahan bermutu dengan standar kebersihan higienis terjamin, cocok untuk camilan keluarga dan oleh-oleh khas.",
+    image: "https://down-id.img.susercontent.com/file/id-11134207-81zto-mteqviayll3648",
+    galleryImages: [
+      "https://down-id.img.susercontent.com/file/id-11134207-81zto-mteqviayll3648",
+      "https://down-id.img.susercontent.com/file/id-11134207-81ztm-mteqviayek8y87"
+    ],
+    shopeeUrl: "https://shopee.co.id/BAKERY-J'KER-%E2%80%93-PIE-SUSU-DONAT-HANDMADE-i.1325294054.51618247185?extraParams=%7B%22display_model_id%22%3A277973805331%2C%22model_selection_logic%22%3A3%7D",
+    isFeatured: true,
+    isBestSeller: true,
+    inStock: true,
+    material: "Bahan Olahan Kue & Roti Berkualitas Terpilih",
+    madeBy: "Dapur Bakery J'KER Lapas Kerobokan",
+    specifications: [
+      { label: "Nama Produk", value: "BAKERY J'KER – PIE SUSU & DONAT HANDMADE" },
+      { label: "Kategori Shopee", value: "Makanan & Minuman > Roti & Kue > Roti" },
+      { label: "Varian", value: "Pie Susu Renyah Legit & Donat Lembut Handmade" },
+      { label: "Kondisi", value: "Fresh Made (Dibuat Segar & Higienis)" }
+    ]
+  },
+  {
+    id: "prod-asbak-01",
+    name: "Asbak Rokok",
+    category: "daur_ulang",
+    categoryLabel: "Dekorasi Rumah",
     price: 50000,
     formattedPrice: "Rp 50.000",
-    shortDescription: "Oleh-oleh khas Bali dengan kulit pie renyah dan vla susu lembut lumer di mulut.",
-    fullDescription: "Pie susu legendaris buatan Dapur Antaboga LKROBO yang dibuat secara higienis menggunakan susu kental manis murni, kuning telur segar pilihan peternakan sendiri, dan mentega aromatik. Tanpa bahan pengawet sintetis.",
-    image: "https://res.cloudinary.com/ig4uk50k/image/upload/v1790044577/wbemrlk6alvqfaqz16aj.webp",
-    shopeeUrl: "https://shopee.co.id/bimker_lkrobo/pie-susu-bali-antaboga-12pcs",
-    tokopediaUrl: `${TOKOPEDIA_CONFIG.officialStoreUrl}/pie-susu-bali-antaboga-12pcs`,
-    isFeatured: true,
-    isBestSeller: true,
-    inStock: true,
-    material: "Tepung Terigu, Kuning Telur Segar, Mentega, Susu",
-    madeBy: "Dapur Bakery Antaboga LKROBO",
-    specifications: [
-      { label: "Isi Box", value: "12 pcs kemasan individual seal" },
-      { label: "Daya Tahan", value: "7 hari suhu ruang, 14 hari pendingin" },
-      { label: "Pilihan Rasa", value: "Original Keju & Cokelat" }
-    ]
-  },
-  {
-    id: "prod-garmen-02",
-    name: "Apron Barista Kanvas Katun Heavy-Duty LKROBO",
-    category: "garmen",
-    categoryLabel: "Garmen & Konveksi",
-    price: 135000,
-    formattedPrice: "Rp 135.000",
-    shortDescription: "Celemek barista & chef dengan saku multifungsi dan tali silang (cross-back) anti lelah.",
-    fullDescription: "Banyak dipesan oleh coffee shop ternama di kawasan Canggu dan Seminyak Bali. Terbuat dari kanvas twill tahan cipratan minyak dan noda, dilengkapi ring kuningan dan kompartemen untuk pulpen, notebook, dan kain lap.",
-    image: "https://images.unsplash.com/photo-1574634534894-89d7576c8259?auto=format&fit=crop&w=800&q=80",
-    shopeeUrl: "https://shopee.co.id/bimker_lkrobo/apron-barista-kanvas-crossback-lkrobo",
-    tokopediaUrl: `${TOKOPEDIA_CONFIG.officialStoreUrl}/apron-barista-kanvas-crossback-lkrobo`,
-    isFeatured: false,
-    isBestSeller: true,
-    inStock: true,
-    material: "Kanvas Twill 100% Katun Tebal & Tali Kulit Sintetis",
-    madeBy: "Unit Konveksi & Garment LKROBO",
-    specifications: [
-      { label: "Ukuran", value: "All Size (Adjustable strap lebar dada 65cm, tinggi 80cm)" },
-      { label: "Warna", value: "Army Green, Espresso Brown, Midnight Black" },
-      { label: "Pengait", value: "Ring D-Hook Logam Antique Gold" }
-    ]
-  },
-  {
-    id: "prod-perak-03",
-    name: "Bros Kebaya Perak Motif Bunga Kamboja Jepun 925",
-    category: "perak",
-    categoryLabel: "Kerajinan Perak",
-    price: 275000,
-    formattedPrice: "Rp 275.000",
-    shortDescription: "Bros kebaya wanita terinspirasi keanggunan bunga Jepun Bali bersepuh perak murni 925.",
-    fullDescription: "Ornamen perak detail filigree dengan sentuhan mutiara air tawar alami di bagian tengah kuncup bunga. Sangat anggun dipadukan dengan kebaya Bali untuk upacara adat, wisuda, maupun resepsi pernikahan.",
-    image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80",
-    shopeeUrl: "https://shopee.co.id/bimker_lkrobo/bros-kebaya-perak-bunga-jepun-925",
-    tokopediaUrl: `${TOKOPEDIA_CONFIG.officialStoreUrl}/bros-kebaya-perak-bunga-jepun-925`,
-    isFeatured: false,
-    isBestSeller: false,
-    inStock: true,
-    material: "Perak 925 & Mutiara Air Tawar Alami",
-    madeBy: "Bengkel Kriya Logam & Perak LKROBO",
-    specifications: [
-      { label: "Dimensi", value: "5.5 cm x 5.0 cm" },
-      { label: "Jarum Peniti", value: "Stainless Steel Kuat & Kunci Pengaman" },
-      { label: "Berat", value: "14 gram" }
-    ]
-  },
-  {
-    id: "prod-telur-01",
-    name: "Telur Ayam Negeri Segar Peternakan Mandiri LKROBO (Tray 30 Butir)",
-    category: "peternakan",
-    categoryLabel: "Ketahanan Pangan & Ternak",
-    price: 58000,
-    formattedPrice: "Rp 58.000",
-    shortDescription: "Telur ayam negeri segar berprotein tinggi panen harian hasil budidaya peternakan ayam petelur Lapas Kerobokan.",
-    fullDescription: "Dipanen segar setiap hari dari kandang peternakan ayam petelur bimbingan kerja Lapas Kelas IIA Kerobokan. Telur berukuran seragam dengan cangkang tebal alami dan kuning telur pekat bernutrisi tinggi. Dihasilkan dari tata kelola sanitasi biosekuriti higienis dan pakan bergizi seimbang.",
-    image: "https://res.cloudinary.com/ig4uk50k/image/upload/v1789968129/z00wjpuzspy9j9ziy0yb.webp",
-    shopeeUrl: "https://shopee.co.id/bimker_lkrobo/telur-ayam-segar-lkrobo-tray-30",
-    tokopediaUrl: `${TOKOPEDIA_CONFIG.officialStoreUrl}/telur-ayam-segar-lkrobo-tray-30`,
-    isFeatured: true,
-    isBestSeller: true,
-    inStock: true,
-    material: "Telur Ayam Negeri Segar Grade A",
-    madeBy: "Unit Peternakan Ayam Petelur LKROBO",
-    specifications: [
-      { label: "Isi Kemasan", value: "Tray Karton Ramah Lingkungan 30 Butir" },
-      { label: "Kondisi", value: "Panen Segar Harian (Fresh Daily Harvest)" },
-      { label: "Standarisasi", value: "Pengawasan Higienis Dinas Peternakan" },
-      { label: "Penyimpanan", value: "Tahan 3-4 minggu dalam lemari pendingin" }
-    ]
-  },
-  {
-    id: "prod-telur-bebek-01",
-    name: "Telur Bebek Segar Pilihan Peternakan LKROBO (Tray 30 Butir)",
-    category: "peternakan",
-    categoryLabel: "Ketahanan Pangan & Ternak",
-    price: 75000,
-    formattedPrice: "Rp 75.000",
-    shortDescription: "Telur bebek segar berkualitas tinggi panen harian hasil budidaya peternakan bebek petelur Lapas Kerobokan. Cocok untuk jamu, martabak, dan telur asin.",
-    fullDescription: "Telur bebek segar berkualitas super hasil peternakan bebek petelur mandiri binaan bimbingan kerja Lapas Kelas IIA Kerobokan. Telur berukuran besar, cangkang biru kehijauan yang kokoh, dan kuning telur oranye pekat kaya nutrisi serta rendah amis berkat pakan alami dan manajemen sanitasi air yang baik.",
-    image: "https://res.cloudinary.com/ig4uk50k/image/upload/v1789968126/czxv95k7kjte92maptwv.webp",
-    shopeeUrl: "https://shopee.co.id/bimker_lkrobo/telur-bebek-segar-lkrobo-tray-30",
-    tokopediaUrl: `${TOKOPEDIA_CONFIG.officialStoreUrl}/telur-bebek-segar-lkrobo-tray-30`,
-    isFeatured: true,
-    isBestSeller: true,
-    inStock: true,
-    material: "Telur Bebek Segar Grade A",
-    madeBy: "Unit Peternakan Bebek Petelur LKROBO",
-    specifications: [
-      { label: "Isi Kemasan", value: "Tray Karton Tebal 30 Butir" },
-      { label: "Kondisi", value: "Panen Baru Setiap Pagi (Daily Fresh)" },
-      { label: "Karakteristik", value: "Kuning Telur Oranye Pekat & Cangkang Bersih" },
-      { label: "Kegunaan", value: "Bahan Telur Asin Masir, Martabak, & Jamu Sehat" }
-    ]
-  },
-  {
-    id: "prod-ikan-nila-01",
-    name: "Ikan Nila Merah & Lele Segar Kolam Bioflok LKROBO (1 Kg)",
-    category: "perikanan",
-    categoryLabel: "Ketahanan Pangan & Perikanan",
-    price: 45000,
-    formattedPrice: "Rp 45.000",
-    shortDescription: "Ikan air tawar segar hidup hasil budidaya kolam bioflok ramah lingkungan bimbingan kerja Lapas Kerobokan. Daging tebal, gurih manis, dan bebas bau lumpur.",
-    fullDescription: "Ikan nila merah dan lele segar kualitas konsumsi terbaik hasil budidaya kolam bioflok terpal binaan Bimbingan Kerja Lapas Kelas IIA Kerobokan. Menggunakan teknologi aerasi bioflok modern ramah lingkungan, pakan terkontrol, dan air terawat optimal sehingga menghasilkan ikan dengan daging tebal padat, bernutrisi tinggi, bebas residu bahan kimia, dan tanpa bau lumpur.",
-    image: "https://res.cloudinary.com/ig4uk50k/image/upload/v1789968127/j1xqy1dewx3ng06aclxs.webp",
-    shopeeUrl: "https://shopee.co.id/bimker_lkrobo/ikan-segar-bioflok-lkrobo-1kg",
-    tokopediaUrl: `${TOKOPEDIA_CONFIG.officialStoreUrl}/ikan-segar-bioflok-lkrobo-1kg`,
-    isFeatured: true,
-    isBestSeller: true,
-    inStock: true,
-    material: "Ikan Air Tawar Segar Hidup / Siap Olah Grade A",
-    madeBy: "Unit Budidaya Perikanan Kolam Bioflok LKROBO",
-    specifications: [
-      { label: "Pilihan Komoditas", value: "Ikan Nila Merah / Ikan Lele Segar" },
-      { label: "Bobot & Isi", value: "1 Kilogram (Isi 3-4 ekor Nila atau 6-8 ekor Lele)" },
-      { label: "Teknologi Budidaya", value: "Kolam Terpal Bioflok Modern Ramah Lingkungan" },
-      { label: "Keunggulan Daging", value: "Daging Tebal Padat, Manis Gurih, Bebas Bau Lumpur" }
-    ]
-  },
-  {
-    id: "prod-maggot-01",
-    name: "Maggot BSF Kering Organik Super (Pakan Ikan & Burung) LKROBO (250g)",
-    category: "perikanan",
-    categoryLabel: "Ketahanan Pangan & Pakan Alami",
-    price: 35000,
-    formattedPrice: "Rp 35.000",
-    shortDescription: "Larva Maggot BSF kering oven kaya protein 45%+ untuk pakan alami bernutrisi tinggi ikan bioflok dan aneka burung berkicau di kubah aviary.",
-    fullDescription: "Pakan alami berkualitas tinggi hasil biokonversi limbah organik budidaya Maggot Black Soldier Fly (BSF) mandiri Lapas Kelas IIA Kerobokan. Dikeringkan higienis dengan oven terkontrol guna menjaga kandungan protein alami 45%+, asam amino, dan mineral kalsium. Sangat disukai ikan nila, lele, koi, channa, serta aneka burung berkicau (murai batu, kacer, lovebird, canari). Memacu pertumbuhan dan meningkatkan kekebalan satwa secara alami.",
-    image: "https://res.cloudinary.com/ig4uk50k/image/upload/v1789968126/hi6ovjcvddmbbte775gr.webp",
-    shopeeUrl: "https://shopee.co.id/bimker_lkrobo/maggot-bsf-kering-lkrobo-250g",
-    tokopediaUrl: `${TOKOPEDIA_CONFIG.officialStoreUrl}/maggot-bsf-kering-lkrobo-250g`,
+    shortDescription: "Asbak rokok handmade ramah lingkungan kreasi kriya daur ulang limbah dengan lapisan tahan panas dan kokoh.",
+    fullDescription: "Asbak rokok handmade hasil kreasi keterampilan warga binaan Lapas Kelas IIA Kerobokan dengan memanfaatkan bahan daur ulang ramah lingkungan. Dilengkapi lapisan pelindung yang tahan bara, permukaan halus, dan mudah dibersihkan.",
+    image: "https://down-id.img.susercontent.com/file/id-11134207-81zti-mt7rvoqshjbcca",
+    galleryImages: [
+      "https://down-id.img.susercontent.com/file/id-11134207-81zti-mt7rvoqshjbcca",
+      "https://down-id.img.susercontent.com/file/id-11134207-81zte-mt7rvoqskcg8ca"
+    ],
+    shopeeUrl: "https://shopee.co.id/Asbak-Rokok-i.1325294054.54617955664?extraParams=%7B%22display_model_id%22%3A416518962713%2C%22model_selection_logic%22%3A3%7D",
     isFeatured: true,
     isBestSeller: false,
     inStock: true,
-    material: "100% Larva Maggot BSF Murni Tanpa Kimia",
-    madeBy: "Unit Budidaya Maggot BSF LKROBO",
+    material: "Material Daur Ulang Ramah Lingkungan",
+    madeBy: "BIMKER Lapas Kelas IIA Kerobokan",
     specifications: [
-      { label: "Kandungan Nutrisi", value: "Protein Kasar 45%, Lemak Baik 25%, Kalsium Tinggi" },
-      { label: "Sasaran Pakan", value: "Pakan Alami Ikan Kolam Bioflok & Burung Aviary" },
-      { label: "Kemasan", value: "Standing Pouch Kedap Udara 250 gram dengan Ziplock" },
-      { label: "Produk Sampingan", value: "Tersedia juga Pupuk Organik Kasgot Penyubur Tanah" }
+      { label: "Nama Produk", value: "Asbak Rokok" },
+      { label: "Kategori Shopee", value: "Perlengkapan Rumah > Dekorasi > Vas & Bejana" },
+      { label: "Karakteristik", value: "Kuat, Tahan Panas, Finishing Halus" },
+      { label: "Perawatan", value: "Mudah dibersihkan dan awet digunakan" }
     ]
   },
   {
-    id: "prod-lukisan-01",
-    name: "Lukisan Kanvas Orisinal 'Harmoni Dewata' Art Gallery LKROBO",
-    category: "lukisan",
-    categoryLabel: "Art Gallery & Seni Lukis",
-    price: 850000,
-    formattedPrice: "Rp 850.000",
-    shortDescription: "Karya seni lukis kanvas orisinal goresan tangan seniman warga binaan binaan Art Gallery Lapas Kerobokan. Kaya nilai estetika, ketenangan batin, dan budaya Bali.",
-    fullDescription: "Lukisan kanvas orisinal berkualitas tinggi yang dikerjakan langsung oleh seniman warga binaan di studio Art Gallery Lapas Kelas IIA Kerobokan. Menggunakan cat minyak dan akrilik bermutu tinggi di atas kanvas bertekstur rapat dengan perpaduan warna dan sapuan kuas berkarakter kuat. Menggambarkan kedamaian spiritual, keindahan alam, dan harapan baru. Sangat bernilai estetika tinggi untuk dekorasi ruang tamu, lobi hotel, villa, maupun koleksi galeri seni.",
-    image: "https://res.cloudinary.com/ig4uk50k/image/upload/v1789968129/ylmupl2mz8vxvvruy5ay.webp",
-    shopeeUrl: "https://shopee.co.id/bimker_lkrobo/lukisan-kanvas-art-gallery-lkrobo",
-    tokopediaUrl: `${TOKOPEDIA_CONFIG.officialStoreUrl}/lukisan-kanvas-art-gallery-lkrobo`,
-    isFeatured: true,
-    isBestSeller: true,
-    inStock: true,
-    material: "Cat Akrilik & Minyak Premium di atas Kanvas Katun + Rangka Spanram Kayu",
-    madeBy: "Studio Seni Lukis Art Gallery LKROBO",
-    specifications: [
-      { label: "Dimensi Karya", value: "60 cm x 80 cm (Sudah Termasuk Spanram Kayu)" },
-      { label: "Media & Teknik", value: "Acrylic & Oil on Canvas (Teknik Palet & Kuas Detail)" },
-      { label: "Sertifikat", value: "Disertai Sertifikat Keaslian Karya Seni LKROBO" },
-      { label: "Proteksi Warna", value: "Varnish Lapisan Satin Anti UV & Tahan Lembap" }
-    ]
-  },
-  {
-    id: "prod-lukisan-02",
-    name: "Lukisan Kanvas Lanskap Tradisi & Budaya Bali Art Gallery LKROBO",
-    category: "lukisan",
-    categoryLabel: "Art Gallery & Seni Lukis",
-    price: 950000,
-    formattedPrice: "Rp 950.000",
-    shortDescription: "Lukisan kanvas orisinal bertema panorama dan kekayaan kultur Bali karya seniman warga binaan LKROBO. Goresan kuas impresif bernilai seni tinggi.",
-    fullDescription: "Karya seni lukis kanvas otentik bertema lanskap alam dan keelokan tradisi budaya Bali. Dilukis dengan dedikasi penuh ketelitian oleh warga binaan berbakat di bawah bimbingan kurator seni rupa Art Gallery Lapas Kelas IIA Kerobokan. Menggunakan cat minyak dan akrilik bergradasi hidup pada kanvas premium dengan spanram kayu solid, siap dipajang untuk mempercantik hunian eksklusif, galeri seni, maupun lobi hotel.",
-    image: "https://res.cloudinary.com/ig4uk50k/image/upload/v1789882636/lukisan.webp",
-    shopeeUrl: "https://shopee.co.id/bimker_lkrobo/lukisan-lanskap-bali-lkrobo",
-    tokopediaUrl: `${TOKOPEDIA_CONFIG.officialStoreUrl}/lukisan-lanskap-bali-lkrobo`,
-    isFeatured: true,
-    isBestSeller: false,
-    inStock: true,
-    material: "Oil & Acrylic on Canvas Berkualitas + Spanram Kayu Solid",
-    madeBy: "Studio Seni Lukis Art Gallery LKROBO",
-    specifications: [
-      { label: "Dimensi Lukisan", value: "70 cm x 90 cm (Rangka Spanram Kayu Siap Gantung)" },
-      { label: "Media & Teknik", value: "Campuran Cat Minyak & Akrilik (Teknik Impasto & Glazing)" },
-      { label: "Otentisitas", value: "Tanda Tangan Asli Pelukis & Sertifikat Kurasi LKROBO" },
-      { label: "Proteksi Lukisan", value: "Vernis Anti Debu, Anti Lembap & UV Protection" }
-    ]
-  },
-  {
-    id: "prod-daur-ulang-rokok-01",
-    name: "Kerajinan Miniatur & Seni Anyaman Daur Ulang Kemasan Rokok LKROBO",
+    id: "prod-kotak-tisu-01",
+    name: "Kotak Tisu Kertas Koran - Handmade  dengan Tutup, Kotak Tisu Meja",
     category: "daur_ulang",
-    categoryLabel: "Kriya Daur Ulang Kreatif",
-    price: 65000,
-    formattedPrice: "Rp 65.000",
-    shortDescription: "Kerajinan tangan unik ramah lingkungan berbahan limbah kemasan rokok yang dianyam dan dirangkai presisi tinggi oleh warga binaan LKROBO.",
-    fullDescription: "Karya seni kriya upcycling inovatif hasil ketelitian dan kesabaran warga binaan bimbingan kerja Lapas Kelas IIA Kerobokan. Memanfaatkan lapisan karton dan foil kemasan rokok bekas yang disortir bersih, dilipat rapi, dan dianyam dengan teknik kunci presisi tanpa lem kimia berbahaya. Menghasilkan aneka miniatur kapal layar tradisional, kotak serbaguna artistik, dan suvenir unik yang kokoh, berkarakter metalik estetis, dan bernilai seni tinggi.",
-    image: "https://res.cloudinary.com/ig4uk50k/image/upload/v1789958409/krtovwh0faamuzcefiaw.webp",
-    shopeeUrl: "https://shopee.co.id/bimker_lkrobo/kerajinan-daur-ulang-kemasan-rokok",
-    tokopediaUrl: `${TOKOPEDIA_CONFIG.officialStoreUrl}/kerajinan-daur-ulang-kemasan-rokok`,
+    categoryLabel: "Organizer Rumah",
+    price: 120000,
+    formattedPrice: "Rp 120.000",
+    shortDescription: "Kotak tisu meja estetik bermaterial lintingan kertas koran daur ulang handmade lengkap dengan tutup atas rapi.",
+    fullDescription: "Kotak tisu kertas koran handmade dengan tutup untuk kotak tisu meja yang unik dan estetik buatan warga binaan Lapas Kelas IIA Kerobokan. Dibuat dari jalinan lintingan kertas koran bekas yang disusun rapat kokoh menyerupai anyaman rotan dengan lapisan vernis pelindung tahan cipratan air.",
+    image: "https://down-id.img.susercontent.com/file/id-11134207-81ztn-mt7kmy0i9ybref",
+    galleryImages: [
+      "https://down-id.img.susercontent.com/file/id-11134207-81ztn-mt7kmy0i9ybref",
+      "https://down-id.img.susercontent.com/file/id-11134207-81ztd-mt8wc2g0rlzd22",
+      "https://down-id.img.susercontent.com/file/id-11134207-81ztk-mt8wc2g0uf49fb"
+    ],
+    shopeeUrl: "https://shopee.co.id/Kotak-Tisu-Kertas-Koran-Handmade-dengan-Tutup-Kotak-Tisu-Meja-i.1325294054.53967929473?extraParams=%7B%22display_model_id%22%3A441518182640%2C%22model_selection_logic%22%3A3%7D",
     isFeatured: true,
     isBestSeller: true,
     inStock: true,
-    material: "100% Upcycled Kemasan Rokok Pilihan, Karton Foil, Vernis Pelindung",
-    madeBy: "Unit Kerajinan Daur Ulang Kemasan Rokok LKROBO",
+    material: "Daur Ulang Kertas Koran Pilihan & Vernis Clear",
+    madeBy: "BIMKER Lapas Kelas IIA Kerobokan",
     specifications: [
-      { label: "Bahan Baku", value: "Limbah Kemasan Rokok Terpilih (Bersih & Higienis)" },
-      { label: "Teknik Pembuatan", value: "Anyaman Kunci Lipat Presisi Manual & Perakitan Detail" },
-      { label: "Finishing", value: "Coating Vernis Transparan (Anti Debu & Tahan Percikan Air)" },
-      { label: "Keistimewaan", value: "Karya Ramah Lingkungan Ekonomi Sirkular (Zero-Waste)" }
+      { label: "Nama Produk", value: "Kotak Tisu Kertas Koran - Handmade dengan Tutup, Kotak Tisu Meja" },
+      { label: "Kategori Shopee", value: "Perlengkapan Rumah > Organizer Rumah > Tempat Tisu" },
+      { label: "Fitur", value: "Lengkap dengan Tutup Atas Rapi" },
+      { label: "Finishing", value: "Lapisan Vernis Pelindung Anti Lembap" }
     ]
   },
   {
-    id: "prod-daur-ulang-koran-01",
-    name: "Keranjang & Wadah Anyaman Estetik Daur Ulang Koran LKROBO",
+    id: "prod-vas-bunga-01",
+    name: "Vas Bunga Kulit Rokok Ramah Lingkungan Handmade",
     category: "daur_ulang",
-    categoryLabel: "Kriya Daur Ulang Kreatif",
-    price: 45000,
-    formattedPrice: "Rp 45.000",
-    shortDescription: "Keranjang dan wadah serbaguna estetik berbahan lintingan koran bekas pilihan berfinishing vernis tahan lembap karya warga binaan LKROBO.",
-    fullDescription: "Karya seni kriya ramah lingkungan yang memadukan kepedulian daur ulang limbah dengan seni anyaman bernilai estetika tinggi. Dibuat dari lintingan kertas koran bekas yang digulung padat, dianyam rapi secara manual dengan kekuatan setara anyaman rotan alam, serta dilapisi vernis khusus anti jamur dan tahan percikan air. Cocok untuk wadah buah meja makan, tempat pernak-pernik, suvenir pernikahan ramah lingkungan, maupun dekorasi ruangan berkonsep natural.",
-    image: "https://res.cloudinary.com/ig4uk50k/image/upload/v1790044576/bkop5z6x6qvyxgmmvtvh.webp",
-    shopeeUrl: "https://shopee.co.id/bimker_lkrobo/kerajinan-anyaman-daur-ulang-koran",
-    tokopediaUrl: `${TOKOPEDIA_CONFIG.officialStoreUrl}/kerajinan-anyaman-daur-ulang-koran`,
+    categoryLabel: "Dekorasi Rumah",
+    price: 250000,
+    formattedPrice: "Rp 250.000",
+    shortDescription: "Vas bunga hias meja handmade ramah lingkungan hasil anyaman daur ulang kulit bungkus rokok bertekstur foil kilap.",
+    fullDescription: "Vas bunga kulit rokok ramah lingkungan handmade buatan tangan warga binaan Lapas Kelas IIA Kerobokan. Memanfaatkan limbah bungkus rokok yang dianyam presisi dengan kilauan foil metalik yang khas dan dilapisi vernis pelindung, sangat cantik untuk hiasan bunga meja ruang tamu, kafe, atau meja kerja.",
+    image: "https://down-id.img.susercontent.com/file/id-11134207-81ztk-mt7lsx0zkyrm27",
+    galleryImages: [
+      "https://down-id.img.susercontent.com/file/id-11134207-81ztk-mt7lsx0zkyrm27",
+      "https://down-id.img.susercontent.com/file/id-11134207-81ztq-mt8yjtlr01sa78"
+    ],
+    shopeeUrl: "https://shopee.co.id/Vas-Bunga-Kulit-Rokok-Ramah-Lingkungan-Handmade-i.1325294054.54617940494?extraParams=%7B%22display_model_id%22%3A287963886532%2C%22model_selection_logic%22%3A3%7D",
     isFeatured: true,
-    isBestSeller: true,
+    isBestSeller: false,
     inStock: true,
-    material: "100% Kertas Koran Daur Ulang, Perekat Ramah Lingkungan, Vernis Gloss Pelindung",
-    madeBy: "Unit Kerajinan Daur Ulang Koran LKROBO",
+    material: "Daur Ulang Kulit / Bungkus Rokok Pilihan & Vernis",
+    madeBy: "BIMKER Lapas Kelas IIA Kerobokan",
     specifications: [
-      { label: "Bahan Baku", value: "Kertas Koran Bekas Pilihan (Lintingan Padat & Rapat)" },
-      { label: "Teknik Pembuatan", value: "Anyaman Tangan Manual (Handcrafted Woven Paper)" },
-      { label: "Pelapis Akhir", value: "Vernis Clear Gloss (Tahan Percikan Air & Anti Lembap)" },
-      { label: "Keunggulan", value: "Ramah Lingkungan, Bobot Ringan, Kuat & Bernuansa Etnik" }
-    ]
-  },
-  {
-    id: "prod-batik-01",
-    name: "Kain Batik Tulis & Cap Eksklusif Motif Ornamen Bali LKROBO",
-    category: "batik",
-    categoryLabel: "Kerajinan Batik & Tekstil",
-    price: 245000,
-    formattedPrice: "Rp 245.000",
-    shortDescription: "Kain batik karya warga binaan LKROBO dengan perpaduan canting malam dan cap bermotif ornamen khas Bali di atas kain katun primissima super.",
-    fullDescription: "Karya tekstil adiluhung hasil ketelitian warga binaan unit Kerajinan Batik Lapas Kelas IIA Kerobokan. Dibuat menggunakan kain katun primissima mori berkualitas tinggi dengan sentuhan lilin malam dan pewarnaan bertahap yang matang. Memiliki tekstur kain yang jatuh lembut, adem di kulit, serta warna tajam yang tidak mudah luntur. Cocok dijadikan bahan kemeja formal, kebaya, gamis, maupun sarung adat berkelas.",
-    image: "https://res.cloudinary.com/ig4uk50k/image/upload/v1789958428/vch8076fjlf9fvclbnyh.webp",
-    shopeeUrl: "https://shopee.co.id/bimker_lkrobo/kain-batik-motif-bali-lkrobo",
-    tokopediaUrl: `${TOKOPEDIA_CONFIG.officialStoreUrl}/kain-batik-motif-bali-lkrobo`,
-    isFeatured: true,
-    isBestSeller: true,
-    inStock: true,
-    material: "100% Katun Primissima Super Berkualitas Tinggi",
-    madeBy: "Unit Kerajinan Batik LKROBO",
-    specifications: [
-      { label: "Dimensi Kain", value: "Panjang 220 cm x Lebar 115 cm" },
-      { label: "Teknik Pembuatan", value: "Kombinasi Batik Cap Tembaga & Canting Lilin Malam" },
-      { label: "Karakter Bahan", value: "Halus, Sejuk, Menyerap Keringat, Tidak Nerawang" },
-      { label: "Perawatan", value: "Cuci dengan sabun lerak atau detergen cair lembut" }
-    ]
-  },
-  {
-    id: "prod-perkebunan-01",
-    name: "Paket Hasil Kebun & Komoditas Pangan Segar Perkebunan LKROBO",
-    category: "perkebunan",
-    categoryLabel: "Perkebunan & Pangan",
-    price: 38000,
-    formattedPrice: "Rp 38.000",
-    shortDescription: "Hasil bumi perkebunan segar ramah lingkungan seperti aneka buah pisang, jagung manis, dan tanaman pangan hasil budidaya warga binaan LKROBO.",
-    fullDescription: "Dipanen langsung dari area perkebunan terbuka produktif Lapas Kelas IIA Kerobokan. Dikelola dengan pemupukan organik kasgot (residu biokonversi maggot BSF) dan bokashi alami tanpa bahan kimia berbahaya. Menghasilkan aneka buah pisang, jagung manis segar, dan rempah pangan berkhasiat dengan cita rasa alami, manis, dan bergizi tinggi.",
-    image: "https://res.cloudinary.com/ig4uk50k/image/upload/v1789968126/zvjkbkjecpp4i5f2loo5.webp",
-    shopeeUrl: "https://shopee.co.id/bimker_lkrobo/paket-hasil-kebun-perkebunan-lkrobo",
-    tokopediaUrl: `${TOKOPEDIA_CONFIG.officialStoreUrl}/paket-hasil-kebun-perkebunan-lkrobo`,
-    isFeatured: true,
-    isBestSeller: true,
-    inStock: true,
-    material: "100% Hasil Kebun Segar Organik (Dipupuk Kasgot Alami)",
-    madeBy: "Unit Perkebunan & Ketahanan Pangan LKROBO",
-    specifications: [
-      { label: "Kondisi", value: "Fresh Picked Daily (Dipetik Baru Saat Pesanan)" },
-      { label: "Metode Budidaya", value: "Pertanian Organik Ramah Lingkungan Non-Pestisida Kimia" },
-      { label: "Nutrisi Tanah", value: "Pupuk Kasgot BSF Organik Hasil Biokonversi Mandiri" },
-      { label: "Kualitas", value: "Segar Alami, Bersih, Kaya Nutrisi & Serat Pangan" }
-    ]
-  },
-  {
-    id: "prod-pertukangan-01",
-    name: "Meja & Bangku Kayu Solid Kombinasi Rangka Besi Industrial LKROBO",
-    category: "pertukangan",
-    categoryLabel: "Pertukangan & Las",
-    price: 450000,
-    formattedPrice: "Rp 450.000",
-    shortDescription: "Furnitur meja dan bangku kayu solid pilihan dengan rangka besi hollow kokoh berfinishing cat anti karat karya bengkel pertukangan dan las LKROBO.",
-    fullDescription: "Karya furnitur fungsional dan estetik hasil kolaborasi keterampilan pertukangan kayu dan pengelasan logam warga binaan Lapas Kelas IIA Kerobokan. Menggunakan papan kayu solid pilihan dengan serat alami yang dipertegas pelapis politur pelindung cuaca, dipadukan rangka besi hollow tebal dengan las sambungan rapi dan kuat. Sangat cocok untuk meja santai kafe, teras rumah, ruang kerja minimalis, maupun taman.",
-    image: "https://res.cloudinary.com/ig4uk50k/image/upload/v1790042758/ovxca9k9rpep6gfaph4v.webp",
-    shopeeUrl: "https://shopee.co.id/bimker_lkrobo/meja-bangku-kayu-besi-industrial-lkrobo",
-    tokopediaUrl: `${TOKOPEDIA_CONFIG.officialStoreUrl}/meja-bangku-kayu-besi-industrial-lkrobo`,
-    isFeatured: true,
-    isBestSeller: true,
-    inStock: true,
-    material: "Kayu Solid Pilihan, Rangka Besi Hollow, Finishing Politur & Cat Anti Karat",
-    madeBy: "Bengkel Pertukangan & Las LKROBO",
-    specifications: [
-      { label: "Material Daun Meja", value: "Kayu Solid Alami (Finishing Melamine Clear Gloss)" },
-      { label: "Material Rangka", value: "Besi Hollow Tebal dengan Pengelasan Presisi" },
-      { label: "Finishing Rangka", value: "Cat Primer Anti Karat & Epoxy Matte Black" },
-      { label: "Layanan Tambahan", value: "Menerima Pesanan Kustom Ukuran & Desain (Custom Order)" }
+      { label: "Nama Produk", value: "Vas Bunga Kulit Rokok Ramah Lingkungan Handmade" },
+      { label: "Kategori Shopee", value: "Perlengkapan Rumah > Dekorasi > Vas & Bejana" },
+      { label: "Kelebihan", value: "Unik, Ramah Lingkungan, Aksen Kilap Metalik" },
+      { label: "Kegunaan", value: "Pajangan Meja, Vas Bunga Kering & Ruang Santai" }
     ]
   }
 ];
@@ -570,7 +348,8 @@ export const PROGRAMS: Program[] = [
     image: "https://res.cloudinary.com/ig4uk50k/image/upload/v1790044576/bkop5z6x6qvyxgmmvtvh.webp",
     galleryImages: [
       "https://res.cloudinary.com/ig4uk50k/image/upload/v1790044576/bkop5z6x6qvyxgmmvtvh.webp",
-      "https://res.cloudinary.com/ig4uk50k/image/upload/v1790044788/copy_of_jua8h5hppyqakshi5rnr.webp"
+      "https://res.cloudinary.com/ig4uk50k/image/upload/v1790044788/copy_of_jua8h5hppyqakshi5rnr.webp",
+      "https://down-id.img.susercontent.com/file/id-11134207-81ztn-mt7kmy0i9ybref"
     ],
     fullDesc: "Program inovatif berbasis green economy yang melatih ketelitian dan kesabaran warga binaan dalam memilin lembaran koran menjadi lintingan rapat, lalu menganyamnya menjadi beragam produk fungsional. Melalui proses pelapisan pernis khusus tahan lembap, produk anyaman koran memiliki kekuatan yang kokoh setara anyaman rotan alam.",
     participantsCount: 25,
@@ -596,7 +375,10 @@ export const PROGRAMS: Program[] = [
     icon: "Package",
     image: "https://res.cloudinary.com/ig4uk50k/image/upload/v1789958409/krtovwh0faamuzcefiaw.webp",
     galleryImages: [
-      "https://res.cloudinary.com/ig4uk50k/image/upload/v1789958409/krtovwh0faamuzcefiaw.webp"
+      "https://res.cloudinary.com/ig4uk50k/image/upload/v1789958409/krtovwh0faamuzcefiaw.webp",
+      "https://down-id.img.susercontent.com/file/id-11134207-81zti-mt7prpayry81bf",
+      "https://down-id.img.susercontent.com/file/id-11134207-81ztk-mt7lsx0zkyrm27",
+      "https://down-id.img.susercontent.com/file/id-11134207-81zti-mt7rvoqshjbcca"
     ],
     fullDesc: "Warga binaan dilatih ketelitian tinggi dalam memanfaatkan lapisan foil dan karton kemasan rokok bekas. Bahan dipotong presisi, dilipat, dan dirangkai tanpa lem sintetis berbahaya menjadi miniatur kapal tradisional, tas anyaman modis berkarakter metalik, serta cenderamata unik yang sangat diminati pembeli karena nilai keuletan dan keasliannya.",
     participantsCount: 20,
@@ -623,7 +405,8 @@ export const PROGRAMS: Program[] = [
     image: "https://res.cloudinary.com/ig4uk50k/image/upload/v1789968128/uhc1sdyxogduglz2lwwd.webp",
     galleryImages: [
       "https://res.cloudinary.com/ig4uk50k/image/upload/v1789968128/uhc1sdyxogduglz2lwwd.webp",
-      "https://res.cloudinary.com/ig4uk50k/image/upload/v1790044577/wbemrlk6alvqfaqz16aj.webp"
+      "https://res.cloudinary.com/ig4uk50k/image/upload/v1790044577/wbemrlk6alvqfaqz16aj.webp",
+      "https://down-id.img.susercontent.com/file/id-11134207-81zto-mteqviayll3648"
     ],
     fullDesc: "Dapur Bakery Antaboga merupakan salah satu unit UMKM paling produktif di Lapas Kerobokan. Beroperasi setiap hari memproduksi aneka roti manis, roti sobek, croissant renyah, kue basah, serta pie susu khas Bali. Seluruh proses produksi mengikuti prosedur ketat sanitasi makanan dan telah mengantongi Sertifikat Laik Higiene Sanitasi dari Dinas Kesehatan.",
     participantsCount: 40,
@@ -650,18 +433,22 @@ export const PROGRAMS: Program[] = [
     image: "https://res.cloudinary.com/ig4uk50k/image/upload/v1789958503/d5sw4j0cjgpqimoapz7r.webp",
     galleryImages: [
       "https://res.cloudinary.com/ig4uk50k/image/upload/v1789958503/d5sw4j0cjgpqimoapz7r.webp",
-      "https://res.cloudinary.com/ig4uk50k/image/upload/v1789958410/lnxmwwpxt1sffmxrqemq.webp"
+      "https://res.cloudinary.com/ig4uk50k/image/upload/v1790128217/pkd4gihrpeadub9xoeiq.webp",
+      "https://res.cloudinary.com/ig4uk50k/image/upload/v1789958410/lnxmwwpxt1sffmxrqemq.webp",
+      "https://down-id.img.susercontent.com/file/id-11134207-81ztc-mt8yjtlu8mx485",
+      "https://down-id.img.susercontent.com/file/id-11134207-81zti-mt7prpaymby9b0"
     ],
-    fullDesc: "Bekerja sama dengan maestro pengrajin perak Celuk Gianyar, program ini membekali warga binaan dengan keahlian memotong, mematri, mengukir jawan rumit, hingga tahap pemolesan perak 925. Hasil karya telah menembus pasar cenderamata turis mancanegara, butik perhiasan di Sanur dan Seminyak, serta marketplace resmi.",
+    fullDesc: "Bekerja sama resmi dengan mitra industri perhiasan terkemuka seperti Yin Jewelry serta maestro pengrajin perak Celuk Gianyar, program ini membekali warga binaan dengan keahlian memotong, mematri, mengukir jawan rumit, hingga tahap pemolesan perak 925 standar ekspor. Hasil karya telah menembus butik perhiasan di Sanur dan Seminyak, cenderamata turis mancanegara, serta marketplace resmi.",
     participantsCount: 35,
     duration: "6 Bulan Pelatihan Intensif",
     durationEn: "6 Months Intensive Workshop",
     certification: "Sertifikat Uji Kompetensi Kriya Logam BNSP",
     outputProducts: ["Gelang Jawan Bali Perak 925", "Cincin Perak Tridatu", "Bros Kebaya Filigree", "Liontin Etnik Kamboja Bali"],
     highlights: [
+      "Perjanjian Kerjasama (PKS) Resmi dengan Yin Jewelry untuk transfer keahlian & kurasi ekspor",
       "Instruktur berpengalaman dari sentra perak legendaris Celuk Sukawati",
-      "Peralatan tempa dan pematrian presisi dengan standar keselamatan kerja",
-      "Tersedia di Tokopedia resmi dan pesanan maklon butik perhiasan Bali"
+      "Peralatan tempa dan pematrian presisi dengan standar keselamatan kerja tinggi",
+      "Tersedia di toko Shopee resmi dan pesanan butik perhiasan Bali"
     ]
   },
   {
@@ -676,7 +463,9 @@ export const PROGRAMS: Program[] = [
     icon: "Flame",
     image: "https://res.cloudinary.com/ig4uk50k/image/upload/v1789958557/IMG_3895.webp",
     galleryImages: [
-      "https://res.cloudinary.com/ig4uk50k/image/upload/v1789958557/IMG_3895.webp"
+      "https://res.cloudinary.com/ig4uk50k/image/upload/v1789958557/IMG_3895.webp",
+      "https://down-id.img.susercontent.com/file/id-11134207-81ztm-mt662wyk8miq70",
+      "https://down-id.img.susercontent.com/file/id-11134207-81ztq-mt7lsx0zusqq61"
     ],
     fullDesc: "Dupa dan udeng merupakan dua kebutuhan pokok adat dan persembahyangan di Bali dengan permintaan pasar harian yang sangat konsisten. Warga binaan dilatih meracik serbuk kayu wangi herbal alami seperti cendana dan gaharu yang menghasilkan abu dingin tidak perih di mata, serta keterampilan menjahit dan melipat udeng khas Bali dengan potongan proporsional dan jahitan rapi.",
     participantsCount: 30,
@@ -703,7 +492,8 @@ export const PROGRAMS: Program[] = [
     image: "https://res.cloudinary.com/ig4uk50k/image/upload/v1789972519/ibv1quezbsvwqzrgthxg.webp",
     galleryImages: [
       "https://res.cloudinary.com/ig4uk50k/image/upload/v1789972519/ibv1quezbsvwqzrgthxg.webp",
-      "https://res.cloudinary.com/ig4uk50k/image/upload/v1790046463/yddlpoqbzdmgm9lbesdz.webp"
+      "https://res.cloudinary.com/ig4uk50k/image/upload/v1790046463/yddlpoqbzdmgm9lbesdz.webp",
+      "https://down-id.img.susercontent.com/file/id-11134207-81ztn-mt7u0jhky8ll06"
     ],
     fullDesc: "Menyiapkan warga binaan untuk siap bekerja di industri kreatif dan periklanan digital. Peserta dilatih menguasai software desain grafis komputer, teknik separasi warna, pembuatan film sablon (afdruk), serta teknik cetak manual plastisol maupun polyflex heatpress. Menerima pesanan maklon kaos komunitas, seminar kit, dan suvenir khas Bali.",
     participantsCount: 25,
@@ -729,7 +519,8 @@ export const PROGRAMS: Program[] = [
     icon: "Scissors",
     image: "https://res.cloudinary.com/ig4uk50k/image/upload/v1789958428/vch8076fjlf9fvclbnyh.webp",
     galleryImages: [
-      "https://res.cloudinary.com/ig4uk50k/image/upload/v1789958428/vch8076fjlf9fvclbnyh.webp"
+      "https://res.cloudinary.com/ig4uk50k/image/upload/v1789958428/vch8076fjlf9fvclbnyh.webp",
+      "https://down-id.img.susercontent.com/file/id-11134207-81zti-mt8wc2g0x895a3"
     ],
     fullDesc: "Unit Kerajinan Batik bimbingan kerja Lapas Kelas IIA Kerobokan melatih warga binaan dalam seni membatik tradisional secara telaten dan presisi. Mulai dari pembuatan pola sketsa motif, proses mencanting malam panas (batik tulis), teknik batik cap tembaga, pewarnaan kain berlapis (pewarna alami dan sintetis berkualitas), hingga proses lorod (pelepasan malam). Menghasilkan lembaran kain batik motif khas Bali yang anggun dan aneka produk turunan fashion siap pakai.",
     participantsCount: 25,
@@ -755,15 +546,17 @@ export const PROGRAMS: Program[] = [
     icon: "Shirt",
     image: "https://res.cloudinary.com/ig4uk50k/image/upload/v1789972550/zndy4t5h557j42vdenzl.webp",
     galleryImages: [
-      "https://res.cloudinary.com/ig4uk50k/image/upload/v1789972550/zndy4t5h557j42vdenzl.webp"
+       "https://res.cloudinary.com/ig4uk50k/image/upload/v1789972550/zndy4t5h557j42vdenzl.webp",
+       "https://res.cloudinary.com/ig4uk50k/image/upload/v1790128206/bhods4st9kp0myxyqriq.webp"
     ],
-    fullDesc: "Unit Bimbingan Kerja Laundry Lapas Kelas IIA Kerobokan membekali warga binaan dengan keterampilan operasional tata graha dan binatu profesional. Peserta dilatih mengoperasikan mesin cuci industri, teknik pemilahan serat kain, formulasi deterjen dan pelembut higienis, pengeringan steril, hingga teknik setrika uap presisi agar pakaian rapi, wangi, dan bebas bakteri. Program ini melayani pencucian seragam dinas, linen operasional, serta pesanan binatu kiloan dan satuan dari mitra sekitar.",
+    fullDesc: "Unit Bimbingan Kerja Laundry Lapas Kelas IIA Kerobokan membekali warga binaan dengan keterampilan operasional tata graha dan binatu profesional, kini diperkuat melalui Perjanjian Kerjasama (PKS) resmi bersama Go Laundry. Peserta dilatih mengoperasikan mesin cuci industri, teknik pemilahan serat kain, formulasi deterjen dan pelembut higienis, pengeringan steril, hingga teknik setrika uap presisi agar pakaian rapi, wangi, dan bebas bakteri. Program ini melayani pencucian seragam dinas, linen operasional, serta pesanan binatu kiloan dan satuan dari mitra sekitar.",
     participantsCount: 25,
     duration: "3 Bulan Pelatihan Binatu & Tata Graha",
     durationEn: "3 Months Laundry & Housekeeping Course",
     certification: "Sertifikat Kejuruan Binatu & Tata Graha (Laundry & Housekeeping)",
     outputProducts: ["Layanan Cuci & Setrika Uap Kiloan", "Pencucian Seragam Dinas & Jas Satuan", "Layanan Cuci Linen Hotel, Villa & Resto", "Pencucian Bed Cover & Selimut Tebal"],
     highlights: [
+      "Perjanjian Kerjasama (PKS) Resmi dengan Go Laundry untuk standarisasi mutu & alur operasional",
       "Fasilitas mesin cuci dan pengering kapasitas industri berstandar efisiensi tinggi",
       "SOP higienitas ketat dengan formula deterjen antibakteri ramah lingkungan",
       "Pelatihan teknik setrika uap bertekanan tinggi untuk hasil lipatan rapi sempurna",
@@ -1008,101 +801,123 @@ export const PROGRAMS: Program[] = [
 
 export const NEWS_ITEMS: NewsItem[] = [
   {
+    id: "news-pks-yin-golaundry",
+    title: "Perkuat Kemandirian Narapidana, Lapas Kerobokan Resmi Gandeng Yin Jewelry dan Go Laundry Melalui Perjanjian Kerjasama (PKS)",
+    titleEn: "Empowering Inmates, Kerobokan Prison Officially Inks Strategic MoU with Yin Jewelry & Go Laundry",
+    date: "21 Maret 2026",
+    dateEn: "March 21, 2026",
+    category: "Kemitraan Industri",
+    categoryEn: "Industry Partnership",
+    author: "Humas Lapas Kelas IIA Kerobokan",
+    authorEn: "Kerobokan Prison Public Relations",
+    readTime: "4 menit baca",
+    readTimeEn: "4 min read",
+    image: "https://res.cloudinary.com/ig4uk50k/image/upload/v1790128217/pkd4gihrpeadub9xoeiq.webp",
+    galleryImages: [
+      "https://res.cloudinary.com/ig4uk50k/image/upload/v1790128217/pkd4gihrpeadub9xoeiq.webp",
+      "https://res.cloudinary.com/ig4uk50k/image/upload/v1790128206/bhods4st9kp0myxyqriq.webp"
+    ],
+    excerpt: "BIMKER LKROBO resmi menandatangani naskah Perjanjian Kerja Sama (PKS) strategis bersama Yin Jewelry untuk pembinaan kriya perak ekspor serta Go Laundry guna peningkatan standar mutu binatu profesional.",
+    excerptEn: "Kerobokan Prison Vocational Hub officially signs strategic MoUs with Yin Jewelry for export silvercraft training and Go Laundry for professional laundry standardization.",
+    content: [
+      "BADUNG — Lembaga Pemasyarakatan (Lapas) Kelas IIA Kerobokan mempertegas komitmen pembinaan kemandirian warga binaan dengan menandatangani Perjanjian Kerja Sama (PKS) kemitraan strategis bersama dua entitas industri ternama di Bali: Yin Jewelry dan Go Laundry.",
+      "Penandatanganan naskah kerja sama ini berlangsung khidmat di aula Lapas Kerobokan yang dihadiri oleh jajaran pimpinan Seksi Kegiatan Kerja (BIMKER LKROBO), pejabat struktural, serta perwakilan direksi dan manajemen dari Yin Jewelry maupun Go Laundry.",
+      "Melalui kolaborasi bersama Yin Jewelry, warga binaan unit kriya perak memperoleh pembinaan kurikulum teknik filigree kontemporer, kurasi kontrol kualitas perhiasan 925 berstandar butik ekspor, serta integrasi pemesanan langsung.",
+      "Sementara itu, kerja sama bersama Go Laundry difokuskan pada peningkatan kapasitas operasional unit binatu Lapas Kerobokan, mencakup standarisasi metode pencucian higienis berbasis deterjen ramah lingkungan, teknik perawatan linen hotel dan villa berbintang, serta manajemen alur kerja binatu profesional.",
+      "\"Sinergi dengan Yin Jewelry dan Go Laundry ini membuktikan bahwa pembinaan di Lapas Kerobokan terhubung langsung dengan standar industri riil. Kami ingin warga binaan memiliki keahlian yang relevan dan terserap pasar saat kembali ke masyarakat,\" tegas pihak Bimbingan Kerja Lapas Kerobokan."
+    ],
+    contentEn: [
+      "BADUNG — Kerobokan Class IIA Prison reinforces its commitment to inmate self-reliance by signing strategic Cooperation Agreements (MoU) with two prominent Bali enterprises: Yin Jewelry and Go Laundry.",
+      "The official signing ceremony took place at the Kerobokan Prison Hall, attended by leadership of the Vocational Activity Section (BIMKER LKROBO), structural officials, and executive representatives from Yin Jewelry and Go Laundry.",
+      "Through the partnership with Yin Jewelry, inmate silversmiths receive hands-on training in contemporary filigree techniques, boutique-grade 925 jewelry quality control, and direct international order integration.",
+      "Meanwhile, the collaboration with Go Laundry upgrades the prison's laundry unit operations, implementing eco-friendly detergent hygiene standards, five-star hotel linen care methods, and commercial laundry workflow management.",
+      "\"This synergy with Yin Jewelry and Go Laundry proves that our vocational rehabilitation is directly aligned with genuine industry standards. We ensure inmates acquire relevant skills that seamlessly reintegrate into the workforce,\" stated the Prison Vocational Management."
+    ]
+  },
+  {
     id: "news-premi-01",
     title: "Transparansi & Akuntabilitas Pembinaan: Lapas Kerobokan Salurkan Hak Premi Kerja Hasil Penjualan Produk kepada Warga Binaan",
+    titleEn: "Transparency & Accountability: Kerobokan Prison Distributes Inmate Wage Premiums from Commercial Sales",
     date: "18 Maret 2026",
+    dateEn: "March 18, 2026",
     category: "Pemberdayaan & Premi",
+    categoryEn: "Empowerment & Wages",
     author: "Humas & Seksi Giatja LKROBO",
+    authorEn: "PR & Vocational Section LKROBO",
     readTime: "4 menit baca",
+    readTimeEn: "4 min read",
     image: "https://res.cloudinary.com/ig4uk50k/image/upload/v1789968127/l5zuxuucvytsxjfbpsuk.webp",
     excerpt: "Sebagai pemenuhan hak pekerja narapidana dan wujud transparansi pengelolaan hasil karya, Lapas Kerobokan secara berkala menyalurkan upah premi yang langsung dibukukan ke tabungan mandiri warga binaan.",
+    excerptEn: "In accordance with inmate rights and financial transparency, Kerobokan Prison regularly disburses labor wage premiums credited directly into inmates' personal savings passbooks.",
     content: [
       "KEROBOKAN — Lapas Kelas IIA Kerobokan membuktikan komitmen transparansi dan akuntabilitas pembinaan dengan menggelar seremoni berkala penyerahan upah premi hasil kerja kepada para warga binaan yang aktif berproduksi di berbagai unit bimbingan kerja.",
       "Premi diserahkan langsung oleh jajaran pejabat struktural Seksi Kegiatan Kerja kepada perwakilan narapidana pengrajin perak, juru masak Dapur Bakery Antaboga, penjahit garmen tenun Endek, seniman lukis, serta tim budidaya perikanan dan perkebunan.",
-      "Nominal premi yang diterima merupakan persentase resmi dari laba bersih penjualan produk di toko resmi Tokopedia BIMKER LKROBO serta pesanan instansi dan mitra industri sepanjang periode berjalan.",
+      "Nominal premi yang diterima merupakan persentase resmi dari laba bersih penjualan produk di toko resmi Shopee BIMKER LKROBO serta pesanan instansi dan mitra industri sepanjang periode berjalan.",
       "Hasil premi ini langsung dibukukan ke dalam rekening tabungan mandiri masing-masing warga binaan. Mereka dapat mengirimkannya secara berkala untuk membantu nafkah keluarga di rumah maupun disimpan utuh sebagai modal memulai wirausaha saat masa pidana usai.",
       "\"Melalui pembagian premi yang transparan ini, warga binaan merasakan langsung bahwa keringat dan kerja keras mereka dihargai secara bermartabat. Ini memotivasi mereka untuk terus belajar dan membuktikan diri bahwa mereka mampu berdikari secara halal,\" ungkap Kepala Seksi Kegiatan Kerja Lapas Kerobokan."
+    ],
+    contentEn: [
+      "KEROBOKAN — Kerobokan Class IIA Prison demonstrates its transparency commitment by hosting its regular labor wage premium distribution ceremony for inmates actively producing across vocational units.",
+      "Premiums were presented by Prison Vocational Officials to inmate representatives, including silversmiths, Antaboga bakery chefs, Endek garment tailors, visual artists, and agro-aquaculture teams.",
+      "The wage premium amount represents the official percentage of net revenue generated from Shopee e-commerce sales, government institutional orders, and corporate partnerships.",
+      "All premiums are credited directly into individualized passbook bank accounts. Inmates can send remittances to support their families or keep them untouched as reintegration venture capital post-release.",
+      "\"Through this transparent wage distribution, inmates tangibly feel that their hard work and craftsmanship are dignified. It empowers them with legitimate self-reliance,\" highlighted the Head of Prison Vocational Activities."
     ]
   },
   {
     id: "news-apel-01",
     title: "Membangun Disiplin & Keselamatan Kerja: Rutinitas Apel Pagi Warga Binaan Sebelum Memulai Produksi di Balik Terali",
+    titleEn: "Instilling Discipline & Workplace Safety: Daily Morning Assembly for Inmates Before Workshop Production",
     date: "16 Maret 2026",
+    dateEn: "March 16, 2026",
     category: "Pelatihan & Sertifikasi",
+    categoryEn: "Training & Certification",
     author: "Seksi Kegiatan Kerja LKROBO",
+    authorEn: "LKROBO Vocational Section",
     readTime: "3 menit baca",
+    readTimeEn: "3 min read",
     image: "https://res.cloudinary.com/ig4uk50k/image/upload/v1789968128/slefyi8iuwrmleiwhg37.webp",
     excerpt: "Sebelum melangkah ke bengkel kerja kriya, bakery, maupun kebun, warga binaan Lapas Kerobokan wajib mengikuti apel pagi guna pembekalan kedisiplinan dan SOP keselamatan kerja.",
+    excerptEn: "Before heading to craft workshops, the bakery, or agricultural greenhouses, inmates attend morning assembly for discipline briefing and occupational health and safety (OHS) SOPs.",
     content: [
       "KEROBOKAN — Suasana tertib dan penuh konsentrasi terlihat di halaman area Bimbingan Kerja Lapas Kelas IIA Kerobokan setiap pagi. Puluhan warga binaan pekerja berdiri berbaris rapi mengikuti apel pagi sebelum didistribusikan ke unit kerja masing-masing.",
       "Apel pagi ini dipimpin langsung oleh staf Seksi Kegiatan Kerja (Giatja) dan para instruktur teknis. Tujuannya adalah memastikan kesiapan fisik dan mental para peserta, memeriksa kelengkapan alat pelindung diri (APD), serta memberikan pengarahan terkait target produksi harian.",
       "Penerapan Keselamatan dan Kesehatan Kerja (K3) menjadi prioritas mutlak, terutama bagi warga binaan yang menangani mesin konveksi berkecepatan tinggi, oven bakery bersuhu tinggi, maupun peleburan logam mulia di bengkel perak.",
       "\"Melalui apel pagi ini, kami tidak hanya melatih keterampilan tangan, tetapi juga menanamkan etos kerja profesional seperti disiplin waktu, kerapian, tanggung jawab, dan rasa saling menghargai. Nilai-nilai inilah yang menjadi bekal paling berharga saat kembali ke masyarakat nanti,\" jelas perwira pembina kegiatan kerja."
-    ]
-  },
-  {
-    id: "news-01",
-    title: "Produk Kerajinan Perak BIMKER LKROBO Tampil Memukau di Pameran UMKM Bali Expo 2026",
-    date: "14 Maret 2026",
-    category: "Pameran & Prestasi",
-    author: "Humas Lapas Kerobokan",
-    readTime: "4 menit baca",
-    image: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80",
-    excerpt: "Stan Bimbingan Kerja Lapas Kerobokan ramai dikunjungi wisatawan lokal dan mancanegara yang mengagumi kehalusan ukir perak jawan buatan warga binaan.",
-    content: [
-      "DENPASAR — Stan Bimbingan Kerja Lapas Kelas IIA Kerobokan (BIMKER LKROBO) berhasil menarik perhatian ribuan pengunjung dalam gelaran Bali Creative & UMKM Expo di Denpasar.",
-      "Berbagai karya unggulan seperti gelang perak filigree 925, talenan kayu jati solid food-grade, serta aneka produk roti artisan dari Dapur Antaboga ludes terjual dalam kurun waktu tiga hari pameran.",
-      "Kepala Seksi Kegiatan Kerja Lapas Kelas IIA Kerobokan menyampaikan bahwa keikutsertaan dalam pameran ini membuktikan bahwa karya warga binaan memiliki standar kualitas yang mampu bersaing di pasar terbuka.",
-      "\"Masyarakat sangat terkejut saat mengetahui bahwa gelang perak sehalus ini dibuat oleh tangan-tangan warga binaan di dalam lapas. Ini membuka paradigma baru bahwa pemasyarakatan adalah tempat pembinaan manusia seutuhnya, bukan tempat pembalasan,\" ungkapnya.",
-      "Selain transaksi langsung di lokasi pameran, tim juga mengarahkan para pengunjung untuk terus berbelanja melalui toko resmi Tokopedia BIMKER LKROBO agar pesanan dapat dikirim ke seluruh pelosok Indonesia."
-    ]
-  },
-  {
-    id: "news-02",
-    title: "Sebanyak 45 Warga Binaan Terima Sertifikat Kelulusan Uji Kompetensi BNSP Bidang Garmen & Bakery",
-    date: "28 Februari 2026",
-    category: "Pelatihan & Sertifikasi",
-    author: "Tim Bimbingan Kerja",
-    readTime: "3 menit baca",
-    image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80",
-    excerpt: "Sertifikasi resmi BNSP menjadi modal berharga bagi warga binaan untuk langsung terserap di industri perhotelan dan garmen setelah menyelesaikan masa pidana.",
-    content: [
-      "BADUNG — Lapas Kelas IIA Kerobokan menggelar seremoni penyerahan sertifikat kompetensi kerja Badan Nasional Sertifikasi Profesi (BNSP) kepada 45 warga binaan yang telah dinyatakan kompeten dalam bidang tata boga bakery dan garmen konveksi.",
-      "Asesor dari Lembaga Sertifikasi Profesi (LSP) menyatakan apresiasi setinggi-tingginya atas kedisiplinan dan higienitas kerja para peserta selama menjalani rangkaian ujian praktik.",
-      "Sertifikat kompetensi berlogo Garuda ini diakui secara nasional bahkan di kawasan ASEAN, sehingga mempermudah para warga binaan untuk melamar pekerjaan di hotel bintang lima, bakery kafe, atau membuka wirausaha mandiri ketika kembali ke tengah keluarga.",
-      "\"Kami ingin memastikan bahwa ketika gerbang lapas terbuka, mereka tidak keluar dengan tangan hampa, melainkan membawa kehormatan, keahlian bersertifikat, dan tekad baru untuk menghidupi keluarga secara halal,\" tutur Kalapas Kerobokan dalam sambutannya."
+    ],
+    contentEn: [
+      "KEROBOKAN — An atmosphere of discipline and focus fills the Kerobokan Prison vocational courtyard every morning as dozens of inmate artisans line up for the daily briefing before reporting to their workshops.",
+      "The morning briefing is led by Vocational Activity officers and certified instructors. It inspects personal protective equipment (PPE), reinforces daily production quotas, and reviews safety protocols.",
+      "Occupational Health and Safety (OHS) is strictly observed, especially for inmates operating high-speed garment machines, commercial bakery ovens, and metal smelting in the silver workshops.",
+      "\"Through this morning routine, we instill professional work ethics: punctuality, tidiness, accountability, and mutual respect. These values become their most valuable asset when reintegrating into society,\" explained the vocational supervisor."
     ]
   },
   {
     id: "news-03",
     title: "Panen Raya Selada Hidroponik: Pasok Kebutuhan Sayuran Segar ke Kafe Sehat Kawasan Seminyak",
+    titleEn: "Hydroponic Lettuce Harvest: Supplying Fresh Salad Greens to Seminyak Healthy Cafes",
     date: "12 Februari 2026",
+    dateEn: "February 12, 2026",
     category: "Agribisnis & Panen",
+    categoryEn: "Agribusiness & Harvest",
     author: "Unit Pertanian LKROBO",
+    authorEn: "LKROBO Agro Unit",
     readTime: "3 menit baca",
+    readTimeEn: "3 min read",
     image: "https://res.cloudinary.com/ig4uk50k/image/upload/v1790042640/knj7rfxgwpnbkctsumqy.webp",
     excerpt: "Kebun greenhouse hidroponik BIMKER LKROBO membukukan panen 350 kg selada segar kualitas premium yang langsung diserap mitra usaha kuliner Bali.",
+    excerptEn: "Kerobokan Prison's greenhouse hydroponic farm yields 350 kg of premium fresh lettuce, supplied directly to Bali's culinary restaurant partners.",
     content: [
       "KEROBOKAN — Senyum semringah terpancar dari wajah para warga binaan yang tergabung dalam tim hidroponik Lapas Kerobokan saat memanen ratusan kilogram selada butterhead dan romaine segar.",
       "Dengan perawatan teliti pada sirkulasi air nutrisi dan pencahayaan alami Bali, sayuran yang dihasilkan memiliki tekstur tebal, renyah, dan manis tanpa rasa getir pahit.",
       "Tiga pengelola restoran dan kafe salad sehat di area Kuta Utara dan Seminyak telah menandatangani kesepakatan pasokan rutin mingguan dengan pihak bimbingan kerja.",
       "Keberhasilan agribisnis ini juga memberikan bagian upah premi (remunerasi) langsung kepada warga binaan yang disimpan dalam rekening tabungan mereka untuk keluarga di rumah."
-    ]
-  },
-  {
-    id: "news-04",
-    title: "Kemitraan Strategis Bersama Asosiasi Desainer Bali untuk Pengembangan Motif Tenun Endek Modern",
-    date: "20 Januari 2026",
-    category: "Kemitraan",
-    author: "Divisi Hubungan Mitra",
-    readTime: "4 menit baca",
-    image: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=800&q=80",
-    excerpt: "Kolaborasi kreatif ini menggabungkan warisan kain tradisional Bali dengan desain busana kontemporer yang diminati generasi muda dan wisatawan.",
-    content: [
-      "BADUNG — Guna meningkatkan nilai tambah produk garmen bimbingan kerja, BIMKER LKROBO resmi menggandeng komunitas desainer muda Bali dalam lokakarya bertajuk \"Benang Harapan: Re-inventing Endek Bali\".",
-      "Dalam kemitraan ini, para desainer memberikan pelatihan seputar tren busana tropis, pemilihan paduan warna pastel modern, serta teknik jahit berstandar ekspor.",
-      "Hasil perdana dari kolaborasi ini telah diluncurkan di katalog Tokopedia BIMKER LKROBO berupa kemeja kasual tenun Endek kombinasi katun yang langsung mendapat respon positif dari pembeli.",
-      "Kerja sama ini diharapkan terus membuka peluang bagi pihak swasta lainnya untuk mempercayakan proses produksi (maklon) kepada warga binaan lapas."
+    ],
+    contentEn: [
+      "KEROBOKAN — Broad smiles beamed across the faces of inmate agricultural workers as they harvested hundreds of kilograms of fresh butterhead and romaine lettuce inside the prison's greenhouse.",
+      "With meticulous control over nutrient water circulation and Bali's tropical sunlight, the harvested greens boast crisp texture and naturally sweet flavor without bitterness.",
+      "Three health-food restaurants and salad bars in North Kuta and Seminyak have signed weekly recurring supply contracts with the prison vocational team.",
+      "This agribusiness success directly rewards inmate participants with wage premiums deposited into their personal savings passbooks for their families."
     ]
   }
 ];
@@ -1112,36 +927,52 @@ export const TESTIMONIALS: Testimonial[] = [
     id: "testi-01",
     name: "I Wayan S.",
     role: "Warga Binaan — Pengrajin Perak 925",
+    roleEn: "Inmate Artisan — 925 Silversmith",
     program: "Kriya Perak Celuk",
-    quote: "Sebelumnya saya tidak memiliki keterampilan apa pun dan sempat putus asa. Di BIMKER LKROBO, saya diajari cara mematri perak dari nol hingga tangan saya bisa membuat gelang yang laku terjual di Tokopedia. Pendapatan premi ini rutin saya kirimkan untuk biaya sekolah anak saya di desa.",
+    programEn: "Celuk Silvercraft Program",
+    quote: "Sebelumnya saya tidak memiliki keterampilan apa pun dan sempat putus asa. Di BIMKER LKROBO, saya diajari cara mematri perak dari nol hingga tangan saya bisa membuat karya perhiasan yang laku terjual di Shopee. Pendapatan premi ini rutin saya kirimkan untuk biaya sekolah anak saya di desa.",
+    quoteEn: "I had no vocational skills before and felt hopeless. At BIMKER LKROBO, I was taught silver soldering from scratch until I could create jewelry that sells on our official Shopee store. The wages I earn are regularly remitted to pay for my child's schooling back in my village.",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80",
-    year: "Pelatihan Angkatan 2024"
+    year: "Pelatihan Angkatan 2024",
+    yearEn: "Class of 2024 Trainee"
   },
   {
     id: "testi-02",
     name: "Made Dananjaya",
     role: "Pemilik Kafe & Restoran di Canggu, Bali",
+    roleEn: "Cafe & Restaurant Owner in Canggu, Bali",
     program: "Mitra Bisnis Suplai Sayur & Bakery",
+    programEn: "Bakery & Agro Supply Partner",
     quote: "Awalnya saya ragu, namun saat melihat langsung standar kebersihan dapur Antaboga dan greenhouse hidroponik Lapas Kerobokan, kualitasnya bahkan melampaui beberapa supplier komersial. Selada dan croissant mereka sangat fresh dan disukai tamu-tamu kami.",
+    quoteEn: "Initially I had doubts, but after personally touring the Antaboga bakery kitchen and hydroponic greenhouses, their cleanliness and quality exceeded commercial suppliers. Their fresh lettuce and croissants are beloved by our cafe guests.",
     avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
-    year: "Mitra Kerja Sama sejak 2023"
+    year: "Mitra Kerja Sama sejak 2023",
+    yearEn: "Partner since 2023"
   },
   {
     id: "testi-03",
     name: "Agus Pratama",
     role: "Alumni Warga Binaan — Pemilik Barbershop Mandiri",
+    roleEn: "Alumni Inmate — Independent Barbershop Owner",
     program: "Pangkas Rambut Modern",
+    programEn: "Modern Barbershop Course",
     quote: "Berkat sertifikat kompetensi barbershop dari Lapas Kerobokan dan modal tabungan hasil premi kerja di dalam, setelah bebas saya bisa langsung membuka usaha potong rambut di Denpasar. Sekarang saya mandiri dan dihormati oleh keluarga serta tetangga.",
+    quoteEn: "Thanks to the official barbershop competence certificate from Kerobokan Prison and my savings from in-prison wages, I opened my own barbershop in Denpasar upon release. Now I am fully self-reliant and respected by my family and community.",
     avatar: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=300&q=80",
-    year: "Bebas Murni 2025"
+    year: "Bebas Murni 2025",
+    yearEn: "Full Release 2025"
   },
   {
     id: "testi-04",
     name: "Ni Luh Putu Anggreni",
-    role: "Pembeli Setia Tokopedia dari Jakarta",
-    program: "Pelanggan Toko Tokopedia BIMKER",
-    quote: "Saya pesan gelang perak dan pie susu lewat Tokopedia resmi BIMKER LKROBO. Packing-nya sangat aman, kualitas peraknya luar biasa cantik persis toko perhiasan ternama di Ubud. Bangga bisa ikut mendukung rehabilitasi kemandirian warga binaan!",
+    role: "Pelanggan Setia Shopee dari Jakarta",
+    roleEn: "Verified Shopee Customer from Jakarta",
+    program: "Pelanggan Toko Shopee LKROBO",
+    programEn: "LKROBO Shopee Customer",
+    quote: "Saya pesan perhiasan silver dan camilan bakery lewat toko Shopee resmi BIMKER LKROBO. Packing-nya sangat aman, kualitas peraknya luar biasa cantik. Bangga bisa ikut mendukung rehabilitasi kemandirian warga binaan!",
+    quoteEn: "I ordered silver jewelry and bakery snacks through BIMKER LKROBO's official Shopee store. The packaging was immaculate, and the silver quality is stunning. Proud to support inmate rehabilitation!",
     avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80",
-    year: "Top Buyer Tokopedia"
+    year: "Top Buyer Shopee",
+    yearEn: "Top Shopee Buyer"
   }
 ];
